@@ -295,21 +295,24 @@ function Process() {
 function SocialProof() {
   const testimonials = [
     {
-      img: homeVictorian,
+      img: imgVictorian,
+      alt: imgVictorianAlt,
       name: "Sarah, Wandsworth",
       quote:
         "We were quoted heat pump only. Climateway showed us the whole picture and saved us £8,000 by sequencing it properly.",
       result: "£1,800 saved Year 1",
     },
     {
-      img: homeKitchen,
+      img: imgBedroom,
+      alt: imgBedroomAlt,
       name: "James, Sevenoaks",
       quote:
         "The summer bedroom problem was the dealbreaker for me. Nobody else even mentioned cooling.",
       result: "Cool bedrooms for the first time in 12 years",
     },
     {
-      img: homeBedroom,
+      img: imgCozyLiving,
+      alt: imgCozyLivingAlt,
       name: "Priya, Wimbledon",
       quote:
         "Properly designed, properly installed, properly explained. The whole experience felt like working with our architect.",
@@ -327,7 +330,7 @@ function SocialProof() {
           <article key={t.name} className="flex flex-col">
             <img
               src={t.img}
-              alt={`Home of ${t.name}`}
+              alt={t.alt}
               loading="lazy"
               width={1024}
               height={768}
