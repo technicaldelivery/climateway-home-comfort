@@ -358,10 +358,9 @@ function Field({
 
 function Results({ a }: { a: Answers }) {
   const grants = [
-    { name: "Boiler Upgrade Scheme", desc: "Up to £7,500 toward a heat pump." },
-    { name: "ECO4", desc: "Insulation and fabric grants based on property and income." },
-    { name: "London Retrofit Accelerator", desc: "Borough-level top-ups across Greater London." },
-    { name: "Home Upgrade Grant 2", desc: "Off-gas-grid homes only." },
+    { name: "Boiler Upgrade Scheme", value: "£7,500" },
+    { name: "Warm Homes: Local Grant", value: "Varies" },
+    { name: "Great British Insulation Scheme", value: "Varies" },
   ];
 
   return (
@@ -373,20 +372,40 @@ function Results({ a }: { a: Answers }) {
         <h1 className="mt-3 font-display text-4xl leading-tight md:text-5xl">
           Here's how your home performs today.
         </h1>
-        <p className="mt-4 text-base text-foreground/70">
-          Based on {a.property || "your property"} in {a.postcode || "your area"}.
+        <p className="mt-4 max-w-2xl text-base text-foreground/70">
+          Based on what you've told us about your home and what we know about UK property archetypes and your local climate. A site visit will refine these numbers significantly.
         </p>
 
         {/* Score grid */}
-        <div className="mt-12 grid gap-px rounded-md bg-hairline overflow-hidden sm:grid-cols-2">
-          <ScoreCell label="Winter performance" value="Grade D" tone="warn" />
-          <ScoreCell label="Summer comfort" value="At risk" tone="warn" />
-          <ScoreCell label="Estimated energy bill" value="£2,400/year" tone="neutral" />
-          <ScoreCell label="2030 compliance" value="Action needed" tone="warn" />
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <ScoreCard
+            label="Winter Performance"
+            value="Grade D"
+            sub="Your home loses an estimated 60% of heat through fabric and ventilation."
+            tone="warn"
+          />
+          <ScoreCard
+            label="Summer Comfort"
+            value="At Risk"
+            sub="Based on orientation, glazing and ventilation profile, your home is at risk for the new British summer climate."
+            tone="warn"
+          />
+          <ScoreCard
+            label="Energy Bill"
+            value="£2,400"
+            sub="Estimated annual cost at current energy prices. Climateway typically reduces this by 40-65%."
+            tone="neutral"
+          />
+          <ScoreCard
+            label="2030 Outlook"
+            value="Action needed"
+            sub="Your home's compliance and comfort trajectory for the next five years."
+            tone="warn"
+          />
         </div>
 
         {/* Potential */}
-        <h2 className="mt-20 font-display text-3xl">Your home's climate-ready potential</h2>
+        <h2 className="mt-20 font-display text-3xl">Your climate-ready potential</h2>
         <div className="mt-8 overflow-hidden rounded-md border border-hairline">
           <table className="w-full text-left text-sm">
             <thead className="bg-secondary text-foreground">
@@ -399,9 +418,12 @@ function Results({ a }: { a: Answers }) {
             </thead>
             <tbody className="divide-y divide-hairline">
               {[
-                ["Winter grade", "D", "B", "A"],
-                ["Summer comfort", "At risk", "Comfortable", "Comfortable"],
-                ["Annual bill", "£2,400", "£1,400", "£900"],
+                ["Winter Grade", "D", "B", "A"],
+                ["Summer Comfort", "At risk", "Comfortable", "Comfortable"],
+                ["Annual Bill", "£2,400", "£1,400", "£900"],
+                ["CO2 Emissions", "High", "Medium", "Low"],
+                ["Estimated Project Cost", "—", "From £18,000", "From £32,000"],
+                ["Net Cost After Grants", "—", "From £10,500", "From £24,500"],
               ].map((row) => (
                 <tr key={row[0]}>
                   <td className="px-5 py-4 font-medium">{row[0]}</td>
@@ -416,13 +438,15 @@ function Results({ a }: { a: Answers }) {
 
         {/* Grants */}
         <h2 className="mt-20 font-display text-3xl">
-          You qualify for an estimated £12,500 in grants.
+          Your estimated grants
         </h2>
+        <p className="mt-4 text-base text-foreground/70">
+          Based on your postcode and property profile, you may qualify for up to £12,500 in government and local grants:
+        </p>
         <ul className="mt-8 space-y-0">
           {grants.map((g) => (
             <li key={g.name} className="border-t border-hairline py-5 last:border-b">
-              <p className="font-display text-lg">{g.name}</p>
-              <p className="mt-1 text-sm text-foreground/70">{g.desc}</p>
+              <p className="font-display text-lg">{g.name} ({g.value})</p>
             </li>
           ))}
         </ul>
@@ -432,33 +456,43 @@ function Results({ a }: { a: Answers }) {
             Ready for the next step?
           </h3>
           <p className="mt-3 max-w-xl text-ivory/85">
-            Book your home audit — a qualified assessor visits, surveys the
-            whole house, and tells you exactly what's possible.
+            Book your Home Audit — £250, fully credited against your design fee.
           </p>
           <Link
             to="/contact"
             className="mt-6 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3.5 text-base font-medium text-accent-foreground transition-opacity hover:opacity-90"
           >
-            Book your home audit — £250, credited to your design fee
+            Book your Home Audit
             <ArrowRight className="h-4 w-4" />
           </Link>
+          <div className="mt-4">
+            <button
+              type="button"
+              className="text-sm text-ivory/80 underline underline-offset-4 hover:text-ivory"
+              onClick={() => alert("PDF download coming soon.")}
+            >
+              Email me my Climate Score (PDF)
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-function ScoreCell({
+function ScoreCard({
   label,
   value,
+  sub,
   tone,
 }: {
   label: string;
   value: string;
+  sub: string;
   tone: "neutral" | "warn";
 }) {
   return (
-    <div className="bg-card p-8">
+    <div className="rounded-md border border-hairline bg-card p-8">
       <p className="text-xs font-medium uppercase tracking-[0.16em] text-foreground/55">
         {label}
       </p>
@@ -469,6 +503,7 @@ function ScoreCell({
       >
         {value}
       </p>
+      <p className="mt-3 text-sm text-foreground/70">{sub}</p>
     </div>
   );
 }
