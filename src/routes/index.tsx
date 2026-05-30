@@ -240,7 +240,7 @@ function ScoreTeaser() {
 }
 
 function Process() {
-  const steps = [
+  const steps: Array<{ title: string; body: string; img?: string; alt?: string }> = [
     {
       title: "Climate Score",
       body: "Free online assessment. 60 seconds. Tells you exactly where your home stands today.",
