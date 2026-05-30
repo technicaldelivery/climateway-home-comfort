@@ -287,6 +287,16 @@ function Process() {
             <p className="col-span-2 text-base text-foreground/75 md:col-span-1 md:self-center md:text-lg">
               {s.body}
             </p>
+            {s.img && (
+              <img
+                src={s.img}
+                alt={s.alt ?? ""}
+                loading="lazy"
+                width={1600}
+                height={1200}
+                className="col-span-2 mt-4 aspect-[4/3] w-full rounded-md object-cover md:col-span-3"
+              />
+            )}
           </li>
         ))}
       </ol>
