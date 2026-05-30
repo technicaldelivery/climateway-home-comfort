@@ -101,12 +101,12 @@ function Problem() {
       body: "UK summer temperatures are now regularly exceeding levels British homes were never designed for.",
     },
     {
-      n: "19m",
-      body: "UK homes rated EPC D or worse, leaking heat in winter and overheating in summer.",
+      n: "19 million",
+      body: "UK homes rated EPC D or worse — leaking heat in winter, overheating in summer.",
     },
     {
       n: "£2,400",
-      body: "Average annual energy bill for an inefficient family home — and rising.",
+      body: "Average annual energy bill for an inefficient family home, and still climbing.",
     },
   ];
   return (
@@ -131,17 +131,17 @@ function Solution() {
     {
       icon: Home,
       title: "Whole-home design",
-      body: "We assess your house as a system — fabric, heating, cooling, ventilation, controls — not as a list of separate measures.",
+      body: "We assess your house as a system — fabric, heating, cooling, ventilation, controls — not as a list of separate measures. Every recommendation is engineered against the others.",
     },
     {
       icon: Sun,
       title: "Year-round comfort",
-      body: "Engineered for warm winters AND cool summers. Most retrofit only solves half the problem.",
+      body: "Engineered for warm winters and cool summers. Most retrofit projects only solve half the problem. We solve both.",
     },
     {
       icon: PiggyBank,
       title: "Lower bills, guaranteed",
-      body: "We model your savings before we start. If we miss the number, we refund the difference for two years.",
+      body: "We model your savings before we start. If we miss the number, we refund the difference for two years. No other UK climate company offers this.",
     },
   ];
   return (
@@ -173,7 +173,7 @@ function ScoreTeaser() {
           </h2>
           <p className="mt-6 max-w-xl text-lg text-foreground/80">
             In 60 seconds, see how your home performs in the new British
-            climate — and what it would cost to make it future-ready.
+            climate — and exactly what it would cost to make it future-ready.
           </p>
         </div>
         <div>
@@ -209,23 +209,23 @@ function Process() {
   const steps = [
     {
       title: "Climate Score",
-      body: "Free online assessment. 60 seconds.",
+      body: "Free online assessment. 60 seconds. Tells you exactly where your home stands today.",
     },
     {
       title: "Home Audit",
-      body: "A qualified assessor visits. 90 minutes. £250, credited against your design fee.",
+      body: "A qualified assessor visits. 90 minutes on site. We measure everything — fabric, heating, ventilation, glazing, overheating risk. £250, credited against your design fee.",
     },
     {
       title: "System Design",
-      body: "We design your full climate system, model the savings, apply for grants, give you a fixed price. £1,500 fixed design fee.",
+      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fixed installation price. £1,500 fixed design fee. No obligation to proceed.",
     },
     {
       title: "Installation",
-      body: "Our vetted engineers install everything as one managed project. One team, one invoice, one contact.",
+      body: "Our vetted engineers install everything as one managed project. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
     },
     {
       title: "Performance Year",
-      body: "Twelve months of monitoring. If we miss your savings target, we refund the difference.",
+      body: "Twelve months of monitoring with smart meter data tied into your dashboard. If we miss your projected savings target, we refund the difference for the next two years.",
     },
   ];
   return (
@@ -262,24 +262,24 @@ function SocialProof() {
   const testimonials = [
     {
       img: homeVictorian,
-      name: "Sarah, Islington",
+      name: "Sarah, Wandsworth",
       quote:
-        "We were sceptical about whole-home design — but the first winter bill made the case for itself.",
-      result: "£1,800 saved in Year 1",
+        "We were quoted heat pump only. Climateway showed us the whole picture and saved us £8,000 by sequencing it properly.",
+      result: "£1,800 saved Year 1",
     },
     {
       img: homeKitchen,
-      name: "James, St Albans",
+      name: "James, Sevenoaks",
       quote:
-        "One team, one project. After two years of quotes from different trades, it was a relief.",
-      result: "From EPC D to B",
+        "The summer bedroom problem was the dealbreaker for me. Nobody else even mentioned cooling.",
+      result: "Cool bedrooms for the first time in 12 years",
     },
     {
       img: homeBedroom,
       name: "Priya, Wimbledon",
       quote:
-        "The kids actually slept through July. That was worth every penny on its own.",
-      result: "Cool bedrooms for the first time",
+        "Properly designed, properly installed, properly explained. The whole experience felt like working with our architect.",
+      result: "From EPC D to B",
     },
   ];
   return (
@@ -332,20 +332,20 @@ function Pricing() {
       price: "From £18,000",
       blurb: "For homes under 100m².",
       detail:
-        "Heating upgrade, controls, targeted cooling, fabric basics.",
+        "Heating upgrade, smart controls, targeted cooling, fabric improvements. Right for flats and smaller terraces.",
     },
     {
       name: "Climate Complete",
       price: "From £32,000",
-      blurb: "For homes 100–200m².",
+      blurb: "For homes 100 to 200m².",
       detail:
-        "Full heating, cooling, MVHR, controls, full fabric works.",
+        "Full heating, cooling, MVHR ventilation, smart controls, comprehensive fabric works. Right for typical family homes.",
     },
     {
       name: "Climate Estate",
       price: "From £55,000",
-      blurb: "For larger homes.",
-      detail: "Bespoke whole-house specification.",
+      blurb: "For homes over 200m².",
+      detail: "Bespoke whole-house specification, multi-zone systems, integration with existing or planned renewable generation. Right for larger homes and complex properties.",
     },
   ];
   return (
@@ -367,7 +367,7 @@ function Pricing() {
         ))}
       </div>
       <p className="mt-10 text-base text-ivory/80">
-        Grants of up to £15,000 available. Finance available from £180/month.
+        Grants of up to £15,000 available depending on your property and circumstances. Finance available from £180/month.
       </p>
       <Link
         to="/pricing"
@@ -382,36 +382,36 @@ function Pricing() {
 
 const faqs = [
   {
-    q: "How long does a Climateway project take?",
-    a: "Typical projects run 8–14 weeks from design sign-off to handover. The Climate Score and home audit happen in the first two weeks; installation is usually 4–8 weeks depending on scope.",
+    q: "How long does a project take?",
+    a: "From your audit to a finished installation, typically 8 to 14 weeks for Climate Ready, 12 to 20 weeks for Climate Complete, longer for Estate.",
   },
   {
-    q: "Will I need to move out?",
-    a: "Most clients stay in their home throughout. We sequence the works to keep at least heating and a working kitchen running at all times.",
+    q: "Do I have to do everything at once?",
+    a: "No. We design the full system but installation can be staged across phases if needed. We'll recommend a sequence that protects your savings target.",
   },
   {
-    q: "What grants can I get?",
-    a: "Most homeowners qualify for the Boiler Upgrade Scheme (£7,500) and ECO4 contributions. Some London boroughs add a further £2,000–£5,000. We apply for everything you're eligible for as part of the design fee.",
+    q: "What grants are available?",
+    a: "Every home is different. The Boiler Upgrade Scheme is £7,500 for heat pumps. The Warm Homes Plan offers further support for fabric works. Your Climate Score identifies everything you qualify for.",
   },
   {
-    q: "Do you do listed buildings?",
-    a: "Yes. We've completed projects in Grade II listed Georgian and Victorian homes and work with conservation officers from day one.",
+    q: "What if I'm planning to sell?",
+    a: "A climate-ready home commands a meaningful premium. Most of our completed projects add more in value than they cost. We'll show you the projected resale uplift in your design.",
   },
   {
-    q: "What if your savings estimate is wrong?",
-    a: "We monitor your home for twelve months after handover. If you miss your modelled savings, we refund the difference — for two years.",
+    q: "Do you work with my architect?",
+    a: "Yes. We routinely partner with architects on refurbishments and extensions. Talk to us early and we'll integrate.",
   },
   {
-    q: "Do I need planning permission?",
-    a: "Most works are permitted development. Where planning is needed (typically external units in conservation areas), we manage the application for you.",
+    q: "What if it goes wrong?",
+    a: "Every project carries an insurance-backed 10-year guarantee. Plus our 2-year energy bill guarantee. Plus we manage every contractor directly — you never have to chase a trade.",
   },
   {
-    q: "Can I just have cooling installed?",
-    a: "We don't take cooling-only projects. Adding cooling without addressing the rest of the house creates new problems — higher bills, worse air quality, comfort that doesn't last.",
+    q: "Are you carbon offsetters or installers?",
+    a: "Installers. Real engineering, real equipment, real homes. We don't sell offsets or carbon credits. Your savings come from your home actually using less energy.",
   },
   {
     q: "Where do you work?",
-    a: "Greater London and the Home Counties — Surrey, Hertfordshire, Berkshire, Buckinghamshire, Essex, Kent.",
+    a: "Greater London, Surrey, Berkshire, Buckinghamshire, Hertfordshire, Kent and parts of Sussex. We're expanding through 2026.",
   },
 ];
 
@@ -464,7 +464,7 @@ function FinalCTA() {
         </h2>
         <p className="mt-6 text-lg text-ivory/85">
           Your free Climate Score takes 60 seconds and tells you exactly where
-          your home stands.
+          your home stands — what's working, what isn't, what it would cost to make it brilliant.
         </p>
         <Link
           to="/score"
