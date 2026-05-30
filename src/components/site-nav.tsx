@@ -7,6 +7,7 @@ const navLinks = [
   { to: "/score", label: "Your Score" },
   { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
+  { to: "/journal", label: "Journal" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
