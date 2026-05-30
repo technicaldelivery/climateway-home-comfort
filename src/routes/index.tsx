@@ -7,11 +7,31 @@ import {
   PiggyBank,
   ChevronDown,
 } from "lucide-react";
-import heroHome from "@/assets/hero-home.jpg";
-import homeVictorian from "@/assets/home-victorian.jpg";
-import homeKitchen from "@/assets/home-kitchen.jpg";
-import homeBedroom from "@/assets/home-bedroom.jpg";
 import { Section, Eyebrow } from "@/components/section";
+
+const heroHome =
+  "https://images.unsplash.com/photo-1758915753332-cab59126742c?fm=jpg&q=85&w=2400&auto=format&fit=crop";
+const heroHomeAlt = "Modern living room with fireplace and pendant light";
+const imgComfort =
+  "https://images.unsplash.com/photo-1714153760214-5e86aa688fc3?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgComfortAlt =
+  "Warm sunlight streaming through a window into a calm apartment";
+const imgHeatPump =
+  "https://images.unsplash.com/photo-1776860150305-108ed577d7d4?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgHeatPumpAlt =
+  "Modern heat pump installed against a brick house exterior";
+const imgVictorian =
+  "https://images.unsplash.com/photo-1712869965218-3128c2eef88c?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgVictorianAlt =
+  "Row of Victorian terraced houses in Kensington, London";
+const imgBedroom =
+  "https://images.unsplash.com/photo-1600908389678-64b54d9cf054?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgBedroomAlt =
+  "Calm bedroom with crisp white linen and soft natural light";
+const imgCozyLiving =
+  "https://images.unsplash.com/photo-1680965585463-386646047473?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgCozyLivingAlt =
+  "Cozy living room with wood paneling, sofa and natural light";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -83,7 +103,7 @@ function Hero() {
         <div className="relative">
           <img
             src={heroHome}
-            alt="Sunlit modern British living room with oak floors and linen sofa"
+            alt={heroHomeAlt}
             width={1600}
             height={1280}
             className="aspect-[4/5] w-full rounded-md object-cover shadow-[0_20px_60px_-20px_rgb(31_41_55_/_0.25)] md:aspect-[5/6]"
@@ -130,16 +150,22 @@ function Solution() {
   const features = [
     {
       icon: Home,
+      img: imgCozyLiving,
+      alt: imgCozyLivingAlt,
       title: "Whole-home design",
       body: "We assess your house as a system — fabric, heating, cooling, ventilation, controls — not as a list of separate measures. Every recommendation is engineered against the others.",
     },
     {
       icon: Sun,
+      img: imgComfort,
+      alt: imgComfortAlt,
       title: "Year-round comfort",
       body: "Engineered for warm winters and cool summers. Most retrofit projects only solve half the problem. We solve both.",
     },
     {
       icon: PiggyBank,
+      img: imgHeatPump,
+      alt: imgHeatPumpAlt,
       title: "Lower bills, guaranteed",
       body: "We model your savings before we start. If we miss the number, we refund the difference for two years. No other UK climate company offers this.",
     },
@@ -153,8 +179,16 @@ function Solution() {
       <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
         {features.map((f) => (
           <div key={f.title} className="border-t border-hairline pt-8">
-            <f.icon className="h-7 w-7 text-primary" strokeWidth={1.5} />
-            <h3 className="mt-6 font-display text-2xl">{f.title}</h3>
+            <img
+              src={f.img}
+              alt={f.alt}
+              loading="lazy"
+              width={800}
+              height={800}
+              className="aspect-square w-full rounded-md object-cover"
+            />
+            <f.icon className="mt-6 h-7 w-7 text-primary" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-2xl">{f.title}</h3>
             <p className="mt-3 text-base text-foreground/75">{f.body}</p>
           </div>
         ))}
@@ -206,7 +240,7 @@ function ScoreTeaser() {
 }
 
 function Process() {
-  const steps = [
+  const steps: Array<{ title: string; body: string; img?: string; alt?: string }> = [
     {
       title: "Climate Score",
       body: "Free online assessment. 60 seconds. Tells you exactly where your home stands today.",
@@ -222,6 +256,8 @@ function Process() {
     {
       title: "Installation",
       body: "Our vetted engineers install everything as one managed project. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
+      img: imgHeatPump,
+      alt: imgHeatPumpAlt,
     },
     {
       title: "Performance Year",
@@ -251,6 +287,16 @@ function Process() {
             <p className="col-span-2 text-base text-foreground/75 md:col-span-1 md:self-center md:text-lg">
               {s.body}
             </p>
+            {s.img && (
+              <img
+                src={s.img}
+                alt={s.alt ?? ""}
+                loading="lazy"
+                width={1600}
+                height={1200}
+                className="col-span-2 mt-4 aspect-[4/3] w-full rounded-md object-cover md:col-span-3"
+              />
+            )}
           </li>
         ))}
       </ol>
@@ -261,21 +307,24 @@ function Process() {
 function SocialProof() {
   const testimonials = [
     {
-      img: homeVictorian,
+      img: imgVictorian,
+      alt: imgVictorianAlt,
       name: "Sarah, Wandsworth",
       quote:
         "We were quoted heat pump only. Climateway showed us the whole picture and saved us £8,000 by sequencing it properly.",
       result: "£1,800 saved Year 1",
     },
     {
-      img: homeKitchen,
+      img: imgBedroom,
+      alt: imgBedroomAlt,
       name: "James, Sevenoaks",
       quote:
         "The summer bedroom problem was the dealbreaker for me. Nobody else even mentioned cooling.",
       result: "Cool bedrooms for the first time in 12 years",
     },
     {
-      img: homeBedroom,
+      img: imgCozyLiving,
+      alt: imgCozyLivingAlt,
       name: "Priya, Wimbledon",
       quote:
         "Properly designed, properly installed, properly explained. The whole experience felt like working with our architect.",
@@ -293,7 +342,7 @@ function SocialProof() {
           <article key={t.name} className="flex flex-col">
             <img
               src={t.img}
-              alt={`Home of ${t.name}`}
+              alt={t.alt}
               loading="lazy"
               width={1024}
               height={768}
