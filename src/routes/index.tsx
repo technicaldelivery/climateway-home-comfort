@@ -150,16 +150,22 @@ function Solution() {
   const features = [
     {
       icon: Home,
+      img: imgCozyLiving,
+      alt: imgCozyLivingAlt,
       title: "Whole-home design",
       body: "We assess your house as a system — fabric, heating, cooling, ventilation, controls — not as a list of separate measures. Every recommendation is engineered against the others.",
     },
     {
       icon: Sun,
+      img: imgComfort,
+      alt: imgComfortAlt,
       title: "Year-round comfort",
       body: "Engineered for warm winters and cool summers. Most retrofit projects only solve half the problem. We solve both.",
     },
     {
       icon: PiggyBank,
+      img: imgHeatPump,
+      alt: imgHeatPumpAlt,
       title: "Lower bills, guaranteed",
       body: "We model your savings before we start. If we miss the number, we refund the difference for two years. No other UK climate company offers this.",
     },
@@ -173,8 +179,16 @@ function Solution() {
       <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
         {features.map((f) => (
           <div key={f.title} className="border-t border-hairline pt-8">
-            <f.icon className="h-7 w-7 text-primary" strokeWidth={1.5} />
-            <h3 className="mt-6 font-display text-2xl">{f.title}</h3>
+            <img
+              src={f.img}
+              alt={f.alt}
+              loading="lazy"
+              width={800}
+              height={800}
+              className="aspect-square w-full rounded-md object-cover"
+            />
+            <f.icon className="mt-6 h-7 w-7 text-primary" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-2xl">{f.title}</h3>
             <p className="mt-3 text-base text-foreground/75">{f.body}</p>
           </div>
         ))}
