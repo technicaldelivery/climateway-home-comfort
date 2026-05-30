@@ -256,6 +256,8 @@ function Process() {
     {
       title: "Installation",
       body: "Our vetted engineers install everything as one managed project. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
+      img: imgHeatPump,
+      alt: imgHeatPumpAlt,
     },
     {
       title: "Performance Year",
