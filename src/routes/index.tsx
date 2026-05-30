@@ -103,7 +103,7 @@ function Hero() {
         <div className="relative">
           <img
             src={heroHome}
-            alt="Sunlit modern British living room with oak floors and linen sofa"
+            alt={heroHomeAlt}
             width={1600}
             height={1280}
             className="aspect-[4/5] w-full rounded-md object-cover shadow-[0_20px_60px_-20px_rgb(31_41_55_/_0.25)] md:aspect-[5/6]"
