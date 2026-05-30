@@ -7,11 +7,31 @@ import {
   PiggyBank,
   ChevronDown,
 } from "lucide-react";
-import heroHome from "@/assets/hero-home.jpg";
-import homeVictorian from "@/assets/home-victorian.jpg";
-import homeKitchen from "@/assets/home-kitchen.jpg";
-import homeBedroom from "@/assets/home-bedroom.jpg";
 import { Section, Eyebrow } from "@/components/section";
+
+const heroHome =
+  "https://images.unsplash.com/photo-1758915753332-cab59126742c?fm=jpg&q=85&w=2400&auto=format&fit=crop";
+const heroHomeAlt = "Modern living room with fireplace and pendant light";
+const imgComfort =
+  "https://images.unsplash.com/photo-1714153760214-5e86aa688fc3?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgComfortAlt =
+  "Warm sunlight streaming through a window into a calm apartment";
+const imgHeatPump =
+  "https://images.unsplash.com/photo-1776860150305-108ed577d7d4?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgHeatPumpAlt =
+  "Modern heat pump installed against a brick house exterior";
+const imgVictorian =
+  "https://images.unsplash.com/photo-1712869965218-3128c2eef88c?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgVictorianAlt =
+  "Row of Victorian terraced houses in Kensington, London";
+const imgBedroom =
+  "https://images.unsplash.com/photo-1600908389678-64b54d9cf054?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgBedroomAlt =
+  "Calm bedroom with crisp white linen and soft natural light";
+const imgCozyLiving =
+  "https://images.unsplash.com/photo-1680965585463-386646047473?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgCozyLivingAlt =
+  "Cozy living room with wood paneling, sofa and natural light";
 
 export const Route = createFileRoute("/")({
   head: () => ({
