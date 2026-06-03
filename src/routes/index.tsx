@@ -4,7 +4,8 @@ import {
   ArrowRight,
   Home,
   Sun,
-  PiggyBank,
+  Snowflake,
+  ShieldCheck,
   ChevronDown,
 } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
@@ -170,25 +171,28 @@ function Problem() {
 function Solution() {
   const features = [
     {
-      icon: Home,
-      img: imgCozyLiving,
-      alt: imgCozyLivingAlt,
       title: "Whole-home design",
       body: "We assess your house as a system — fabric, heating, cooling, ventilation, controls — not as a list of separate measures. Every recommendation is engineered against the others.",
+      icon: (
+        <Home className="h-9 w-9" style={{ color: "#0E4F4A" }} strokeWidth={1.5} />
+      ),
     },
     {
-      icon: Sun,
-      img: imgComfort,
-      alt: imgComfortAlt,
       title: "Year-round comfort",
       body: "Engineered for warm winters and cool summers. Most retrofit projects only solve half the problem. We solve both.",
+      icon: (
+        <div className="flex items-center gap-1" style={{ color: "#0E4F4A" }}>
+          <Sun className="h-9 w-9" strokeWidth={1.5} />
+          <Snowflake className="h-7 w-7" strokeWidth={1.5} />
+        </div>
+      ),
     },
     {
-      icon: PiggyBank,
-      img: imgHeatPump,
-      alt: imgHeatPumpAlt,
       title: "Lower bills, guaranteed",
       body: "We model your savings before we start. If we miss the number, we refund the difference for two years. No other UK climate company offers this.",
+      icon: (
+        <ShieldCheck className="h-9 w-9" style={{ color: "#0E4F4A" }} strokeWidth={1.5} />
+      ),
     },
   ];
   return (
@@ -197,20 +201,21 @@ function Solution() {
       <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
         One designed system. Built for every season.
       </h2>
-      <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
-        {features.map((f) => (
-          <div key={f.title} className="border-t border-hairline pt-8">
-            <img
-              src={f.img}
-              alt={f.alt}
-              loading="lazy"
-              width={800}
-              height={800}
-              className="aspect-square w-full rounded-md object-cover"
-            />
-            <f.icon className="mt-6 h-7 w-7 text-primary" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-2xl">{f.title}</h3>
-            <p className="mt-3 text-base text-foreground/75">{f.body}</p>
+      <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-0">
+        {features.map((f, i) => (
+          <div
+            key={f.title}
+            className={`pt-8 md:pt-0 md:px-8 ${
+              i > 0 ? "border-t border-hairline md:border-t-0 md:border-l" : ""
+            } first:md:pl-0 last:md:pr-0`}
+          >
+            {f.icon}
+            <h3 className="mt-6 font-display text-[28px] leading-tight">
+              {f.title}
+            </h3>
+            <p className="mt-4 text-[17px] leading-relaxed text-foreground/75">
+              {f.body}
+            </p>
           </div>
         ))}
       </div>
