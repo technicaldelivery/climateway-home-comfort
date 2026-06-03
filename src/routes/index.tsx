@@ -62,6 +62,7 @@ function HomePage() {
       <Problem />
       <Solution />
       <ScoreTeaser />
+      <GrantsUpdate />
       <Process />
       <SocialProof />
       <Pricing />
