@@ -59,6 +59,7 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <TrustStrip />
       <Problem />
       <Solution />
       <ScoreTeaser />
