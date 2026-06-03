@@ -504,7 +504,7 @@ const faqs = [
   },
   {
     q: "What grants are available?",
-    a: "Every home is different. The Boiler Upgrade Scheme is £7,500 for heat pumps. The Warm Homes Plan offers further support for fabric works. Your Climate Score identifies everything you qualify for.",
+    a: "Every home is different. The Boiler Upgrade Scheme provides £7,500 for traditional heat pumps and £2,500 for air-to-air systems. The Warm Homes Plan offers further support for fabric works. Your Climate Score identifies everything you qualify for.",
   },
   {
     q: "What if I'm planning to sell?",
