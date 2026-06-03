@@ -524,7 +524,7 @@ const faqs = [
   },
   {
     q: "Where do you work?",
-    a: "Greater London, Surrey, Berkshire, Buckinghamshire, Hertfordshire, Kent and parts of Sussex. We're expanding through 2026.",
+    a: "Greater London, Surrey, Berkshire, Buckinghamshire, Hertfordshire, Kent and parts of Sussex. We're expanding through 2027.",
   },
 ];
 
