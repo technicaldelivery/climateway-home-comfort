@@ -62,6 +62,7 @@ function HomePage() {
       <Problem />
       <Solution />
       <ScoreTeaser />
+      <GrantsUpdate />
       <Process />
       <SocialProof />
       <Pricing />
@@ -590,6 +591,54 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         <p className="pb-6 pr-12 text-base text-foreground/75">{a}</p>
       )}
     </div>
+  );
+}
+
+function GrantsUpdate() {
+  return (
+    <section className="scroll-mt-24 px-6 py-20 md:py-28" style={{ backgroundColor: "#B8D4E0" }}>
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-6 flex items-center gap-3">
+          <p
+            className="text-xs font-medium uppercase"
+            style={{ color: "#0E4F4A", letterSpacing: "0.18em" }}
+          >
+            New in 2026
+          </p>
+          <span
+            className="rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white"
+            style={{ backgroundColor: "#D97942", letterSpacing: "0.12em" }}
+          >
+            New
+          </span>
+        </div>
+        <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight md:text-5xl">
+          The Boiler Upgrade Scheme now covers cooling.
+        </h2>
+        <div className="mt-10 max-w-[65ch] space-y-5 text-[17px] leading-relaxed text-foreground/80">
+          <p>
+            Until this year, government grants only supported heating upgrades.
+            From 2026, the Boiler Upgrade Scheme extends to air-to-air heat
+            pumps — the same units that warm your home in winter and cool it in
+            summer.
+          </p>
+          <p>
+            Climateway projects qualify for up to £7,500 on traditional heat
+            pumps and £2,500 on air-to-air systems, alongside Warm Homes Plan
+            grants and other support. Most clients see grants of £5,000 to
+            £15,000 on a complete climate adaptation project.
+          </p>
+        </div>
+        <Link
+          to="/score"
+          className="mt-10 inline-flex items-center gap-1.5 text-base underline-offset-4 hover:underline"
+          style={{ color: "#0E4F4A" }}
+        >
+          See what grants you qualify for
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+    </section>
   );
 }
 
