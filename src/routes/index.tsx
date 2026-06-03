@@ -65,6 +65,7 @@ function HomePage() {
       <Process />
       <SocialProof />
       <Pricing />
+      <WhyClimateway />
       <FAQ />
       <FinalCTA />
     </>
