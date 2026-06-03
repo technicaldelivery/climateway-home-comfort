@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/score")({
   head: () => ({
@@ -18,6 +18,11 @@ export const Route = createFileRoute("/score")({
   }),
   component: ScorePage,
 });
+
+const TEAL = "#0E4F4A";
+const TEAL_SOFT = "#E6EEED";
+const ORANGE = "#D97942";
+const GREY = "#6B7280";
 
 type Answers = {
   postcode: string;
@@ -45,63 +50,91 @@ const initial: Answers = {
   marketing: false,
 };
 
-const STEPS = 7; // results = step 8
+const STEPS = 7;
+
+const UK_POSTCODE =
+  /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function ScorePage() {
   const [step, setStep] = useState(1);
   const [a, setA] = useState<Answers>(initial);
   const [submitted, setSubmitted] = useState(false);
-
-  const progress = useMemo(() => Math.min(step, STEPS) / STEPS, [step]);
+  const [submitting, setSubmitting] = useState(false);
 
   const set = <K extends keyof Answers>(k: K, v: Answers[K]) =>
     setA((p) => ({ ...p, [k]: v }));
 
-  const next = () => setStep((s) => s + 1);
+  const next = () => setStep((s) => Math.min(STEPS, s + 1));
   const back = () => setStep((s) => Math.max(1, s - 1));
 
+  const postcodeValid = UK_POSTCODE.test(a.postcode.trim());
+  const emailValid = EMAIL.test(a.email.trim());
+
   const canContinue =
-    (step === 1 && a.postcode.trim().length >= 3) ||
-    (step === 2 && a.property) ||
-    (step === 3 && a.age) ||
-    (step === 4 && a.size) ||
-    (step === 5 && a.heating) ||
-    (step === 6 && a.overheating) ||
-    step === 7;
+    (step === 1 && postcodeValid) ||
+    (step === 2 && !!a.property) ||
+    (step === 3 && !!a.age) ||
+    (step === 4 && !!a.size) ||
+    (step === 5 && !!a.heating) ||
+    (step === 6 && !!a.overheating);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    if (!a.firstName || !a.email) return;
+    if (!a.firstName.trim() || !emailValid) return;
+    setSubmitting(true);
+
+    const url = new URL(window.location.href);
+    const utm: Record<string, string> = {};
+    url.searchParams.forEach((v, k) => {
+      if (k.toLowerCase().startsWith("utm_")) utm[k] = v;
+    });
+
     try {
       await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ kind: "score", ...a }),
+        body: JSON.stringify({
+          kind: "score",
+          answers: a,
+          timestamp: new Date().toISOString(),
+          pageUrl: window.location.href,
+          utm,
+        }),
       });
     } catch (err) {
       console.error(err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
     }
-    setSubmitted(true);
-    setStep(8);
   }
 
-  if (step === 8 && submitted) {
-    return <Results a={a} />;
-  }
+  if (submitted) return <Results a={a} />;
+
+  const progressPct = (step / STEPS) * 100;
 
   return (
     <div className="min-h-[calc(100dvh-80px)] bg-background px-6 py-12 md:py-20">
       <div className="mx-auto max-w-2xl">
         {/* Progress */}
         <div className="mb-12">
-          <div className="flex items-center justify-between text-xs font-medium uppercase tracking-[0.16em] text-foreground/60">
-            <span>Step {Math.min(step, STEPS)} of {STEPS}</span>
-            <span>{Math.round(progress * 100)}%</span>
+          <div
+            className="flex items-center justify-between text-xs font-medium uppercase"
+            style={{ color: GREY, letterSpacing: "0.16em" }}
+          >
+            <span>
+              Step {step} of {STEPS}
+            </span>
+            <span>{Math.round(progressPct)}%</span>
           </div>
-          <div className="mt-3 h-[2px] w-full bg-foreground/10">
+          <div
+            className="mt-3 h-[3px] w-full overflow-hidden rounded-full"
+            style={{ backgroundColor: "rgba(0,0,0,0.08)" }}
+          >
             <div
-              className="h-full bg-primary transition-all duration-500"
-              style={{ width: `${progress * 100}%` }}
+              className="h-full transition-all duration-500"
+              style={{ width: `${progressPct}%`, backgroundColor: TEAL }}
             />
           </div>
         </div>
@@ -116,16 +149,30 @@ function ScorePage() {
               autoFocus
               value={a.postcode}
               onChange={(e) => set("postcode", e.target.value.toUpperCase())}
-              placeholder="e.g. SW19 4DR"
+              placeholder="e.g. SW1A 1AA"
               aria-label="Postcode"
-              className="w-full rounded-md border border-input bg-background px-5 py-4 font-display text-2xl tracking-wide focus:border-primary focus:outline-none"
+              autoComplete="postal-code"
+              spellCheck={false}
+              className="block w-full rounded-md border bg-white text-center font-medium tracking-wide outline-none transition-colors"
+              style={{
+                height: "56px",
+                fontSize: "20px",
+                borderColor: postcodeValid ? TEAL : "rgba(0,0,0,0.2)",
+                color: "#111",
+              }}
             />
+            {a.postcode.trim() && !postcodeValid && (
+              <p className="mt-3 text-center text-sm" style={{ color: ORANGE }}>
+                Please enter a valid UK postcode.
+              </p>
+            )}
           </Step>
         )}
 
         {step === 2 && (
           <Step title="What kind of home is it?">
             <RadioGrid
+              cols={2}
               options={[
                 "Detached house",
                 "Semi-detached house",
@@ -143,7 +190,15 @@ function ScorePage() {
         {step === 3 && (
           <Step title="Roughly when was it built?">
             <RadioGrid
-              options={["Pre-1900", "1900–1939", "1940–1965", "1966–1990", "1991–2010", "Post-2010"]}
+              cols={2}
+              options={[
+                "Pre-1900",
+                "1900–1939",
+                "1940–1965",
+                "1966–1990",
+                "1991–2010",
+                "Post-2010",
+              ]}
               value={a.age}
               onChange={(v) => set("age", v)}
             />
@@ -156,10 +211,10 @@ function ScorePage() {
             sub="A guess is fine. 130m² is a typical 3-bed semi."
           >
             <RadioGrid
+              cols={2}
               options={["Under 80m²", "80–130m²", "130–200m²", "Over 200m²"]}
               value={a.size}
               onChange={(v) => set("size", v)}
-              cols={2}
             />
           </Step>
         )}
@@ -167,6 +222,7 @@ function ScorePage() {
         {step === 5 && (
           <Step title="What heats it today?">
             <RadioGrid
+              cols={2}
               options={[
                 "Gas boiler",
                 "Oil boiler",
@@ -183,10 +239,15 @@ function ScorePage() {
         {step === 6 && (
           <Step title="Does it get uncomfortably hot in summer?">
             <RadioGrid
-              options={["Every summer", "Some rooms only", "Only in extreme weather", "Never"]}
+              cols={2}
+              options={[
+                "Every summer",
+                "Some rooms only",
+                "Only in extreme weather",
+                "Never",
+              ]}
               value={a.overheating}
               onChange={(v) => set("overheating", v)}
-              cols={2}
             />
           </Step>
         )}
@@ -194,7 +255,7 @@ function ScorePage() {
         {step === 7 && (
           <Step
             title="Where shall we send your Climate Score?"
-            sub="We don't share your data. Unsubscribe anytime."
+            sub="Two quick details and we'll generate your report."
           >
             <form onSubmit={submit} className="space-y-5">
               <Field
@@ -202,6 +263,7 @@ function ScorePage() {
                 value={a.firstName}
                 onChange={(v) => set("firstName", v)}
                 required
+                autoComplete="given-name"
               />
               <Field
                 label="Email"
@@ -209,40 +271,57 @@ function ScorePage() {
                 value={a.email}
                 onChange={(v) => set("email", v)}
                 required
+                autoComplete="email"
+                error={
+                  a.email.trim() && !emailValid
+                    ? "Please enter a valid email address."
+                    : undefined
+                }
               />
               <Field
                 label="Phone (optional)"
                 type="tel"
                 value={a.phone}
                 onChange={(v) => set("phone", v)}
+                autoComplete="tel"
               />
-              <label className="flex cursor-pointer items-start gap-3 pt-2 text-sm text-foreground/80">
+              <label className="flex cursor-pointer items-start gap-3 pt-2 text-sm text-foreground/85">
                 <input
                   type="checkbox"
                   checked={a.marketing}
                   onChange={(e) => set("marketing", e.target.checked)}
-                  className="mt-1 h-4 w-4 accent-[color:var(--color-primary)]"
+                  className="mt-1 h-4 w-4"
+                  style={{ accentColor: TEAL }}
                 />
                 OK to send me occasional helpful emails about my home.
               </label>
+              <p className="text-xs" style={{ color: GREY }}>
+                We don't share your data. Unsubscribe anytime.
+              </p>
               <button
                 type="submit"
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 text-base font-medium text-accent-foreground transition-opacity hover:opacity-90"
+                disabled={
+                  submitting || !a.firstName.trim() || !emailValid
+                }
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                style={{ backgroundColor: ORANGE }}
               >
-                See my Climate Score
+                {submitting ? "Sending…" : "See my Climate Score"}
                 <ArrowRight className="h-4 w-4" />
               </button>
             </form>
           </Step>
         )}
 
+        {/* Footer nav */}
         {step < 7 && (
           <div className="mt-12 flex items-center justify-between">
             <button
               type="button"
               onClick={back}
               disabled={step === 1}
-              className="inline-flex items-center gap-2 text-sm text-foreground/70 hover:text-primary disabled:opacity-30"
+              className="inline-flex items-center gap-2 text-sm hover:opacity-80 disabled:opacity-30"
+              style={{ color: GREY }}
             >
               <ArrowLeft className="h-4 w-4" />
               Back
@@ -251,7 +330,8 @@ function ScorePage() {
               type="button"
               onClick={next}
               disabled={!canContinue}
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+              style={{ backgroundColor: TEAL }}
             >
               Continue
               <ArrowRight className="h-4 w-4" />
@@ -263,7 +343,8 @@ function ScorePage() {
             <button
               type="button"
               onClick={back}
-              className="inline-flex items-center gap-2 text-sm text-foreground/70 hover:text-primary"
+              className="inline-flex items-center gap-2 text-sm hover:opacity-80"
+              style={{ color: GREY }}
             >
               <ArrowLeft className="h-4 w-4" />
               Back
@@ -286,8 +367,20 @@ function Step({
 }) {
   return (
     <div>
-      <h1 className="font-display text-3xl leading-tight md:text-4xl">{title}</h1>
-      {sub && <p className="mt-4 text-base text-foreground/70">{sub}</p>}
+      <h1
+        className="font-display font-medium leading-tight"
+        style={{ fontSize: "clamp(28px, 4.5vw, 40px)" }}
+      >
+        {title}
+      </h1>
+      {sub && (
+        <p
+          className="mt-4 text-[17px] font-normal leading-relaxed"
+          style={{ color: GREY }}
+        >
+          {sub}
+        </p>
+      )}
       <div className="mt-10">{children}</div>
     </div>
   );
@@ -314,14 +407,14 @@ function RadioGrid({
             type="button"
             onClick={() => onChange(opt)}
             aria-pressed={selected}
-            className={`flex items-center justify-between gap-4 rounded-md border px-5 py-4 text-left text-base transition-colors ${
-              selected
-                ? "border-primary bg-primary/5 text-primary"
-                : "border-input bg-card text-foreground hover:border-primary/60"
-            }`}
+            className="rounded-md border-2 px-5 py-5 text-left text-[18px] font-medium transition-colors"
+            style={{
+              borderColor: selected ? TEAL : "rgba(0,0,0,0.12)",
+              backgroundColor: selected ? TEAL_SOFT : "#fff",
+              color: selected ? TEAL : "#111",
+            }}
           >
-            <span>{opt}</span>
-            {selected && <Check className="h-4 w-4" />}
+            {opt}
           </button>
         );
       })}
@@ -335,23 +428,36 @@ function Field({
   onChange,
   type = "text",
   required,
+  autoComplete,
+  error,
 }: {
   label: string;
   value: string;
   onChange: (v: string) => void;
   type?: string;
   required?: boolean;
+  autoComplete?: string;
+  error?: string;
 }) {
   return (
     <label className="block">
-      <span className="mb-2 block text-sm font-medium text-foreground/80">{label}</span>
+      <span className="mb-2 block text-sm font-medium text-foreground/85">
+        {label}
+      </span>
       <input
         type={type}
         value={value}
         required={required}
+        autoComplete={autoComplete}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-md border border-input bg-background px-4 py-3 text-base focus:border-primary focus:outline-none"
+        className="w-full rounded-md border bg-white px-4 py-3 text-base outline-none transition-colors focus:border-[color:var(--score-teal,#0E4F4A)]"
+        style={{ borderColor: error ? ORANGE : "rgba(0,0,0,0.2)" }}
       />
+      {error && (
+        <span className="mt-2 block text-sm" style={{ color: ORANGE }}>
+          {error}
+        </span>
+      )}
     </label>
   );
 }
@@ -366,17 +472,21 @@ function Results({ a }: { a: Answers }) {
   return (
     <div className="min-h-[calc(100dvh-80px)] bg-background px-6 py-12 md:py-20">
       <div className="mx-auto max-w-4xl">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-foreground/60">
-          Your Climate Score
+        <p
+          className="text-xs font-medium uppercase"
+          style={{ color: GREY, letterSpacing: "0.18em" }}
+        >
+          Your Climate Score{a.postcode ? ` · ${a.postcode}` : ""}
         </p>
         <h1 className="mt-3 font-display text-4xl leading-tight md:text-5xl">
           Here's how your home performs today.
         </h1>
         <p className="mt-4 max-w-2xl text-base text-foreground/70">
-          Based on what you've told us about your home and what we know about UK property archetypes and your local climate. A site visit will refine these numbers significantly.
+          Based on what you've told us about your home and what we know about
+          UK property archetypes and your local climate. A site visit will
+          refine these numbers significantly.
         </p>
 
-        {/* Score grid */}
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           <ScoreCard
             label="Winter Performance"
@@ -404,8 +514,9 @@ function Results({ a }: { a: Answers }) {
           />
         </div>
 
-        {/* Potential */}
-        <h2 className="mt-20 font-display text-3xl">Your climate-ready potential</h2>
+        <h2 className="mt-20 font-display text-3xl">
+          Your climate-ready potential
+        </h2>
         <div className="mt-8 overflow-hidden rounded-md border border-hairline">
           <table className="w-full text-left text-sm">
             <thead className="bg-secondary text-foreground">
@@ -436,17 +547,20 @@ function Results({ a }: { a: Answers }) {
           </table>
         </div>
 
-        {/* Grants */}
-        <h2 className="mt-20 font-display text-3xl">
-          Your estimated grants
-        </h2>
+        <h2 className="mt-20 font-display text-3xl">Your estimated grants</h2>
         <p className="mt-4 text-base text-foreground/70">
-          Based on your postcode and property profile, you may qualify for up to £12,500 in government and local grants:
+          Based on your postcode and property profile, you may qualify for up
+          to £12,500 in government and local grants:
         </p>
         <ul className="mt-8 space-y-0">
           {grants.map((g) => (
-            <li key={g.name} className="border-t border-hairline py-5 last:border-b">
-              <p className="font-display text-lg">{g.name} ({g.value})</p>
+            <li
+              key={g.name}
+              className="border-t border-hairline py-5 last:border-b"
+            >
+              <p className="font-display text-lg">
+                {g.name} ({g.value})
+              </p>
             </li>
           ))}
         </ul>
@@ -456,11 +570,13 @@ function Results({ a }: { a: Answers }) {
             Ready for the next step?
           </h3>
           <p className="mt-3 max-w-xl text-ivory/85">
-            Book your Home Audit — £250, fully credited against your design fee.
+            Book your Home Audit — £250, fully credited against your design
+            fee.
           </p>
           <Link
             to="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3.5 text-base font-medium text-accent-foreground transition-opacity hover:opacity-90"
+            className="mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: ORANGE }}
           >
             Book your Home Audit
             <ArrowRight className="h-4 w-4" />
@@ -493,7 +609,10 @@ function ScoreCard({
 }) {
   return (
     <div className="rounded-md border border-hairline bg-card p-8">
-      <p className="text-xs font-medium uppercase tracking-[0.16em] text-foreground/55">
+      <p
+        className="text-xs font-medium uppercase"
+        style={{ color: GREY, letterSpacing: "0.16em" }}
+      >
         {label}
       </p>
       <p
