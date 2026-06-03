@@ -591,6 +591,7 @@ function WhyClimateway() {
 }
 
 function FAQ() {
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
   return (
     <Section id="faq">
       <Eyebrow>Frequently asked</Eyebrow>
@@ -598,35 +599,53 @@ function FAQ() {
         Everything homeowners want to know.
       </h2>
       <div className="mt-12 md:max-w-3xl">
-        {faqs.map((f) => (
-          <FaqItem key={f.q} q={f.q} a={f.a} />
-        ))}
+        {faqs.map((f, i) => {
+          const open = openIdx === i;
+          return (
+            <div key={f.q} className="border-t border-hairline last:border-b">
+              <button
+                type="button"
+                onClick={() => setOpenIdx(open ? null : i)}
+                aria-expanded={open}
+                className="flex w-full items-center justify-between gap-8 py-6 text-left"
+              >
+                <span className="text-[18px] font-medium leading-snug text-foreground">
+                  {f.q}
+                </span>
+                <span
+                  aria-hidden
+                  className="relative h-4 w-4 shrink-0"
+                  style={{ color: "#0E4F4A" }}
+                >
+                  <span className="absolute left-0 top-1/2 h-[1.5px] w-4 -translate-y-1/2 bg-current" />
+                  <span
+                    className={`absolute left-1/2 top-0 h-4 w-[1.5px] -translate-x-1/2 bg-current transition-transform duration-300 ${
+                      open ? "rotate-90" : ""
+                    }`}
+                  />
+                </span>
+              </button>
+              <div
+                className="grid transition-all duration-300 ease-out"
+                style={{
+                  gridTemplateRows: open ? "1fr" : "0fr",
+                  opacity: open ? 1 : 0,
+                }}
+              >
+                <div className="overflow-hidden">
+                  <p
+                    className="max-w-[65ch] pb-6 pr-12 text-[17px] font-normal text-foreground/75"
+                    style={{ lineHeight: 1.6 }}
+                  >
+                    {f.a}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </Section>
-  );
-}
-
-function FaqItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-t border-hairline last:border-b">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className="flex w-full items-center justify-between gap-8 py-6 text-left"
-      >
-        <span className="font-display text-lg md:text-xl">{q}</span>
-        <ChevronDown
-          className={`h-5 w-5 shrink-0 text-primary transition-transform ${
-            open ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      {open && (
-        <p className="pb-6 pr-12 text-base text-foreground/75">{a}</p>
-      )}
-    </div>
   );
 }
 
