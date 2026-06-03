@@ -491,6 +491,68 @@ const faqs = [
   },
 ];
 
+function WhyClimateway() {
+  const left = [
+    "Heat pumps OR cooling OR insulation, never together",
+    "Tied to one energy supplier or manufacturer",
+    "You coordinate three or four contractors yourself",
+    "You miss grants by sequencing wrong",
+  ];
+  const right = [
+    "One integrated system: heat, cool, fabric, controls",
+    "Independent — no supplier or manufacturer ties",
+    "One designed project, one team, one invoice",
+    "Every grant identified and applied for you",
+  ];
+  return (
+    <Section className="bg-[#F6F1E8]">
+      <Eyebrow>
+        <span style={{ color: "#0E4F4A" }}>Why Climateway</span>
+      </Eyebrow>
+      <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight md:text-5xl">
+        Most companies sell one thing. We design the whole system.
+      </h2>
+      <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-0 md:divide-x md:divide-foreground/15">
+        <div className="md:pr-12">
+          <h3 className="font-display text-2xl text-foreground/80">
+            Single-product installers
+          </h3>
+          <ul className="mt-8 space-y-5">
+            {left.map((item) => (
+              <li
+                key={item}
+                className="text-[17px] font-normal leading-relaxed"
+                style={{ color: "#6B7280" }}
+              >
+                — {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="md:pl-12">
+          <h3
+            className="font-display text-2xl font-semibold"
+            style={{ color: "#0E4F4A" }}
+          >
+            Climateway
+          </h3>
+          <ul className="mt-8 space-y-5">
+            {right.map((item) => (
+              <li
+                key={item}
+                className="text-[17px] font-medium leading-relaxed"
+                style={{ color: "#0E4F4A" }}
+              >
+                — {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
 function FAQ() {
   return (
     <Section id="faq">
