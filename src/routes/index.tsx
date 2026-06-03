@@ -72,30 +72,51 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="bg-background px-6 pt-12 pb-20 md:min-h-[calc(100dvh-80px)] md:pt-20 md:pb-24">
+    <section className="bg-background px-6 pt-16 pb-24 md:min-h-[calc(100dvh-80px)] md:pt-28 md:pb-32">
       <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-16">
         <div>
-          <h1 className="font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-            The way to a climate-ready home.
-          </h1>
-          <p className="mt-8 max-w-xl text-lg text-foreground/75 md:text-xl">
-            Warm in winter. Cool in summer. Lower bills, all year. We design and
-            install complete climate systems for British homes — heating,
-            cooling, ventilation, controls — as one managed project.
+          <p
+            className="mb-8 text-xs font-medium uppercase"
+            style={{ color: "#0E4F4A", letterSpacing: "0.1em" }}
+          >
+            Whole-home climate adaptation
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-6">
-            <Link
-              to="/score"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 text-base font-medium text-accent-foreground transition-opacity hover:opacity-90"
-            >
-              Get your free Climate Score
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+          <h1
+            className="font-display font-medium tracking-tight"
+            style={{
+              fontSize: "clamp(48px, 9vw, 96px)",
+              lineHeight: 1.02,
+            }}
+          >
+            Warm winters. Cool summers. Lower bills.
+          </h1>
+          <p className="mt-10 max-w-[60ch] text-lg font-normal text-foreground/75 md:text-xl">
+            We design and install complete climate systems for British homes —
+            heating, cooling, ventilation, controls — as one managed project.
+          </p>
+          <div className="mt-12 flex flex-wrap items-start gap-x-8 gap-y-6">
+            <div className="flex flex-col items-start">
+              <Link
+                to="/score"
+                className="inline-flex items-center justify-center gap-2 rounded-md px-6 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#D97942" }}
+              >
+                Get your free Climate Score
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <p
+                className="mt-3 text-sm font-normal"
+                style={{ color: "#6B7280" }}
+              >
+                60 seconds. No commitment.
+              </p>
+            </div>
             <a
               href="#solution"
-              className="inline-flex items-center gap-1.5 text-base text-primary underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-1.5 pt-3 text-base underline-offset-4 hover:underline"
+              style={{ color: "#0E4F4A" }}
             >
-              How it works
+              See how it works
               <ChevronDown className="h-4 w-4" />
             </a>
           </div>
