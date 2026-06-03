@@ -59,6 +59,7 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <TrustStrip />
       <Problem />
       <Solution />
       <ScoreTeaser />
@@ -387,18 +388,53 @@ function SocialProof() {
         ))}
       </div>
 
-      <div className="mt-20 hairline pt-10">
-        <p className="text-xs uppercase tracking-[0.18em] text-foreground/55">
-          Accredited by
-        </p>
-        <div className="mt-6 flex flex-wrap items-center gap-x-12 gap-y-4 font-display text-lg text-foreground/70">
-          <span>MCS</span>
-          <span>TrustMark</span>
-          <span>PAS 2035</span>
-          <span>Which? Trusted Trader</span>
+    </Section>
+  );
+}
+
+function TrustStrip() {
+  const badges = [
+    "MCS",
+    "TrustMark",
+    "PAS 2035",
+    "F-Gas Certified",
+    "Which? Trusted Trader",
+  ];
+  return (
+    <section
+      className="border-y px-6 py-5"
+      style={{ backgroundColor: "#F6F1E8", borderColor: "rgb(0 0 0 / 0.08)" }}
+      aria-label="Accreditations and guarantee"
+    >
+      <div className="mx-auto flex max-w-7xl flex-col items-start gap-4 md:flex-row md:items-center md:justify-between md:gap-8">
+        <div className="flex flex-col items-start gap-3 md:flex-row md:items-center md:gap-6">
+          <p
+            className="text-[13px] font-normal"
+            style={{ color: "#6B7280" }}
+          >
+            Accredited and trusted by:
+          </p>
+          <ul className="flex flex-wrap items-center gap-x-3 gap-y-2 md:gap-x-4">
+            {badges.map((b) => (
+              <li
+                key={b}
+                className="rounded-full border px-3 py-1 text-[13px] font-medium text-foreground/55 transition-colors hover:text-foreground"
+                style={{ borderColor: "rgb(0 0 0 / 0.18)" }}
+              >
+                {b}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div
+          className="flex items-center gap-2 text-[14px] font-medium"
+          style={{ color: "#0E4F4A" }}
+        >
+          <ShieldCheck className="h-4 w-4" strokeWidth={1.75} />
+          <span>10-year insurance-backed guarantee on every installation</span>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
 

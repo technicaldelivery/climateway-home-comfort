@@ -77,10 +77,13 @@ export function SiteFooter() {
           <p>
             Climateway Ltd, registered in England. Company no. 00000000.
           </p>
-          <p className="flex flex-wrap gap-x-4 gap-y-2">
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-2">
             <span>MCS Certified</span>
+            <span aria-hidden className="text-ivory/40">·</span>
             <span>TrustMark</span>
+            <span aria-hidden className="text-ivory/40">·</span>
             <span>PAS 2035</span>
+            <span aria-hidden className="text-ivory/40">·</span>
             <span>Which? Trusted Trader</span>
           </p>
         </div>
