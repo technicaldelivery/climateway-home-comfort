@@ -4,7 +4,8 @@ import {
   ArrowRight,
   Home,
   Sun,
-  PiggyBank,
+  Snowflake,
+  ShieldCheck,
   ChevronDown,
 } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
