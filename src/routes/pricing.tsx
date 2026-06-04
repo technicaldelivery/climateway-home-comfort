@@ -135,25 +135,30 @@ function PricingPage() {
       </Section>
 
       <Section tone="sky">
-        <div className="grid gap-12 md:grid-cols-2">
-          <div>
-            <Eyebrow>Grants</Eyebrow>
-            <h2 className="font-display text-4xl">Up to £15,000 in support.</h2>
-            <p className="mt-6 text-base text-foreground/80">
-              We apply for everything you qualify for as part of the design
-              fee — Boiler Upgrade Scheme, ECO4, London borough top-ups, and
-              the Home Upgrade Grant where applicable.
-            </p>
-          </div>
-          <div>
-            <Eyebrow>Finance</Eyebrow>
-            <h2 className="font-display text-4xl">From £180/month.</h2>
-            <p className="mt-6 text-base text-foreground/80">
-              Spread the cost over 3–10 years through our regulated finance
-              partner. Subject to status. Representative APR 9.9%.
-            </p>
-          </div>
+        <Eyebrow>Grants &amp; Finance</Eyebrow>
+        <h2 className="font-display text-4xl">
+          Honest numbers on what you'll actually receive.
+        </h2>
+        <div className="mt-8 max-w-[65ch] space-y-5 text-base text-foreground/80">
+          <p>
+            Most homeowners qualify for £7,500 toward heat pump installation
+            through the Boiler Upgrade Scheme, plus £2,500 for air-to-air heat
+            pumps where eligible. Lower-income households may qualify for
+            additional support through the Warm Homes Plan. Most Climateway
+            projects see total grant support of £7,500 to £10,000.
+          </p>
+          <p>
+            Finance available from £180/month through our commercial finance
+            partners — independent of any energy supplier. Spread the cost
+            over 3–10 years. Subject to status. Representative APR 9.9%.
+          </p>
         </div>
+        <Link
+          to="/grants"
+          className="mt-6 inline-flex items-center gap-1 text-sm text-foreground underline underline-offset-4 hover:text-primary"
+        >
+          See exactly which grants apply to you →
+        </Link>
       </Section>
 
       <Section tone="teal">
