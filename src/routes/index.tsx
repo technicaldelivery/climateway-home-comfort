@@ -699,23 +699,26 @@ function GrantsUpdate() {
 
 function FinalCTA() {
   return (
-    <Section tone="teal">
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="font-display text-4xl leading-tight md:text-5xl">
-          Find out what your home needs.
+    <section className="w-full bg-[#0E4F4A] px-6 py-20 md:py-[120px]">
+      <div className="mx-auto max-w-[700px] text-center text-ivory">
+        <p className="text-xs font-medium uppercase tracking-[0.1em] text-ivory">
+          Start here
+        </p>
+        <h2 className="mt-6 font-display font-medium leading-[1.05] text-ivory text-[clamp(2.5rem,6vw,4.5rem)]">
+          One question. One free answer.
         </h2>
-        <p className="mt-6 text-lg text-ivory/85">
-          Your free Climate Score takes 60 seconds and tells you exactly where
-          your home stands — what's working, what isn't, what it would cost to make it brilliant.
+        <p className="mx-auto mt-6 max-w-[60ch] text-[20px] leading-relaxed text-ivory/80">
+          How does your home perform in the new British climate? Find out in 60 seconds. No commitment. No call required.
         </p>
         <Link
           to="/score"
-          className="mt-10 inline-flex items-center gap-2 rounded-md bg-accent px-7 py-4 text-base font-medium text-accent-foreground transition-opacity hover:opacity-90"
+          className="mt-10 inline-flex h-16 items-center gap-2 rounded-md bg-[#D97942] px-8 text-base font-medium text-ivory transition-opacity hover:opacity-90"
         >
           Get your Climate Score
           <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
-    </Section>
+    </section>
   );
 }
+
