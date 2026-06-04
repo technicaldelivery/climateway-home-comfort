@@ -32,17 +32,39 @@ export function SiteFooter() {
             <p className="mt-4 max-w-xs text-sm text-ivory/70">
               Climate-ready homes for the way Britain lives now.
             </p>
-            <div className="mt-6 flex gap-4">
-              <a href="#" aria-label="Instagram" className="text-ivory/70 hover:text-ivory">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="text-ivory/70 hover:text-ivory">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" aria-label="YouTube" className="text-ivory/70 hover:text-ivory">
-                <Youtube className="h-5 w-5" />
-              </a>
+            <div className="mt-6">
+              <p className="text-[13px] font-medium text-ivory/60">Follow us</p>
+              <div className="mt-3 flex gap-4">
+                <a
+                  href="https://instagram.com/climateway"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="text-ivory transition-colors hover:text-[#D97942]"
+                >
+                  <Instagram className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://linkedin.com/company/climateway"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-ivory transition-colors hover:text-[#D97942]"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://youtube.com/@climateway"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="text-ivory transition-colors hover:text-[#D97942]"
+                >
+                  <Youtube className="h-6 w-6" />
+                </a>
+              </div>
             </div>
+
           </div>
 
           <FooterCol
