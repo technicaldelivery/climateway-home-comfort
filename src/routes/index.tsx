@@ -479,9 +479,25 @@ function Pricing() {
           </div>
         ))}
       </div>
-      <p className="mt-10 text-base text-ivory/80">
-        Grants of up to £15,000 available depending on your property and circumstances. Finance available from £180/month.
-      </p>
+      <div className="mt-10 max-w-[65ch] space-y-4 text-base text-ivory/80">
+        <p>
+          Most homeowners qualify for £7,500 toward heat pump installation
+          through the Boiler Upgrade Scheme, plus £2,500 for air-to-air heat
+          pumps where eligible. Lower-income households may qualify for
+          additional support through the Warm Homes Plan. Most Climateway
+          projects see total grant support of £7,500 to £10,000.
+        </p>
+        <p>
+          Finance available from £180/month through our commercial finance
+          partners — independent of any energy supplier.
+        </p>
+      </div>
+      <Link
+        to="/grants"
+        className="mt-4 inline-flex items-center gap-1 text-sm text-ivory/90 underline underline-offset-4 hover:text-ivory"
+      >
+        See exactly which grants apply to you →
+      </Link>
       <Link
         to="/pricing"
         className="mt-6 inline-flex items-center gap-2 text-base text-ivory underline-offset-4 hover:underline"
