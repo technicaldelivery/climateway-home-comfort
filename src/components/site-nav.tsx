@@ -6,6 +6,7 @@ const navLinks = [
   { to: "/how-it-works", label: "How it Works" },
   { to: "/score", label: "Your Score" },
   { to: "/pricing", label: "Pricing" },
+  { to: "/grants", label: "Grants" },
   { to: "/about", label: "About" },
   { to: "/journal", label: "Journal" },
   { to: "/contact", label: "Contact" },

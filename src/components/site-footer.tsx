@@ -82,7 +82,7 @@ export function SiteFooter() {
               { to: "/score", label: "Climate Score" },
               { to: "/journal", label: "Journal" },
               { to: "/#faq", label: "FAQ" },
-              { to: "/journal", label: "Grant Guide" },
+              { to: "/grants", label: "Grant Guide" },
             ]}
           />
           <FooterCol
