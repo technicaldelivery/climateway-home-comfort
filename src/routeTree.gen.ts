@@ -16,6 +16,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as JournalRouteImport } from './routes/journal'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as GuaranteesRouteImport } from './routes/guarantees'
 import { Route as GrantsRouteImport } from './routes/grants'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ComplaintsRouteImport } from './routes/complaints'
@@ -58,6 +59,11 @@ const HowItWorksRoute = HowItWorksRouteImport.update({
   path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuaranteesRoute = GuaranteesRouteImport.update({
+  id: '/guarantees',
+  path: '/guarantees',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GrantsRoute = GrantsRouteImport.update({
   id: '/grants',
   path: '/grants',
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/complaints': typeof ComplaintsRoute
   '/contact': typeof ContactRoute
   '/grants': typeof GrantsRoute
+  '/guarantees': typeof GuaranteesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/journal': typeof JournalRoute
   '/pricing': typeof PricingRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/complaints': typeof ComplaintsRoute
   '/contact': typeof ContactRoute
   '/grants': typeof GrantsRoute
+  '/guarantees': typeof GuaranteesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/journal': typeof JournalRoute
   '/pricing': typeof PricingRoute
@@ -126,6 +134,7 @@ export interface FileRoutesById {
   '/complaints': typeof ComplaintsRoute
   '/contact': typeof ContactRoute
   '/grants': typeof GrantsRoute
+  '/guarantees': typeof GuaranteesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/journal': typeof JournalRoute
   '/pricing': typeof PricingRoute
@@ -143,6 +152,7 @@ export interface FileRouteTypes {
     | '/complaints'
     | '/contact'
     | '/grants'
+    | '/guarantees'
     | '/how-it-works'
     | '/journal'
     | '/pricing'
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/complaints'
     | '/contact'
     | '/grants'
+    | '/guarantees'
     | '/how-it-works'
     | '/journal'
     | '/pricing'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/complaints'
     | '/contact'
     | '/grants'
+    | '/guarantees'
     | '/how-it-works'
     | '/journal'
     | '/pricing'
@@ -189,6 +201,7 @@ export interface RootRouteChildren {
   ComplaintsRoute: typeof ComplaintsRoute
   ContactRoute: typeof ContactRoute
   GrantsRoute: typeof GrantsRoute
+  GuaranteesRoute: typeof GuaranteesRoute
   HowItWorksRoute: typeof HowItWorksRoute
   JournalRoute: typeof JournalRoute
   PricingRoute: typeof PricingRoute
@@ -250,6 +263,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guarantees': {
+      id: '/guarantees'
+      path: '/guarantees'
+      fullPath: '/guarantees'
+      preLoaderRoute: typeof GuaranteesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/grants': {
       id: '/grants'
       path: '/grants'
@@ -301,6 +321,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComplaintsRoute: ComplaintsRoute,
   ContactRoute: ContactRoute,
   GrantsRoute: GrantsRoute,
+  GuaranteesRoute: GuaranteesRoute,
   HowItWorksRoute: HowItWorksRoute,
   JournalRoute: JournalRoute,
   PricingRoute: PricingRoute,

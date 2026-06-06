@@ -73,6 +73,7 @@ export function SiteFooter() {
               { to: "/about", label: "About" },
               { to: "/how-it-works", label: "Process" },
               { to: "/pricing", label: "Pricing" },
+              { to: "/guarantees", label: "Guarantees" },
               { to: "/contact", label: "Contact" },
             ]}
           />
