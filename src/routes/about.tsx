@@ -121,16 +121,20 @@ function AboutPage() {
       </Section>
 
       <Section tone="teal">
-        <Eyebrow>Accreditations</Eyebrow>
+        <Eyebrow>Our standards</Eyebrow>
         <h2 className="font-display text-4xl">Standards we work to.</h2>
-        <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6 font-display text-2xl text-ivory/80">
-          <span>MCS</span>
-          <span>TrustMark</span>
-          <span>PAS 2035</span>
-          <span>Which? Trusted Trader</span>
-          <span>RECC</span>
-          <span>HIES</span>
-        </div>
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-ivory/85">
+          Climateway is a member of the Renewable Energy Consumer Code
+          (RECC). Every installation is delivered by MCS certified,
+          TrustMark registered partners under direct Climateway management.
+          Cooling installations are completed by F-Gas certified engineers,
+          and all projects are designed to PAS 2035 whole-house retrofit
+          standards.
+        </p>
+        <p className="mt-4 max-w-2xl text-sm italic leading-relaxed text-ivory/65">
+          Specific accreditations of installation partners are available on
+          request and detailed in your project documentation.
+        </p>
         <Link
           to="/score"
           className="mt-12 inline-flex items-center gap-2 rounded-md bg-accent px-7 py-4 text-base font-medium text-accent-foreground hover:opacity-90"

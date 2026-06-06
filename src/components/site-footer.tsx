@@ -96,18 +96,22 @@ export function SiteFooter() {
 
         </div>
 
-        <div className="mt-16 flex flex-col gap-6 border-t border-ivory/15 pt-8 text-xs text-ivory/60 md:flex-row md:items-center md:justify-between">
-          <p>
-            Climateway Ltd, registered in England. Company no. 00000000.
+        <div className="mt-16 border-t border-ivory/15 pt-8">
+          <p className="text-[13px] font-medium uppercase tracking-[0.1em] text-ivory/60">
+            Our standards
           </p>
-          <p className="flex flex-wrap items-center gap-x-2 gap-y-2">
-            <span>MCS Certified</span>
-            <span aria-hidden className="text-ivory/40">·</span>
-            <span>TrustMark</span>
-            <span aria-hidden className="text-ivory/40">·</span>
-            <span>PAS 2035</span>
-            <span aria-hidden className="text-ivory/40">·</span>
-            <span>Which? Trusted Trader</span>
+          <p className="mt-3 max-w-3xl text-[14px] font-normal leading-relaxed text-ivory/85">
+            Climateway is a member of the Renewable Energy Consumer Code
+            (RECC). Every installation is delivered by MCS certified,
+            TrustMark registered partners under direct Climateway
+            management.
+          </p>
+          <p className="mt-3 max-w-3xl text-[13px] italic leading-relaxed text-ivory/60">
+            Specific accreditations of installation partners are available
+            on request and detailed in your project documentation.
+          </p>
+          <p className="mt-8 text-xs text-ivory/60">
+            Climateway Ltd, registered in England. Company no. 00000000.
           </p>
         </div>
       </div>
