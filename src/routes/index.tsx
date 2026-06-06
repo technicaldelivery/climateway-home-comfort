@@ -191,8 +191,8 @@ function Solution() {
       ),
     },
     {
-      title: "Lower bills, guaranteed",
-      body: "We model your savings before we start. If we miss the number, we refund the difference for two years. No other UK climate company offers this.",
+      title: "Comfort, guaranteed",
+      body: "We design every system to deliver agreed comfort temperatures in both seasons. If our installation doesn't hit those temperatures, we come back at our cost until it does. No other UK climate company offers this.",
       icon: (
         <ShieldCheck className="h-9 w-9" style={{ color: "#0E4F4A" }} strokeWidth={1.5} />
       ),
@@ -290,7 +290,7 @@ function Process() {
     },
     {
       title: "Performance Year",
-      body: "Twelve months of monitoring with smart meter data tied into your dashboard. If we miss your projected savings target, we refund the difference for the next two years.",
+      body: "Twelve months of monitoring with smart meter data tied into your dashboard. We review performance against your design and tune the system to keep it on track.",
     },
   ];
   return (
@@ -459,6 +459,9 @@ function Pricing() {
           >
             <h3 className="font-display text-2xl">{t.name}</h3>
             <p className="mt-4 font-display text-3xl text-primary">{t.price}</p>
+            <p className="mt-1 text-xs font-medium uppercase tracking-[0.08em] text-foreground/55">
+              Comfort Promise included
+            </p>
             <p className="mt-4 text-sm text-foreground/75">{t.blurb}</p>
             <p className="mt-2 text-sm text-foreground/75">{t.detail}</p>
           </div>
@@ -517,7 +520,11 @@ const faqs = [
   },
   {
     q: "What if it goes wrong?",
-    a: "Every project carries an insurance-backed 10-year guarantee. Plus our 2-year energy bill guarantee. Plus we manage every contractor directly — you never have to chase a trade.",
+    a: "Every installation carries a 6-year workmanship guarantee, underwritten by an independent insurer, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You never have to chase a trade.",
+  },
+  {
+    q: "Do you guarantee my energy bills will be lower?",
+    a: "We model your projected savings using your home's design and current energy prices, and we share that modelling with you transparently before you sign. But your actual bills depend on factors outside our control — your energy tariff, how you use the system, weather, and energy market prices. We commit to designing the most efficient system possible for your home, and to delivering the comfort temperatures we agree. We can't guarantee a specific bill outcome and no honest installer can.",
   },
   {
     q: "Are you carbon offsetters or installers?",

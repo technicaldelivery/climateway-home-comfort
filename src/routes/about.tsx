@@ -88,7 +88,7 @@ function AboutPage() {
             },
             {
               t: "Backed by our money",
-              b: "We're the only UK climate company to refund the difference if we miss your modelled savings. We bet on our own design.",
+              b: "Our Comfort Promise: if your installed system doesn't deliver the agreed indoor temperatures, we come back at our cost until it does. We bet on our own design.",
             },
           ].map((c) => (
             <div key={c.t} className="border-t border-foreground/20 pt-6">

@@ -50,7 +50,7 @@ const tiers = [
       "MVHR (mechanical ventilation with heat recovery)",
       "Whole-home smart controls",
       "Full fabric works — insulation, draught-proofing, glazing review",
-      "Two-year savings guarantee",
+      "Comfort Promise included",
     ],
     excludes: [
       "Triple-glazed window replacement (priced separately)",
