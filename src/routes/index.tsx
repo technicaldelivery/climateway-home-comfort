@@ -393,41 +393,26 @@ function SocialProof() {
 }
 
 function TrustStrip() {
-  const badges = [
-    "MCS",
-    "TrustMark",
-    "PAS 2035",
-    "F-Gas Certified",
-    "Which? Trusted Trader",
-  ];
   return (
     <section
-      className="border-y px-6 py-5"
+      className="border-y px-6 py-12"
       style={{ backgroundColor: "#F6F1E8", borderColor: "rgb(0 0 0 / 0.08)" }}
-      aria-label="Accreditations and guarantee"
+      aria-label="Installation standards"
     >
-      <div className="mx-auto flex max-w-7xl flex-col items-start gap-4 md:flex-row md:items-center md:justify-between md:gap-8">
-        <div className="flex flex-col items-start gap-3 md:flex-row md:items-center md:gap-6">
-          <p
-            className="text-[13px] font-normal"
-            style={{ color: "#6B7280" }}
-          >
-            Accredited and trusted by:
-          </p>
-          <ul className="flex flex-wrap items-center gap-x-3 gap-y-2 md:gap-x-4">
-            {badges.map((b) => (
-              <li
-                key={b}
-                className="rounded-full border px-3 py-1 text-[13px] font-medium text-foreground/55 transition-colors hover:text-foreground"
-                style={{ borderColor: "rgb(0 0 0 / 0.18)" }}
-              >
-                {b}
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
+        <p
+          className="text-[13px] font-medium uppercase tracking-[0.1em]"
+          style={{ color: "#0E4F4A" }}
+        >
+          Our installation standards
+        </p>
+        <p className="max-w-[65ch] text-[17px] font-normal leading-relaxed text-foreground/85">
+          Every Climateway installation partner is MCS certified. Cooling
+          installations are completed by F-Gas certified engineers. All
+          projects are designed to PAS 2035 whole-house retrofit standards.
+        </p>
         <div
-          className="flex items-center gap-2 text-[14px] font-medium"
+          className="mt-2 flex items-center gap-2 text-[14px] font-medium"
           style={{ color: "#0E4F4A" }}
         >
           <ShieldCheck className="h-4 w-4" strokeWidth={1.75} />
