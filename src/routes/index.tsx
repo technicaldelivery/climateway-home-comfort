@@ -416,7 +416,7 @@ function TrustStrip() {
           style={{ color: "#0E4F4A" }}
         >
           <ShieldCheck className="h-4 w-4" strokeWidth={1.75} />
-          <span>10-year insurance-backed guarantee on every installation</span>
+          <span>Every installation comes with our three-part Climateway Cover — product, workmanship, and insurance.</span>
         </div>
       </div>
     </section>
@@ -520,7 +520,7 @@ const faqs = [
   },
   {
     q: "What if it goes wrong?",
-    a: "Every installation carries a 6-year workmanship guarantee, underwritten by an independent insurer, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You never have to chase a trade.",
+    a: "Every installation carries a 6-year workmanship guarantee, underwritten by an independent insurer, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You never have to chase a trade. Full details on our /guarantees page.",
   },
   {
     q: "Do you guarantee my energy bills will be lower?",
