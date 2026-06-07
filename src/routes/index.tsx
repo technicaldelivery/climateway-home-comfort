@@ -280,7 +280,7 @@ function Process() {
     },
     {
       title: "System Design",
-      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fixed installation price. £1,500 fixed design fee. No obligation to proceed.",
+      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fully fixed, written installation price. Once you accept it, that's what you pay. If anything comes up during installation that's our fault to have missed, we cover it. £1,500 fixed design fee. No obligation to proceed.",
     },
     {
       title: "Installation",
