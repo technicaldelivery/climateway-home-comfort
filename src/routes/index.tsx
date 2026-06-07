@@ -449,7 +449,7 @@ function Pricing() {
   return (
     <Section tone="teal" id="pricing">
       <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
-        Fixed-price climate systems. No surprises.
+        Transparent pricing. Fixed before you commit.
       </h2>
       <div className="mt-14 grid gap-6 md:grid-cols-3">
         {tiers.map((t) => (
