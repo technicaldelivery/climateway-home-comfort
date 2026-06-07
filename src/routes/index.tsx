@@ -284,7 +284,7 @@ function Process() {
     },
     {
       title: "Installation",
-      body: "Our vetted engineers install everything as one managed project. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
+      body: "Our approved installation partners — all MCS certified, all bound by Climateway quality standards — install your system under our direct project management. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
       img: imgHeatPump,
       alt: imgHeatPumpAlt,
     },
