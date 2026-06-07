@@ -120,6 +120,34 @@ function AboutPage() {
         </div>
       </Section>
 
+      <Section>
+        <Eyebrow>Our network</Eyebrow>
+        <h2 className="max-w-3xl font-display text-4xl md:text-5xl">
+          Why we don't employ our installers directly.
+        </h2>
+        <div className="mt-8 max-w-3xl space-y-5 text-base text-foreground/80">
+          <p>
+            The UK has thousands of brilliant, MCS-certified heat pump and
+            climate engineers — most of them small businesses with decades
+            of trade experience. Our model is to bring the best of them
+            together under one quality-controlled network, rather than try
+            to compete with them by employing our own.
+          </p>
+          <p>Every installer in the Climateway network is:</p>
+          <ul className="space-y-2 pl-1">
+            <li>— MCS certified (Microgeneration Certification Scheme)</li>
+            <li>— F-Gas certified where cooling work is involved</li>
+            <li>— TrustMark registered</li>
+            <li>— Vetted by us against project history, customer references and on-site quality audits</li>
+            <li>— Bound by Climateway's quality protocols and service-level commitments</li>
+          </ul>
+          <p>
+            Your contract is with Climateway. We design, we coordinate, we
+            manage, we sign off — and we stand behind the result.
+          </p>
+        </div>
+      </Section>
+
       <Section tone="teal">
         <Eyebrow>Our standards</Eyebrow>
         <h2 className="font-display text-4xl">Standards we work to.</h2>
