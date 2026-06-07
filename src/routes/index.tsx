@@ -520,7 +520,7 @@ const faqs = [
   },
   {
     q: "What if it goes wrong?",
-    a: "Every installation carries a 6-year workmanship guarantee, underwritten by an independent insurer, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You never have to chase a trade. Full details on our /guarantees page.",
+    a: "Every installation carries a 6-year workmanship guarantee, underwritten by an independent insurer, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You only ever deal with Climateway, not the installers. We manage every contractor on your behalf. Full details on our /guarantees page.",
   },
   {
     q: "Do you guarantee my energy bills will be lower?",
