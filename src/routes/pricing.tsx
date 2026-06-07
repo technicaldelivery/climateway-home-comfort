@@ -148,8 +148,8 @@ function PricingPage() {
             projects see total grant support of £7,500 to £10,000.
           </p>
           <p>
-            Finance available from £180/month through our commercial finance
-            partners — independent of any energy supplier. Spread the cost
+            Finance available from £180/month through our independent
+            commercial finance partners. Spread the cost
             over 3–10 years. Subject to status. Representative APR 9.9%.
           </p>
         </div>
