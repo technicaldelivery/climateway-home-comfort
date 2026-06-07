@@ -510,8 +510,8 @@ function Pricing() {
           projects see total grant support of £7,500 to £10,000.
         </p>
         <p>
-          Finance available from £180/month through our commercial finance
-          partners — independent of any energy supplier.
+          Finance available from £180/month through our independent
+          commercial finance partners.
         </p>
       </div>
       <Link
@@ -542,7 +542,7 @@ const faqs = [
   },
   {
     q: "What grants are available?",
-    a: "The two main grants are the Boiler Upgrade Scheme, which provides £7,500 toward a heat pump installation (or £2,500 for air-to-air systems), and zero-rated VAT on all energy-efficient home upgrades. Lower-income households may also qualify for the Warm Homes: Local Grant. Your Climate Score identifies exactly what your home qualifies for. We apply for the grants on your behalf — you don't deal with any paperwork.",
+    a: "The two main grants are the Boiler Upgrade Scheme, which provides £7,500 toward a heat pump installation (or £2,500 for air-to-air systems), plus zero-rated VAT on all energy-efficient home upgrades. Lower-income households may also qualify for the Warm Homes: Local Grant. Your Climate Score identifies exactly what your home qualifies for. We apply for the grants on your behalf — you don't deal with any paperwork.",
   },
   {
     q: "What if I'm planning to sell?",
