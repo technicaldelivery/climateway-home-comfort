@@ -510,8 +510,8 @@ function Pricing() {
           projects see total grant support of £7,500 to £10,000.
         </p>
         <p>
-          Finance available from £180/month through our commercial finance
-          partners — independent of any energy supplier.
+          Finance available from £180/month through our independent
+          commercial finance partners.
         </p>
       </div>
       <Link
