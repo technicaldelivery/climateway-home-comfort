@@ -284,7 +284,7 @@ function Process() {
     },
     {
       title: "Installation",
-      body: "Our vetted engineers install everything as one managed project. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
+      body: "Our approved installation partners — all MCS certified, all bound by Climateway quality standards — install your system under our direct project management. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
       img: imgHeatPump,
       alt: imgHeatPumpAlt,
     },
@@ -520,7 +520,7 @@ const faqs = [
   },
   {
     q: "What if it goes wrong?",
-    a: "Every installation carries a 6-year workmanship guarantee, underwritten by an independent insurer, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You never have to chase a trade. Full details on our /guarantees page.",
+    a: "Every installation carries a 6-year workmanship guarantee, underwritten by an independent insurer, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You only ever deal with Climateway, not the installers. We manage every contractor on your behalf. Full details on our /guarantees page.",
   },
   {
     q: "Do you guarantee my energy bills will be lower?",
