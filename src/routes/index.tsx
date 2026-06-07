@@ -280,7 +280,7 @@ function Process() {
     },
     {
       title: "System Design",
-      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fixed installation price. £1,500 fixed design fee. No obligation to proceed.",
+      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fully fixed, written installation price. Once you accept it, that's what you pay. If anything comes up during installation that's our fault to have missed, we cover it. £1,500 fixed design fee. No obligation to proceed.",
     },
     {
       title: "Installation",
@@ -449,7 +449,7 @@ function Pricing() {
   return (
     <Section tone="teal" id="pricing">
       <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
-        Fixed-price climate systems. No surprises.
+        Transparent pricing. Fixed before you commit.
       </h2>
       <div className="mt-14 grid gap-6 md:grid-cols-3">
         {tiers.map((t) => (
@@ -466,6 +466,40 @@ function Pricing() {
             <p className="mt-2 text-sm text-foreground/75">{t.detail}</p>
           </div>
         ))}
+      </div>
+
+      <div className="mt-16">
+        <h3 className="font-display text-2xl text-ivory md:text-3xl">
+          How our pricing works
+        </h3>
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              n: "01",
+              t: "Indicative pricing tier",
+              b: "The \"from\" prices above are starting points based on home size and typical scope. Real projects vary.",
+            },
+            {
+              n: "02",
+              t: "Home Audit (£250)",
+              b: "Our assessor visits, measures everything, and refines the scope for your specific home. We share what we find with you in plain English.",
+            },
+            {
+              n: "03",
+              t: "System Design and fixed price (£1,500)",
+              b: "We produce your designed system with a fully-priced quote. This is the price you pay — fixed, in writing, no upward changes once you accept it. You're not committed to proceeding.",
+            },
+          ].map((s) => (
+            <div
+              key={s.n}
+              className="rounded-md bg-background p-8 text-foreground"
+            >
+              <p className="font-display text-3xl text-primary">{s.n}</p>
+              <p className="mt-4 font-display text-xl">{s.t}</p>
+              <p className="mt-3 text-sm text-foreground/75">{s.b}</p>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="mt-10 max-w-[65ch] space-y-4 text-base text-ivory/80">
         <p>
