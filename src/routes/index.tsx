@@ -537,7 +537,7 @@ function Pricing() {
 const faqs = [
   {
     q: "How long does a project take?",
-    a: "From your audit to a finished installation, typically 8 to 14 weeks for Climate Ready, 12 to 20 weeks for Climate Complete, longer for Estate.",
+    a: "From your audit to a finished installation, typically:\n\n— Climate Ready: 8 to 14 weeks\n— Climate Complete: 12 to 20 weeks\n— Climate Estate: 16 to 28 weeks\n\nMost of that time is design and approvals. The physical installation usually takes 1 to 3 weeks on site. Listed buildings, conservation areas, ground-source projects and complex period properties can take longer — we tell you upfront if your project falls into this category.",
   },
   {
     q: "Do I have to do everything at once?",
@@ -679,7 +679,7 @@ function FAQ() {
               >
                 <div className="overflow-hidden">
                   <p
-                    className="max-w-[65ch] pb-6 pr-12 text-[17px] font-normal text-foreground/75"
+                    className="max-w-[65ch] whitespace-pre-line pb-6 pr-12 text-[17px] font-normal text-foreground/75"
                     style={{ lineHeight: 1.6 }}
                   >
                     {f.a}
