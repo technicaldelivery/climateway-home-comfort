@@ -679,7 +679,7 @@ function FAQ() {
               >
                 <div className="overflow-hidden">
                   <p
-                    className="max-w-[65ch] pb-6 pr-12 text-[17px] font-normal text-foreground/75"
+                    className="max-w-[65ch] whitespace-pre-line pb-6 pr-12 text-[17px] font-normal text-foreground/75"
                     style={{ lineHeight: 1.6 }}
                   >
                     {f.a}
