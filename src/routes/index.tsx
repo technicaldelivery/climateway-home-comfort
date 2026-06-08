@@ -150,8 +150,8 @@ function Problem() {
       body: "UK homes rated EPC D or worse — leaking heat in winter, overheating in summer.",
     },
     {
-      n: "£2,400",
-      body: "Average annual energy bill for an inefficient family home, and still climbing.",
+      n: "£2,400+",
+      body: "Typical annual energy bill for a UK family home rated EPC D or below, based on current Ofgem price-cap data.",
     },
   ];
   return (
@@ -167,6 +167,9 @@ function Problem() {
           </div>
         ))}
       </div>
+      <p className="mt-10 text-[12px] italic text-ivory/60">
+        Energy bill figures based on Ofgem price-cap data (Q1 2026) for a typical 3-bedroom gas-heated family home rated EPC D. Your bill will vary. Get your Climate Score for a home-specific estimate.
+      </p>
     </Section>
   );
 }
