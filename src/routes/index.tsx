@@ -26,9 +26,9 @@ const imgVictorian =
 const imgVictorianAlt =
   "Row of Victorian terraced houses in Kensington, London";
 const imgBedroom =
-  "https://images.unsplash.com/photo-1600908389678-64b54d9cf054?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1633505765486-e404bbbec654?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 const imgBedroomAlt =
-  "Calm bedroom with crisp white linen and soft natural light";
+  "Considered bedroom interior with calm, design-led furnishings";
 const imgCozyLiving =
   "https://images.unsplash.com/photo-1680965585463-386646047473?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 const imgCozyLivingAlt =
