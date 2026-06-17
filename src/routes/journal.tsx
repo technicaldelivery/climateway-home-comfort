@@ -1,10 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
-import heroHome from "@/assets/hero-home.jpg";
-import homeVictorian from "@/assets/home-victorian.jpg";
-import homeKitchen from "@/assets/home-kitchen.jpg";
-import homeBedroom from "@/assets/home-bedroom.jpg";
+const heroHome =
+  "https://images.unsplash.com/photo-1640797878742-dccaa23e7bfc?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const homeVictorian =
+  "https://images.unsplash.com/photo-1712869965218-3128c2eef88c?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const homeKitchen =
+  "https://images.unsplash.com/photo-1680965585463-386646047473?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const homeBedroom =
+  "https://images.unsplash.com/photo-1714153760214-5e86aa688fc3?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgSpacejoy =
+  "https://images.unsplash.com/photo-1633505765486-e404bbbec654?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 
 export const Route = createFileRoute("/journal")({
   head: () => ({
