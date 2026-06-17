@@ -1,10 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
-import homeVictorian from "@/assets/home-victorian.jpg";
-import homeKitchen from "@/assets/home-kitchen.jpg";
-import homeBedroom from "@/assets/home-bedroom.jpg";
-import heroHome from "@/assets/hero-home.jpg";
+const homeVictorian =
+  "https://images.unsplash.com/photo-1712869965218-3128c2eef88c?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const homeKitchen =
+  "https://images.unsplash.com/photo-1633505765486-e404bbbec654?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const homeBedroom =
+  "https://images.unsplash.com/photo-1776860150305-108ed577d7d4?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const heroHome =
+  "https://images.unsplash.com/photo-1758915753332-cab59126742c?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const imgThermostat =
+  "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
@@ -54,7 +60,7 @@ const steps = [
   },
   {
     title: "Performance Year",
-    img: heroHome,
+    img: imgThermostat,
     desc: "Twelve months of remote monitoring. We watch how your home actually performs and tune the system in real time. If you miss your modelled savings, we refund the difference.",
     includes: ["Twelve months remote monitoring", "Annual performance report", "Two-year savings guarantee"],
     timeline: "12 months from handover.",

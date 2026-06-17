@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
-import homeKitchen from "@/assets/home-kitchen.jpg";
+const homeKitchen =
+  "https://images.unsplash.com/photo-1680965585463-386646047473?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
