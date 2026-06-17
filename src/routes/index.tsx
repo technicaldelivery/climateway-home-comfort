@@ -11,8 +11,9 @@ import {
 import { Section, Eyebrow } from "@/components/section";
 
 const heroHome =
-  "https://images.unsplash.com/photo-1758915753332-cab59126742c?fm=jpg&q=85&w=2400&auto=format&fit=crop";
-const heroHomeAlt = "Modern living room with fireplace and pendant light";
+  "https://images.unsplash.com/photo-1759238136854-a43787126db7?fm=jpg&q=85&w=2400&auto=format&fit=crop";
+const heroHomeAlt =
+  "Modern living room with fireplace and contemporary minimalist decor";
 const imgComfort =
   "https://images.unsplash.com/photo-1714153760214-5e86aa688fc3?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 const imgComfortAlt =
@@ -22,13 +23,13 @@ const imgHeatPump =
 const imgHeatPumpAlt =
   "Modern heat pump installed against a brick house exterior";
 const imgVictorian =
-  "https://images.unsplash.com/photo-1712869965218-3128c2eef88c?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1707308029017-1f5ce047706c?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 const imgVictorianAlt =
-  "Row of Victorian terraced houses in Kensington, London";
+  "London period terrace street with brick buildings and cobblestone road";
 const imgBedroom =
-  "https://images.unsplash.com/photo-1633505765486-e404bbbec654?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 const imgBedroomAlt =
-  "Considered bedroom interior with calm, design-led furnishings";
+  "Calm living space with large window and natural light";
 const imgCozyLiving =
   "https://images.unsplash.com/photo-1680965585463-386646047473?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 const imgCozyLivingAlt =
