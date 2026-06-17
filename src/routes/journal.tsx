@@ -64,7 +64,7 @@ const posts = [
     date: "Apr 2026",
   },
   {
-    img: homeKitchen,
+    img: imgSpacejoy,
     category: "Home Stories",
     title: "A 1930s semi in St Albans, twelve months on.",
     excerpt:
