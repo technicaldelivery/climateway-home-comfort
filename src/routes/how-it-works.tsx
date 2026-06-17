@@ -60,7 +60,7 @@ const steps = [
   },
   {
     title: "Performance Year",
-    img: heroHome,
+    img: imgThermostat,
     desc: "Twelve months of remote monitoring. We watch how your home actually performs and tune the system in real time. If you miss your modelled savings, we refund the difference.",
     includes: ["Twelve months remote monitoring", "Annual performance report", "Two-year savings guarantee"],
     timeline: "12 months from handover.",
