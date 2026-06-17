@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Climateway" },
       { property: "og:site_name", content: "Climateway" },
-      { property: "og:title", content: "Climateway — Climate-ready homes" },
+      { property: "og:title", content: "Climateway — Climate-ready homes for British weather" },
       {
         property: "og:description",
         content: "Warm in winter. Cool in summer. Lower bills, all year.",
@@ -89,6 +89,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@climateway" },
       { name: "theme-color", content: "#0E4F4A" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather" },
+      { name: "description", content: "Climateway designs and installs integrated home climate systems for year-round comfort." },
+      { property: "og:description", content: "Climateway designs and installs integrated home climate systems for year-round comfort." },
+      { name: "twitter:description", content: "Climateway designs and installs integrated home climate systems for year-round comfort." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/93f33d8a-69a7-414d-a576-f782f1bf58fc/id-preview-3de1a0a6--0fec4c6c-f414-426e-b1f6-305b77b2224f.lovable.app-1781697199277.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/93f33d8a-69a7-414d-a576-f782f1bf58fc/id-preview-3de1a0a6--0fec4c6c-f414-426e-b1f6-305b77b2224f.lovable.app-1781697199277.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
