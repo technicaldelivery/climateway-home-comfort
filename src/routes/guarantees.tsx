@@ -99,7 +99,7 @@ function GuaranteesPage() {
 
       <Section tone="teal">
         <Eyebrow>Comfort Promise</Eyebrow>
-        <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
+        <h2 className="max-w-3xl font-display text-4xl leading-tight text-ivory md:text-5xl">
           On top of the cover, our Comfort Promise.
         </h2>
         <p className="mt-6 max-w-[65ch] text-lg leading-relaxed text-ivory/85">

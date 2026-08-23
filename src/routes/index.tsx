@@ -157,7 +157,7 @@ function Problem() {
   ];
   return (
     <Section tone="teal">
-      <h2 className="font-display text-4xl leading-tight md:max-w-3xl md:text-5xl">
+      <h2 className="font-display text-4xl leading-tight text-ivory md:max-w-3xl md:text-5xl">
         Your home wasn't built for this climate.
       </h2>
       <div className="mt-16 grid gap-12 border-t border-ivory/20 pt-12 md:grid-cols-3">
@@ -452,7 +452,7 @@ function Pricing() {
   ];
   return (
     <Section tone="teal" id="pricing">
-      <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
+      <h2 className="max-w-3xl font-display text-4xl leading-tight text-ivory md:text-5xl">
         Transparent pricing. Fixed before you commit.
       </h2>
       <div className="mt-14 grid gap-6 md:grid-cols-3">

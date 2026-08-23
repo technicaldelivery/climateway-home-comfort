@@ -151,7 +151,7 @@ function AboutPage() {
 
       <Section tone="teal">
         <Eyebrow>Our standards</Eyebrow>
-        <h2 className="font-display text-4xl">Standards we work to.</h2>
+        <h2 className="font-display text-4xl text-ivory">Standards we work to.</h2>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ivory/85">
           Climateway is a member of the Renewable Energy Consumer Code
           (RECC). Every installation is delivered by MCS certified,

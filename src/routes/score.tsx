@@ -452,7 +452,7 @@ function Results({ a }: { a: Answers }) {
         </ul>
 
         <div className="mt-16 rounded-md bg-teal p-10 text-ivory">
-          <h3 className="font-display text-2xl md:text-3xl">
+          <h3 className="font-display text-2xl text-ivory md:text-3xl">
             Ready for the next step?
           </h3>
           <p className="mt-3 max-w-xl text-ivory/85">

@@ -122,7 +122,7 @@ function HowPage() {
 
       <Section tone="teal">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-4xl leading-tight md:text-5xl">
+          <h2 className="font-display text-4xl leading-tight text-ivory md:text-5xl">
             Start with your Climate Score.
           </h2>
           <Link

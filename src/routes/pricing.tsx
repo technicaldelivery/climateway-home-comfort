@@ -163,7 +163,7 @@ function PricingPage() {
 
       <Section tone="teal">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-4xl md:text-5xl">
+          <h2 className="font-display text-4xl text-ivory md:text-5xl">
             See what your home qualifies for.
           </h2>
           <Link
