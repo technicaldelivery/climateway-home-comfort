@@ -64,8 +64,9 @@ function AboutPage() {
             Climateway designs your climate system. Our approved installation
             partners — MCS certified, F-Gas certified, Gas Safe registered —
             build it under our direct project management. Our installation
-            network is led by MBM Services Group, a UK M&E business with a proven
-            track record across residential and commercial projects.
+            partners are established UK mechanical and electrical businesses
+            with proven track records across residential and commercial
+            projects, all bound by Climateway's quality standards.
           </p>
           <p>
             You have one team from your first enquiry to your final
