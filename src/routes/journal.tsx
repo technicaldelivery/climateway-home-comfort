@@ -68,7 +68,7 @@ const posts = [
     category: "Home Stories",
     title: "A 1930s semi in St Albans, twelve months on.",
     excerpt:
-      "We revisit a Climate Complete project to see how the modelled savings held up.",
+      "We revisit a whole-home project to see how comfort and performance changed over twelve months.",
     date: "Mar 2026",
   },
 ];

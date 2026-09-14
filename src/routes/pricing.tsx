@@ -54,7 +54,7 @@ function PricingPage() {
           })}
         </div>
         <p className="mt-10 max-w-4xl text-base text-foreground/80">
-          Every project qualifies for at least £2,500 in government grants. Most qualify for £7,500-£10,000. Finance available from £75/month.
+          Every project qualifies for at least £2,500 in government grants. Most qualify for £7,500-£10,000. Finance is available through independent commercial finance partners from £75/month.
         </p>
         <Link to="/grants" className="mt-4 inline-flex text-sm text-primary underline underline-offset-4">See exactly which grants apply →</Link>
       </Section>

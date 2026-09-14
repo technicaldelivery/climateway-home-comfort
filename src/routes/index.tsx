@@ -442,8 +442,8 @@ function TrustStrip() {
             );
           })}
         </div>
-        <p className="mt-10 border-t border-border pt-6 text-center text-sm text-muted-foreground">
-          MCS certified · F-Gas certified · Gas Safe registered · RECC member · Fully insured
+        <p className="mx-auto mt-10 max-w-4xl border-t border-border pt-6 text-center text-sm text-muted-foreground">
+          Climateway installations are delivered through our MCS certified, F-Gas certified, Gas Safe registered partner network led by MBM Services Group. We are a member of the Renewable Energy Consumer Code (RECC).
         </p>
       </div>
     </section>
@@ -507,7 +507,7 @@ function Pricing() {
         })}
       </div>
       <p className="mt-10 max-w-4xl text-base text-foreground/80">
-        Every project qualifies for at least £2,500 in government grants. Most qualify for £7,500-£10,000. Finance available from £75/month.
+        Every project qualifies for at least £2,500 in government grants. Most qualify for £7,500-£10,000. Finance is available through independent commercial finance partners from £75/month.
       </p>
       <Link
         to="/grants"
@@ -522,7 +522,7 @@ function Pricing() {
 const faqs = [
   {
     q: "How long does a project take?",
-    a: "From your audit to a finished installation, typically:\n\n— Climate Ready: 8 to 14 weeks\n— Climate Complete: 12 to 20 weeks\n— Climate Estate: 16 to 28 weeks\n\nMost of that time is design and approvals. The physical installation usually takes 1 to 3 weeks on site. Listed buildings, conservation areas, ground-source projects and complex period properties can take longer — we tell you upfront if your project falls into this category.",
+    a: "From your audit to a finished installation, a single-room cooling project typically takes 6 to 10 weeks, a heating project 8 to 14 weeks, and a whole-home project 12 to 28 weeks.\n\nMost of that time is design and approvals. The physical installation usually takes 1 to 3 weeks on site. Listed buildings, conservation areas, ground-source projects and complex period properties can take longer — we tell you upfront if your project falls into this category.",
   },
   {
     q: "Do I have to do everything at once?",

@@ -170,7 +170,7 @@ function GrantsPage() {
               <tr className="bg-muted/50">
                 <th className="px-5 py-4 text-left font-medium" />
                 <th className="px-5 py-4 text-right font-medium">
-                  Climate Complete project
+                  Whole-home project
                 </th>
               </tr>
             </thead>

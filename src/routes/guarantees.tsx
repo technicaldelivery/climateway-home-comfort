@@ -90,7 +90,7 @@ function GuaranteesPage() {
         </h2>
         <p className="mt-6 max-w-[65ch] text-lg leading-relaxed text-foreground/80">
           Our 6-year workmanship guarantee is underwritten by an independent
-          insurer through a TrustMark-approved IBG provider. If Climateway
+          insurer through an independent IBG provider. If Climateway
           ceases trading during the guarantee period, the insurer steps in
           to cover any workmanship issues. Your installation is protected
           even in the unlikely event we are not.
