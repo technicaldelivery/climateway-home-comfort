@@ -30,7 +30,7 @@ export function SiteFooter() {
               Climateway
             </Link>
             <p className="mt-4 max-w-xs whitespace-pre-line text-sm leading-relaxed text-ivory/70">
-              {"Climate-ready homes across London, the Home Counties, the Cotswolds and the West Country.\n\nNotting Hill · Wandsworth · Richmond · Islington · Guildford · Cobham · Sevenoaks · Beaconsfield · Marlow · Henley · Oxford · Cheltenham · Bath · Bristol · Bruton · Sherborne · Salisbury · Exeter"}
+              {"Climate-ready homes across London, the Home Counties and Oxfordshire.\n\nNotting Hill · Chelsea · Wandsworth · Richmond · Wimbledon · Chiswick · Islington · Hampstead · Highgate · Dulwich · Greenwich · Clapham · Battersea · Peckham · Hackney · Guildford · Cobham · Weybridge · Sevenoaks · Tunbridge Wells · Beaconsfield · Marlow · Henley · Oxford · Woodstock · Windsor · Ascot · St Albans"}
             </p>
             <div className="mt-6">
               <p className="text-[13px] font-medium text-ivory/60">Follow us</p>
@@ -112,7 +112,7 @@ export function SiteFooter() {
             on request and detailed in your project documentation.
           </p>
           <p className="mt-8 text-xs text-ivory/60">
-            Climateway Ltd, registered in England. Company no. 00000000.
+            Climateway Ltd, England.
           </p>
         </div>
       </div>
