@@ -43,6 +43,8 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Warm in winter. Cool in summer. Lower bills, all year.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -71,7 +73,7 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="bg-background px-6 pt-16 pb-24 md:min-h-[calc(100dvh-80px)] md:pt-28 md:pb-32">
+    <section className="bg-background px-6 py-20 md:py-[120px]">
       <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-16">
         <div>
           <p
@@ -198,7 +200,7 @@ function Solution() {
     },
   ];
   return (
-    <Section id="solution">
+    <Section id="solution" tone="sky">
       <Eyebrow>How Climateway works</Eyebrow>
       <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
         One designed system. Built for every season.
@@ -292,7 +294,7 @@ function WhoWeHelp() {
               <h3 className="mt-6 font-display text-2xl font-medium leading-tight">{audience.title}</h3>
               <p className="mt-4 text-[16px] leading-relaxed text-foreground/75">{audience.body}</p>
               {audience.quote && (
-                <p className="mt-auto pt-6 text-sm italic leading-snug text-foreground/65">{audience.quote}</p>
+                <p className="mt-auto line-clamp-2 pt-6 text-sm italic leading-snug text-foreground/65">{audience.quote}</p>
               )}
             </Link>
           );
@@ -304,19 +306,19 @@ function WhoWeHelp() {
 
 function ScoreTeaser() {
   return (
-    <Section tone="sky">
+    <Section tone="teal">
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div>
           <h2 className="font-display text-4xl leading-tight md:text-5xl">
             Start with your free Climate Score.
           </h2>
-          <p className="mt-6 max-w-xl text-lg text-foreground/80">
+          <p className="mt-6 max-w-xl text-lg text-ivory/80">
             In 60 seconds, see how your home performs in the new British
             climate — and exactly what it would cost to make it future-ready.
           </p>
         </div>
         <div>
-          <ul className="space-y-4 text-base text-foreground/85">
+          <ul className="space-y-4 text-base text-ivory/85">
             {[
               "Personalised to your postcode and property type",
               "Identifies every grant you qualify for",
@@ -324,9 +326,9 @@ function ScoreTeaser() {
             ].map((b) => (
               <li
                 key={b}
-                className="flex gap-3 border-b border-foreground/15 pb-4"
+                className="flex gap-3 border-b border-ivory/20 pb-4"
               >
-                <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 {b}
               </li>
             ))}
@@ -428,7 +430,7 @@ function TrustStrip() {
     },
   ];
   return (
-    <section className="border-y border-border bg-background px-6 py-16" aria-label="Why homeowners choose Climateway">
+    <section className="border-y border-border bg-background px-6 py-20 md:py-[120px]" aria-label="Why homeowners choose Climateway">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-3 md:gap-0 md:divide-x md:divide-border">
           {points.map((point) => {
@@ -621,7 +623,7 @@ function WhyClimateway() {
 function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   return (
-    <Section id="faq">
+    <Section id="faq" tone="sky">
       <Eyebrow>Frequently asked</Eyebrow>
       <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
         Everything homeowners want to know.
