@@ -21,7 +21,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`${tones[tone]} scroll-mt-24 px-6 py-20 md:py-28 ${className}`}
+      className={`${tones[tone]} scroll-mt-24 px-6 py-20 md:py-30 ${className}`}
     >
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>

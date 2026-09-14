@@ -128,7 +128,7 @@ function AboutPage() {
         </h2>
         <div className="mt-8 max-w-3xl space-y-5 text-base text-foreground/80">
           <p>
-            The UK has thousands of brilliant, MCS-certified heat pump and
+            The UK has thousands of brilliant, certified heat pump and
             climate engineers — most of them small businesses with decades
             of trade experience. Our model is to bring the best of them
             together under one quality-controlled network, rather than try
@@ -138,7 +138,7 @@ function AboutPage() {
           <ul className="space-y-2 pl-1">
             <li>— MCS certified (Microgeneration Certification Scheme)</li>
             <li>— F-Gas certified where cooling work is involved</li>
-            <li>— TrustMark registered</li>
+            <li>— Gas Safe registered where gas work is involved</li>
             <li>— Vetted by us against project history, customer references and on-site quality audits</li>
             <li>— Bound by Climateway's quality protocols and service-level commitments</li>
           </ul>
@@ -153,12 +153,10 @@ function AboutPage() {
         <Eyebrow>Our standards</Eyebrow>
         <h2 className="font-display text-4xl text-ivory">Standards we work to.</h2>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ivory/85">
-          Climateway is a member of the Renewable Energy Consumer Code
-          (RECC). Every installation is delivered by MCS certified,
-          TrustMark registered partners under direct Climateway management.
-          Cooling installations are completed by F-Gas certified engineers,
-          and all projects are designed to PAS 2035 whole-house retrofit
-          standards.
+          Climateway installations are delivered through our MCS certified,
+          F-Gas certified, Gas Safe registered partner network led by MBM
+          Services Group. We are a member of the Renewable Energy Consumer
+          Code (RECC).
         </p>
         <p className="mt-4 max-w-2xl text-sm italic leading-relaxed text-ivory/65">
           Specific accreditations of installation partners are available on
