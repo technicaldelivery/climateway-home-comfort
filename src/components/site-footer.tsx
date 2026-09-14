@@ -8,7 +8,7 @@ export function SiteFooter() {
     name: "Climateway",
     description:
       "Whole-home climate adaptation for British homes — heating, cooling, ventilation and controls designed and installed as one project.",
-    areaServed: ["Greater London", "South East England"],
+    areaServed: ["London", "Home Counties", "Cotswolds", "West Country"],
     telephone: "+44 20 0000 0000",
     email: "hello@climateway.co.uk",
     address: {
@@ -29,8 +29,8 @@ export function SiteFooter() {
             <Link to="/" className="font-display text-2xl font-semibold">
               Climateway
             </Link>
-            <p className="mt-4 max-w-xs text-sm text-ivory/70">
-              Climate-ready homes for the way Britain lives now.
+            <p className="mt-4 max-w-xs whitespace-pre-line text-sm leading-relaxed text-ivory/70">
+              {"Climate-ready homes across London, the Home Counties, the Cotswolds and the West Country.\n\nNotting Hill · Wandsworth · Richmond · Islington · Guildford · Cobham · Sevenoaks · Beaconsfield · Marlow · Henley · Oxford · Cheltenham · Bath · Bristol · Bruton · Sherborne · Salisbury · Exeter"}
             </p>
             <div className="mt-6">
               <p className="text-[13px] font-medium text-ivory/60">Follow us</p>
@@ -102,10 +102,10 @@ export function SiteFooter() {
             Our standards
           </p>
           <p className="mt-3 max-w-3xl text-[14px] font-normal leading-relaxed text-ivory/85">
-            Climateway is a member of the Renewable Energy Consumer Code
-            (RECC). Every installation is delivered by MCS certified,
-            TrustMark registered partners under direct Climateway
-            management.
+            Climateway installations are delivered through our MCS certified,
+            F-Gas certified, Gas Safe registered partner network led by MBM
+            Services Group. We are a member of the Renewable Energy Consumer
+            Code (RECC).
           </p>
           <p className="mt-3 max-w-3xl text-[13px] italic leading-relaxed text-ivory/60">
             Specific accreditations of installation partners are available

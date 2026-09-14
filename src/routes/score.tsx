@@ -412,8 +412,8 @@ function Results({ a }: { a: Answers }) {
               <tr>
                 <th className="px-5 py-4 font-medium">&nbsp;</th>
                 <th className="px-5 py-4 font-medium">Today</th>
-                <th className="px-5 py-4 font-medium">Climate Ready</th>
-                <th className="px-5 py-4 font-medium">Climate Complete</th>
+                <th className="px-5 py-4 font-medium">Heating</th>
+                <th className="px-5 py-4 font-medium">Whole home</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-hairline">
@@ -422,8 +422,8 @@ function Results({ a }: { a: Answers }) {
                 ["Summer Comfort", "At risk", "Comfortable", "Comfortable"],
                 ["Annual Bill", "£2,400", "£1,400", "£900"],
                 ["CO2 Emissions", "High", "Medium", "Low"],
-                ["Estimated Project Cost", "—", "From £18,000", "From £32,000"],
-                ["Net Cost After Grants", "—", "From £10,500", "From £24,500"],
+                ["Estimated Project Cost", "—", "From £14,000", "From £22,000"],
+                ["Net Cost After Grants", "—", "From £6,500", "From £14,500"],
               ].map((row) => (
                 <tr key={row[0]}>
                   <td className="px-5 py-4 font-medium">{row[0]}</td>

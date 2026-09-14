@@ -22,6 +22,15 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ComplaintsRouteImport } from './routes/complaints'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WhoWeHelpRenovationsRouteImport } from './routes/who-we-help.renovations'
+import { Route as WhoWeHelpPeriodHomesRouteImport } from './routes/who-we-help.period-homes'
+import { Route as WhoWeHelpLandlordsRouteImport } from './routes/who-we-help.landlords'
+import { Route as WhoWeHelpHomeWorkersRouteImport } from './routes/who-we-help.home-workers'
+import { Route as WhoWeHelpForeverHomesRouteImport } from './routes/who-we-help.forever-homes'
+import { Route as WhoWeHelpFamiliesRouteImport } from './routes/who-we-help.families'
+import { Route as PricingWholeHomeRouteImport } from './routes/pricing.whole-home'
+import { Route as PricingHeatingRouteImport } from './routes/pricing.heating'
+import { Route as PricingCoolingRouteImport } from './routes/pricing.cooling'
 import { Route as ApiLeadsRouteImport } from './routes/api/leads'
 
 const TermsRoute = TermsRouteImport.update({
@@ -89,6 +98,51 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WhoWeHelpRenovationsRoute = WhoWeHelpRenovationsRouteImport.update({
+  id: '/who-we-help/renovations',
+  path: '/who-we-help/renovations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhoWeHelpPeriodHomesRoute = WhoWeHelpPeriodHomesRouteImport.update({
+  id: '/who-we-help/period-homes',
+  path: '/who-we-help/period-homes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhoWeHelpLandlordsRoute = WhoWeHelpLandlordsRouteImport.update({
+  id: '/who-we-help/landlords',
+  path: '/who-we-help/landlords',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhoWeHelpHomeWorkersRoute = WhoWeHelpHomeWorkersRouteImport.update({
+  id: '/who-we-help/home-workers',
+  path: '/who-we-help/home-workers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhoWeHelpForeverHomesRoute = WhoWeHelpForeverHomesRouteImport.update({
+  id: '/who-we-help/forever-homes',
+  path: '/who-we-help/forever-homes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhoWeHelpFamiliesRoute = WhoWeHelpFamiliesRouteImport.update({
+  id: '/who-we-help/families',
+  path: '/who-we-help/families',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingWholeHomeRoute = PricingWholeHomeRouteImport.update({
+  id: '/whole-home',
+  path: '/whole-home',
+  getParentRoute: () => PricingRoute,
+} as any)
+const PricingHeatingRoute = PricingHeatingRouteImport.update({
+  id: '/heating',
+  path: '/heating',
+  getParentRoute: () => PricingRoute,
+} as any)
+const PricingCoolingRoute = PricingCoolingRouteImport.update({
+  id: '/cooling',
+  path: '/cooling',
+  getParentRoute: () => PricingRoute,
+} as any)
 const ApiLeadsRoute = ApiLeadsRouteImport.update({
   id: '/api/leads',
   path: '/api/leads',
@@ -104,12 +158,21 @@ export interface FileRoutesByFullPath {
   '/guarantees': typeof GuaranteesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/journal': typeof JournalRoute
-  '/pricing': typeof PricingRoute
+  '/pricing': typeof PricingRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/score': typeof ScoreRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/api/leads': typeof ApiLeadsRoute
+  '/pricing/cooling': typeof PricingCoolingRoute
+  '/pricing/heating': typeof PricingHeatingRoute
+  '/pricing/whole-home': typeof PricingWholeHomeRoute
+  '/who-we-help/families': typeof WhoWeHelpFamiliesRoute
+  '/who-we-help/forever-homes': typeof WhoWeHelpForeverHomesRoute
+  '/who-we-help/home-workers': typeof WhoWeHelpHomeWorkersRoute
+  '/who-we-help/landlords': typeof WhoWeHelpLandlordsRoute
+  '/who-we-help/period-homes': typeof WhoWeHelpPeriodHomesRoute
+  '/who-we-help/renovations': typeof WhoWeHelpRenovationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -120,12 +183,21 @@ export interface FileRoutesByTo {
   '/guarantees': typeof GuaranteesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/journal': typeof JournalRoute
-  '/pricing': typeof PricingRoute
+  '/pricing': typeof PricingRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/score': typeof ScoreRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/api/leads': typeof ApiLeadsRoute
+  '/pricing/cooling': typeof PricingCoolingRoute
+  '/pricing/heating': typeof PricingHeatingRoute
+  '/pricing/whole-home': typeof PricingWholeHomeRoute
+  '/who-we-help/families': typeof WhoWeHelpFamiliesRoute
+  '/who-we-help/forever-homes': typeof WhoWeHelpForeverHomesRoute
+  '/who-we-help/home-workers': typeof WhoWeHelpHomeWorkersRoute
+  '/who-we-help/landlords': typeof WhoWeHelpLandlordsRoute
+  '/who-we-help/period-homes': typeof WhoWeHelpPeriodHomesRoute
+  '/who-we-help/renovations': typeof WhoWeHelpRenovationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -137,12 +209,21 @@ export interface FileRoutesById {
   '/guarantees': typeof GuaranteesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/journal': typeof JournalRoute
-  '/pricing': typeof PricingRoute
+  '/pricing': typeof PricingRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/score': typeof ScoreRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/api/leads': typeof ApiLeadsRoute
+  '/pricing/cooling': typeof PricingCoolingRoute
+  '/pricing/heating': typeof PricingHeatingRoute
+  '/pricing/whole-home': typeof PricingWholeHomeRoute
+  '/who-we-help/families': typeof WhoWeHelpFamiliesRoute
+  '/who-we-help/forever-homes': typeof WhoWeHelpForeverHomesRoute
+  '/who-we-help/home-workers': typeof WhoWeHelpHomeWorkersRoute
+  '/who-we-help/landlords': typeof WhoWeHelpLandlordsRoute
+  '/who-we-help/period-homes': typeof WhoWeHelpPeriodHomesRoute
+  '/who-we-help/renovations': typeof WhoWeHelpRenovationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -161,6 +242,15 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/api/leads'
+    | '/pricing/cooling'
+    | '/pricing/heating'
+    | '/pricing/whole-home'
+    | '/who-we-help/families'
+    | '/who-we-help/forever-homes'
+    | '/who-we-help/home-workers'
+    | '/who-we-help/landlords'
+    | '/who-we-help/period-homes'
+    | '/who-we-help/renovations'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -177,6 +267,15 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/api/leads'
+    | '/pricing/cooling'
+    | '/pricing/heating'
+    | '/pricing/whole-home'
+    | '/who-we-help/families'
+    | '/who-we-help/forever-homes'
+    | '/who-we-help/home-workers'
+    | '/who-we-help/landlords'
+    | '/who-we-help/period-homes'
+    | '/who-we-help/renovations'
   id:
     | '__root__'
     | '/'
@@ -193,6 +292,15 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/api/leads'
+    | '/pricing/cooling'
+    | '/pricing/heating'
+    | '/pricing/whole-home'
+    | '/who-we-help/families'
+    | '/who-we-help/forever-homes'
+    | '/who-we-help/home-workers'
+    | '/who-we-help/landlords'
+    | '/who-we-help/period-homes'
+    | '/who-we-help/renovations'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -204,12 +312,18 @@ export interface RootRouteChildren {
   GuaranteesRoute: typeof GuaranteesRoute
   HowItWorksRoute: typeof HowItWorksRoute
   JournalRoute: typeof JournalRoute
-  PricingRoute: typeof PricingRoute
+  PricingRoute: typeof PricingRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   ScoreRoute: typeof ScoreRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   ApiLeadsRoute: typeof ApiLeadsRoute
+  WhoWeHelpFamiliesRoute: typeof WhoWeHelpFamiliesRoute
+  WhoWeHelpForeverHomesRoute: typeof WhoWeHelpForeverHomesRoute
+  WhoWeHelpHomeWorkersRoute: typeof WhoWeHelpHomeWorkersRoute
+  WhoWeHelpLandlordsRoute: typeof WhoWeHelpLandlordsRoute
+  WhoWeHelpPeriodHomesRoute: typeof WhoWeHelpPeriodHomesRoute
+  WhoWeHelpRenovationsRoute: typeof WhoWeHelpRenovationsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -305,6 +419,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/who-we-help/renovations': {
+      id: '/who-we-help/renovations'
+      path: '/who-we-help/renovations'
+      fullPath: '/who-we-help/renovations'
+      preLoaderRoute: typeof WhoWeHelpRenovationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/who-we-help/period-homes': {
+      id: '/who-we-help/period-homes'
+      path: '/who-we-help/period-homes'
+      fullPath: '/who-we-help/period-homes'
+      preLoaderRoute: typeof WhoWeHelpPeriodHomesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/who-we-help/landlords': {
+      id: '/who-we-help/landlords'
+      path: '/who-we-help/landlords'
+      fullPath: '/who-we-help/landlords'
+      preLoaderRoute: typeof WhoWeHelpLandlordsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/who-we-help/home-workers': {
+      id: '/who-we-help/home-workers'
+      path: '/who-we-help/home-workers'
+      fullPath: '/who-we-help/home-workers'
+      preLoaderRoute: typeof WhoWeHelpHomeWorkersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/who-we-help/forever-homes': {
+      id: '/who-we-help/forever-homes'
+      path: '/who-we-help/forever-homes'
+      fullPath: '/who-we-help/forever-homes'
+      preLoaderRoute: typeof WhoWeHelpForeverHomesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/who-we-help/families': {
+      id: '/who-we-help/families'
+      path: '/who-we-help/families'
+      fullPath: '/who-we-help/families'
+      preLoaderRoute: typeof WhoWeHelpFamiliesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing/whole-home': {
+      id: '/pricing/whole-home'
+      path: '/whole-home'
+      fullPath: '/pricing/whole-home'
+      preLoaderRoute: typeof PricingWholeHomeRouteImport
+      parentRoute: typeof PricingRoute
+    }
+    '/pricing/heating': {
+      id: '/pricing/heating'
+      path: '/heating'
+      fullPath: '/pricing/heating'
+      preLoaderRoute: typeof PricingHeatingRouteImport
+      parentRoute: typeof PricingRoute
+    }
+    '/pricing/cooling': {
+      id: '/pricing/cooling'
+      path: '/cooling'
+      fullPath: '/pricing/cooling'
+      preLoaderRoute: typeof PricingCoolingRouteImport
+      parentRoute: typeof PricingRoute
+    }
     '/api/leads': {
       id: '/api/leads'
       path: '/api/leads'
@@ -315,6 +492,21 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface PricingRouteChildren {
+  PricingCoolingRoute: typeof PricingCoolingRoute
+  PricingHeatingRoute: typeof PricingHeatingRoute
+  PricingWholeHomeRoute: typeof PricingWholeHomeRoute
+}
+
+const PricingRouteChildren: PricingRouteChildren = {
+  PricingCoolingRoute: PricingCoolingRoute,
+  PricingHeatingRoute: PricingHeatingRoute,
+  PricingWholeHomeRoute: PricingWholeHomeRoute,
+}
+
+const PricingRouteWithChildren =
+  PricingRoute._addFileChildren(PricingRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -324,12 +516,18 @@ const rootRouteChildren: RootRouteChildren = {
   GuaranteesRoute: GuaranteesRoute,
   HowItWorksRoute: HowItWorksRoute,
   JournalRoute: JournalRoute,
-  PricingRoute: PricingRoute,
+  PricingRoute: PricingRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   ScoreRoute: ScoreRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   ApiLeadsRoute: ApiLeadsRoute,
+  WhoWeHelpFamiliesRoute: WhoWeHelpFamiliesRoute,
+  WhoWeHelpForeverHomesRoute: WhoWeHelpForeverHomesRoute,
+  WhoWeHelpHomeWorkersRoute: WhoWeHelpHomeWorkersRoute,
+  WhoWeHelpLandlordsRoute: WhoWeHelpLandlordsRoute,
+  WhoWeHelpPeriodHomesRoute: WhoWeHelpPeriodHomesRoute,
+  WhoWeHelpRenovationsRoute: WhoWeHelpRenovationsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
