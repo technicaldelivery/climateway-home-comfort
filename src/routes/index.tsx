@@ -362,7 +362,7 @@ function Process() {
     },
     {
       title: "Installation",
-      body: "Our approved partner network, led by MBM Services Group, installs your system under our direct project management. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
+      body: "Our approved installation partners — all MCS certified, F-Gas certified and Gas Safe registered — install your system under our direct project management. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
       img: imgHeatPump,
       alt: imgHeatPumpAlt,
     },
@@ -445,7 +445,7 @@ function TrustStrip() {
           })}
         </div>
         <p className="mx-auto mt-10 max-w-4xl border-t border-border pt-6 text-center text-sm text-muted-foreground">
-          Climateway installations are delivered through our MCS certified, F-Gas certified, Gas Safe registered partner network led by MBM Services Group. We are a member of the Renewable Energy Consumer Code (RECC).
+          Climateway installations are delivered through our network of MCS certified, F-Gas certified, Gas Safe registered installation partners. We are a member of the Renewable Energy Consumer Code (RECC).
         </p>
       </div>
     </section>
