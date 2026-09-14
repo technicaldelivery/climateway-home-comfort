@@ -43,6 +43,8 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Warm in winter. Cool in summer. Lower bills, all year.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -71,7 +73,7 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="bg-background px-6 pt-16 pb-24 md:min-h-[calc(100dvh-80px)] md:pt-28 md:pb-32">
+    <section className="bg-background px-6 py-20 md:py-[120px]">
       <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-16">
         <div>
           <p
@@ -292,7 +294,7 @@ function WhoWeHelp() {
               <h3 className="mt-6 font-display text-2xl font-medium leading-tight">{audience.title}</h3>
               <p className="mt-4 text-[16px] leading-relaxed text-foreground/75">{audience.body}</p>
               {audience.quote && (
-                <p className="mt-auto pt-6 text-sm italic leading-snug text-foreground/65">{audience.quote}</p>
+                <p className="mt-auto line-clamp-2 pt-6 text-sm italic leading-snug text-foreground/65">{audience.quote}</p>
               )}
             </Link>
           );
@@ -428,7 +430,7 @@ function TrustStrip() {
     },
   ];
   return (
-    <section className="border-y border-border bg-background px-6 py-16" aria-label="Why homeowners choose Climateway">
+    <section className="border-y border-border bg-background px-6 py-20 md:py-[120px]" aria-label="Why homeowners choose Climateway">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-3 md:gap-0 md:divide-x md:divide-border">
           {points.map((point) => {
