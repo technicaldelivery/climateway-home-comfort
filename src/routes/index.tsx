@@ -200,7 +200,7 @@ function Solution() {
     },
   ];
   return (
-    <Section id="solution">
+    <Section id="solution" tone="sky">
       <Eyebrow>How Climateway works</Eyebrow>
       <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
         One designed system. Built for every season.
@@ -306,19 +306,19 @@ function WhoWeHelp() {
 
 function ScoreTeaser() {
   return (
-    <Section tone="sky">
+    <Section tone="teal">
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div>
           <h2 className="font-display text-4xl leading-tight md:text-5xl">
             Start with your free Climate Score.
           </h2>
-          <p className="mt-6 max-w-xl text-lg text-foreground/80">
+          <p className="mt-6 max-w-xl text-lg text-ivory/80">
             In 60 seconds, see how your home performs in the new British
             climate — and exactly what it would cost to make it future-ready.
           </p>
         </div>
         <div>
-          <ul className="space-y-4 text-base text-foreground/85">
+          <ul className="space-y-4 text-base text-ivory/85">
             {[
               "Personalised to your postcode and property type",
               "Identifies every grant you qualify for",
@@ -326,9 +326,9 @@ function ScoreTeaser() {
             ].map((b) => (
               <li
                 key={b}
-                className="flex gap-3 border-b border-foreground/15 pb-4"
+                className="flex gap-3 border-b border-ivory/20 pb-4"
               >
-                <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 {b}
               </li>
             ))}
@@ -623,7 +623,7 @@ function WhyClimateway() {
 function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   return (
-    <Section id="faq">
+    <Section id="faq" tone="sky">
       <Eyebrow>Frequently asked</Eyebrow>
       <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
         Everything homeowners want to know.
