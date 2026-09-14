@@ -166,7 +166,7 @@ function Problem() {
         ))}
       </div>
       <p className="mt-10 text-[12px] italic text-ivory/60">
-        Energy bill figures based on Ofgem price-cap data (Q1 2026) for a typical 3-bedroom gas-heated family home rated EPC D. Your bill will vary. Get your Climate Score for a home-specific estimate.
+        Based on Ofgem price-cap data for a typical EPC-D family home. Your bill will vary — the Climate Score gives you a home-specific estimate.
       </p>
     </Section>
   );
@@ -368,7 +368,7 @@ function Process() {
     },
     {
       title: "Performance Year",
-      body: "Twelve months of monitoring with smart meter data tied into your dashboard. We review performance against your design and tune the system to keep it on track.",
+      body: "For the first year after installation, we check in on system performance and are on-call if anything isn't delivering the temperatures we designed for. That's the Comfort Promise in practice.",
     },
   ];
   return (
@@ -540,7 +540,7 @@ const faqs = [
   },
   {
     q: "Do you work with my architect?",
-    a: "Yes. We routinely partner with architects on refurbishments and extensions. Talk to us early and we'll integrate.",
+    a: "Yes — we regularly partner with architects on refurbishments and extensions. But most of our projects are direct with homeowners, no architect required. Either works — talk to us early either way.",
   },
   {
     q: "What if it goes wrong?",
@@ -556,7 +556,7 @@ const faqs = [
   },
   {
     q: "Where do you work?",
-    a: "We work across London, the Home Counties, the Cotswolds and the West Country. That includes Notting Hill, Kensington, Chelsea, Fulham, Wandsworth, Wimbledon, Richmond, Chiswick, Islington, Hampstead, Highgate, Greenwich, Guildford, Cobham, Weybridge, Esher, Sevenoaks, Tunbridge Wells, Beaconsfield, Gerrards Cross, Amersham, Chorleywood, Marlow, Henley-on-Thames, Oxted, Reigate, Godalming, Farnham, Haslemere, Oxford, Cheltenham, Cirencester, Stow-on-the-Wold, Chipping Norton, Bath, Bristol, Bruton, Frome, Sherborne, Shaftesbury, Salisbury, Winchester, Wells, Taunton, Exeter and surrounding areas. If you're not sure whether we cover you, ask — our network is growing through 2027.",
+    a: "We work across all of London, the Home Counties and Oxfordshire.\n\nIn London: Notting Hill, Kensington, Chelsea, Fulham, Hammersmith, Chiswick, Richmond, Wimbledon, Wandsworth, Battersea, Clapham, Balham, Dulwich, Peckham, Brixton, Camberwell, Greenwich, Blackheath, Islington, Hackney, Shoreditch, Camden, Kentish Town, Hampstead, Highgate, Muswell Hill, Crouch End, Stoke Newington, Kilburn, Maida Vale, St John's Wood, Marylebone, Belgravia, Pimlico, Mayfair.\n\nIn the Home Counties: Guildford, Cobham, Weybridge, Esher, Oxshott, Woking, Ripley, Godalming, Farnham, Haslemere, Sevenoaks, Tunbridge Wells, Westerham, Tonbridge, Oxted, Reigate, Redhill, Dorking, Epsom, Leatherhead, Beaconsfield, Gerrards Cross, Amersham, Chorleywood, Chalfont St Giles, Marlow, Henley-on-Thames, Cookham, Sonning, Ascot, Sunningdale, Virginia Water, Windsor, Wentworth, Radlett, Harpenden, St Albans, Berkhamsted, Tring, Chesham.\n\nIn Oxfordshire: Oxford, Henley-on-Thames, Thame, Wallingford, Wantage, Abingdon, Woodstock, Chipping Norton, Burford, Witney.\n\nIf you're not sure whether we cover you, ask — our network is growing, and we're expanding into the Cotswolds and West Country through 2027.",
   },
 ];
 
@@ -710,8 +710,8 @@ function GrantsUpdate() {
           <p>
             Climateway projects qualify for up to £7,500 on traditional heat
             pumps and £2,500 on air-to-air systems, alongside Warm Homes Plan
-            grants and other support. Most clients see grants of £5,000 to
-            £15,000 on a complete climate adaptation project.
+            grants and other support. Most projects capture £7,500 to £10,000 in
+            combined grants.
           </p>
         </div>
         <Link
