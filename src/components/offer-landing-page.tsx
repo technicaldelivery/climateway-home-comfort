@@ -17,7 +17,7 @@ export function OfferLandingPage({
 }) {
   return (
     <>
-      <section className="bg-background px-6 py-20 md:py-30">
+      <section className="bg-background px-6 py-20 md:py-[120px]">
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-16">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">{eyebrow}</p>
