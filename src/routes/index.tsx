@@ -554,30 +554,28 @@ const faqs = [
   },
   {
     q: "Where do you work?",
-    a: "Greater London, Surrey, Berkshire, Buckinghamshire, Hertfordshire, Kent and parts of Sussex. We're expanding through 2027.",
+    a: "We work across London, the Home Counties, the Cotswolds and the West Country. That includes Notting Hill, Kensington, Chelsea, Fulham, Wandsworth, Wimbledon, Richmond, Chiswick, Islington, Hampstead, Highgate, Greenwich, Guildford, Cobham, Weybridge, Esher, Sevenoaks, Tunbridge Wells, Beaconsfield, Gerrards Cross, Amersham, Chorleywood, Marlow, Henley-on-Thames, Oxted, Reigate, Godalming, Farnham, Haslemere, Oxford, Cheltenham, Cirencester, Stow-on-the-Wold, Chipping Norton, Bath, Bristol, Bruton, Frome, Sherborne, Shaftesbury, Salisbury, Winchester, Wells, Taunton, Exeter and surrounding areas. If you're not sure whether we cover you, ask — our network is growing through 2027.",
   },
 ];
 
 function WhyClimateway() {
   const left = [
-    "Heat pumps OR cooling OR insulation, never together",
-    "Tied to one energy supplier or manufacturer",
-    "You coordinate three or four contractors yourself",
-    "You miss grants by sequencing wrong",
+    "Sell one product at a time: heating OR cooling OR insulation",
+    "Often tied to a single supplier or manufacturer",
+    "You coordinate the trades yourself",
+    "Grants often missed because sequencing isn't planned",
   ];
   const right = [
-    "One integrated system: heat, cool, fabric, controls",
+    "One integrated approach across heat, cool, fabric, controls",
     "Independent — no supplier or manufacturer ties",
-    "One designed project, one team, one invoice",
+    "One project, one team, one invoice",
     "Every grant identified and applied for you",
   ];
   return (
-    <Section className="bg-[#F6F1E8]">
-      <Eyebrow>
-        <span style={{ color: "#0E4F4A" }}>Why Climateway</span>
-      </Eyebrow>
+    <Section>
+      <Eyebrow>Why Climateway</Eyebrow>
       <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight md:text-5xl">
-        Most companies sell one thing. We design the whole system.
+        Most companies sell one thing. We look at your whole home.
       </h2>
       <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-0 md:divide-x md:divide-foreground/15">
         <div className="md:pr-12">
@@ -729,24 +727,23 @@ function GrantsUpdate() {
 
 function FinalCTA() {
   return (
-    <section className="w-full bg-[#0E4F4A] px-6 py-20 md:py-[120px]">
+    <section className="w-full bg-teal px-6 py-20 md:py-[120px]">
       <div className="mx-auto max-w-[700px] text-center text-ivory">
         <p className="text-xs font-medium uppercase tracking-[0.1em] text-ivory">
           Start here
         </p>
         <h2 className="mt-6 font-display font-medium leading-[1.05] text-ivory text-[clamp(2.5rem,6vw,4.5rem)]">
-          One question. One free answer.
+          The best time to design your home for the climate ahead is before the next heatwave.
         </h2>
-        <p className="mx-auto mt-6 max-w-[60ch] text-[20px] leading-relaxed text-ivory/80">
-          How does your home perform in the new British climate? Find out in 60 seconds. No commitment. No call required.
+        <p className="mx-auto mt-6 max-w-[60ch] text-lg leading-relaxed text-ivory/80 md:text-[20px]">
+          The Climate Score takes 60 seconds. It's free. It tells you where your home stands and what's worth doing about it.
         </p>
-        <Link
-          to="/score"
-          className="mt-10 inline-flex h-16 items-center gap-2 rounded-md bg-[#D97942] px-8 text-base font-medium text-ivory transition-opacity hover:opacity-90"
-        >
-          Get your Climate Score
-          <ArrowRight className="h-4 w-4" />
-        </Link>
+        <Button asChild size="lg" className="mt-10 h-16 bg-accent px-8 text-base text-accent-foreground hover:bg-accent/90">
+          <Link to="/score">
+            Get your Climate Score
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Button>
       </div>
     </section>
   );
