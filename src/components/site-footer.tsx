@@ -66,6 +66,15 @@ export function SiteFooter() {
 
           </div>
 
+          <div>
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ivory">
+              Where we work
+            </h2>
+            <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-ivory/70">
+              {"Climate-ready homes across London, the Home Counties and Oxfordshire.\n\nNotting Hill · Chelsea · Wandsworth · Richmond · Wimbledon · Chiswick · Islington · Hampstead · Highgate · Dulwich · Greenwich · Clapham · Battersea · Peckham · Hackney · Guildford · Cobham · Weybridge · Sevenoaks · Tunbridge Wells · Beaconsfield · Marlow · Henley · Oxford · Woodstock · Windsor · Ascot · St Albans"}
+            </p>
+          </div>
+
           <FooterCol
             title="Company"
             links={[
