@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Linkedin, Youtube } from "lucide-react";
 
+import { openPrivacyConsent } from "@/lib/privacy-consent";
+
 export function SiteFooter() {
   const localBusiness = {
     "@context": "https://schema.org",
@@ -90,6 +92,7 @@ export function SiteFooter() {
             title="Legal"
             links={[
               { to: "/privacy", label: "Privacy" },
+              { label: "Cookie settings", onClick: openPrivacyConsent },
               { to: "/terms", label: "Terms" },
               { to: "/complaints", label: "Complaints" },
             ]}
@@ -131,7 +134,10 @@ function FooterCol({
   links,
 }: {
   title: string;
-  links: { to: string; label: string }[];
+  links: (
+    | { label: string; to: string }
+    | { label: string; onClick: () => void }
+  )[];
 }) {
   return (
     <div>
@@ -141,9 +147,20 @@ function FooterCol({
       <ul className="mt-4 space-y-3 text-sm">
         {links.map((l) => (
           <li key={l.label}>
-            <Link to={l.to} className="text-ivory/70 hover:text-ivory">
-              {l.label}
-            </Link>
+            {"to" in l ? (
+              <Link to={l.to} className="text-ivory/70 hover:text-ivory">
+                {l.label}
+              </Link>
+            ) : (
+              <button
+                type="button"
+                onClick={l.onClick}
+                aria-haspopup="dialog"
+                className="cursor-pointer text-ivory/70 hover:text-ivory"
+              >
+                {l.label}
+              </button>
+            )}
           </li>
         ))}
       </ul>

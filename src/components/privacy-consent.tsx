@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
 import {
+  OPEN_CONSENT_EVENT,
   loadGtm,
   readConsent,
   writeConsent,
@@ -10,20 +11,28 @@ import {
 
 export function PrivacyConsent() {
   const [choice, setChoice] = useState<ConsentStatus | null | "unknown">("unknown");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const stored = readConsent();
     setChoice(stored);
     if (stored === "accepted") loadGtm();
+
+    function onReopen() {
+      setOpen(true);
+    }
+    window.addEventListener(OPEN_CONSENT_EVENT, onReopen);
+    return () => window.removeEventListener(OPEN_CONSENT_EVENT, onReopen);
   }, []);
 
   function decide(status: ConsentStatus) {
     writeConsent(status);
     setChoice(status);
+    setOpen(false);
     if (status === "accepted") loadGtm();
   }
 
-  if (choice === "accepted" || choice === "declined") return null;
+  if (!open && (choice === "accepted" || choice === "declined")) return null;
 
   return (
     <div

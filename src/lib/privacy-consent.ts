@@ -1,5 +1,6 @@
 export const STORAGE_KEY = "climateway-privacy-consent";
 export const GTM_ID = "GTM-NBPP77K6";
+export const OPEN_CONSENT_EVENT = "climateway-open-privacy-consent";
 export type ConsentStatus = "accepted" | "declined";
 
 /** Runs in <head> before first paint so a stored choice never flashes the banner. */
@@ -39,6 +40,12 @@ export function writeConsent(status: ConsentStatus) {
     JSON.stringify({ status, at: new Date().toISOString() } satisfies ConsentRecord),
   );
   syncConsentDataset(status);
+}
+
+export function openPrivacyConsent() {
+  if (typeof window === "undefined") return;
+  syncConsentDataset(null);
+  window.dispatchEvent(new Event(OPEN_CONSENT_EVENT));
 }
 
 export function loadGtm() {
