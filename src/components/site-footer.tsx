@@ -129,7 +129,7 @@ export function SiteFooter() {
             on request and detailed in your project documentation.
           </p>
           <p className="mt-8 text-xs text-ivory/60">
-            <span className="font-bold">Bappoo Ltd</span> trading as{" "}
+            Bappoo Ltd trading as{" "}
             <span className="font-bold">Climateway Ltd</span>, England.
           </p>
         </div>
