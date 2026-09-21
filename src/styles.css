@@ -149,3 +149,8 @@
     top: 1rem;
   }
 }
+
+/* Hide the consent banner before hydration when a choice is already stored. */
+html[data-privacy-consent] [data-privacy-banner] {
+  display: none;
+}

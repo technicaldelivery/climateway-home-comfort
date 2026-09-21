@@ -11,6 +11,8 @@ import {
 import appCss from "../styles.css?url";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { PrivacyConsent } from "@/components/privacy-consent";
+import { consentBootstrapScript } from "@/lib/privacy-consent";
 
 function NotFoundComponent() {
   return (
@@ -109,12 +111,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap",
       },
     ],
-    scripts: [
-      {
-        type: "text/javascript",
-        children: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-NBPP77K6');`,
-      },
-    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -127,17 +123,9 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: consentBootstrapScript }} />
       </head>
       <body>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NBPP77K6"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
         {children}
         <Scripts />
       </body>
@@ -158,6 +146,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <SiteFooter />
+      <PrivacyConsent />
     </QueryClientProvider>
   );
 }

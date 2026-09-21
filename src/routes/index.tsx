@@ -383,15 +383,15 @@ function Process() {
         {steps.map((s, i) => (
           <li
             key={s.title}
-            className="grid grid-cols-[auto_1fr] gap-x-8 gap-y-2 border-t border-hairline py-8 md:grid-cols-[120px_240px_1fr] md:gap-x-12 md:py-10"
+            className="grid grid-cols-[3.5rem_1fr] items-baseline gap-x-8 gap-y-2 border-t border-hairline py-8 md:grid-cols-[120px_240px_1fr] md:gap-x-12 md:py-10"
           >
-            <span className="font-display text-3xl text-primary md:text-4xl">
+            <span className="font-display text-3xl tabular-nums leading-none text-primary md:text-4xl">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <h3 className="self-center font-display text-2xl md:text-3xl">
+            <h3 className="font-display text-2xl leading-none md:text-3xl">
               {s.title}
             </h3>
-            <p className="col-span-2 text-base text-foreground/75 md:col-span-1 md:self-center md:text-lg">
+            <p className="col-span-2 text-base text-foreground/75 md:col-span-1 md:text-lg">
               {s.body}
             </p>
             {s.img && (
