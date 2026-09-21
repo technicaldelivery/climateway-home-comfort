@@ -15,9 +15,9 @@ export function SiteFooter() {
     email: "hello@climateway.co.uk",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1 Example Street",
-      addressLocality: "London",
-      postalCode: "EC1A 1AA",
+      streetAddress: "382 Dns House Kenton Road",
+      addressLocality: "Harrow, Greater London",
+      postalCode: "HA3 8DP",
       addressCountry: "GB",
     },
     url: "/",
