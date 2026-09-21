@@ -12,6 +12,9 @@ const navLinks = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
+const scoreCtaClass =
+  "items-center justify-center whitespace-nowrap rounded-md bg-accent px-4 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90";
+
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -23,6 +26,16 @@ export function SiteNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1280px)");
+    const close = () => {
+      if (mq.matches) setOpen(false);
+    };
+    close();
+    mq.addEventListener("change", close);
+    return () => mq.removeEventListener("change", close);
+  }, []);
+
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-colors ${
@@ -31,47 +44,49 @@ export function SiteNav() {
           : "bg-background/60 backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:py-5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:py-5">
         <Link
           to="/"
-          className="font-display text-xl font-semibold tracking-tight text-primary"
+          className="shrink-0 font-display text-xl font-semibold tracking-tight text-primary"
           aria-label="Climateway home"
         >
           Climateway
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 xl:flex" aria-label="Primary">
           {navLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="text-sm text-foreground/80 transition-colors hover:text-primary"
+              className="whitespace-nowrap text-sm text-foreground/80 transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
             >
               {l.label}
             </Link>
           ))}
-          <Link
-            to="/score"
-            className="inline-flex items-center justify-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
-          >
+          <Link to="/score" className={`${scoreCtaClass} inline-flex py-2`}>
             Get your Climate Score
           </Link>
         </nav>
 
-        <button
-          type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-3 xl:hidden">
+          <Link to="/score" className={`${scoreCtaClass} hidden py-2 sm:inline-flex`}>
+            Get your Climate Score
+          </Link>
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-md text-foreground"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background md:hidden">
+        <div className="border-t border-border bg-background xl:hidden">
           <nav className="flex flex-col px-6 py-4" aria-label="Mobile">
             {navLinks.map((l) => (
               <Link
@@ -86,7 +101,7 @@ export function SiteNav() {
             <Link
               to="/score"
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex items-center justify-center rounded-md bg-accent px-4 py-3 text-base font-medium text-accent-foreground"
+              className={`${scoreCtaClass} mt-3 inline-flex py-3 text-base sm:hidden`}
             >
               Get your Climate Score
             </Link>

@@ -51,6 +51,8 @@ function ScorePage() {
   const [step, setStep] = useState(1);
   const [a, setA] = useState<Answers>(initial);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const progress = useMemo(() => Math.min(step, STEPS) / STEPS, [step]);
 
@@ -72,17 +74,25 @@ function ScorePage() {
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!a.firstName || !a.email) return;
+    setSending(true);
+    setError(null);
     try {
-      await fetch("/api/leads", {
+      const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ kind: "score", ...a }),
       });
+      if (!res.ok) throw new Error("send failed");
+      setSubmitted(true);
+      setStep(8);
     } catch (err) {
       console.error(err);
+      setError(
+        "Something went wrong sending your details. Please try again or email hello@climateway.co.uk.",
+      );
+    } finally {
+      setSending(false);
     }
-    setSubmitted(true);
-    setStep(8);
   }
 
   if (step === 8 && submitted) {
@@ -225,11 +235,17 @@ function ScorePage() {
                 />
                 OK to send me occasional helpful emails about my home.
               </label>
+              {error ? (
+                <p className="text-sm text-destructive" role="alert">
+                  {error}
+                </p>
+              ) : null}
               <button
                 type="submit"
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 text-base font-medium text-accent-foreground transition-opacity hover:opacity-90"
+                disabled={sending}
+                className="mt-4 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 text-base font-medium text-accent-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                See my Climate Score
+                {sending ? "Sending…" : "See my Climate Score"}
                 <ArrowRight className="h-4 w-4" />
               </button>
             </form>
@@ -251,7 +267,7 @@ function ScorePage() {
               type="button"
               onClick={next}
               disabled={!canContinue}
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
             >
               Continue
               <ArrowRight className="h-4 w-4" />

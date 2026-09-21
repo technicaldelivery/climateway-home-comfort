@@ -22,6 +22,8 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -31,16 +33,24 @@ function ContactPage() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    setSending(true);
+    setError(null);
     try {
-      await fetch("/api/leads", {
+      const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ kind: "contact", ...form }),
       });
+      if (!res.ok) throw new Error("send failed");
+      setSent(true);
     } catch (err) {
       console.error(err);
+      setError(
+        "Something went wrong sending your message. Please try again or email hello@climateway.co.uk.",
+      );
+    } finally {
+      setSending(false);
     }
-    setSent(true);
   }
 
   return (
@@ -101,11 +111,17 @@ function ContactPage() {
                     className="w-full rounded-md border border-input bg-background px-4 py-3 text-base focus:border-primary focus:outline-none"
                   />
                 </label>
+                {error ? (
+                  <p className="text-sm text-destructive" role="alert">
+                    {error}
+                  </p>
+                ) : null}
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 text-base font-medium text-accent-foreground hover:opacity-90"
+                  disabled={sending}
+                  className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 text-base font-medium text-accent-foreground hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Send message
+                  {sending ? "Sending…" : "Send message"}
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </form>

@@ -637,7 +637,7 @@ function FAQ() {
                 type="button"
                 onClick={() => setOpenIdx(open ? null : i)}
                 aria-expanded={open}
-                className="flex w-full items-center justify-between gap-8 py-6 text-left"
+                className="flex w-full cursor-pointer items-center justify-between gap-8 py-6 text-left"
               >
                 <span className="text-[18px] font-medium leading-snug text-foreground">
                   {f.q}
