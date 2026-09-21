@@ -26,11 +26,15 @@ export function SiteFooter() {
   return (
     <footer className="bg-charcoal text-ivory">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" className="font-display text-2xl font-semibold">
               Climateway
             </Link>
+            <p className="mt-6 text-sm leading-relaxed text-ivory/70">
+              Climate-ready homes across London, the Home Counties and
+              Oxfordshire.
+            </p>
             <div className="mt-6">
               <p className="text-[13px] font-medium text-ivory/60">Follow us</p>
               <div className="mt-3 flex gap-4">
@@ -66,15 +70,6 @@ export function SiteFooter() {
 
           </div>
 
-          <div>
-            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ivory">
-              Where we work
-            </h2>
-            <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-ivory/70">
-              {"Climate-ready homes across London, the Home Counties and Oxfordshire.\n\nNotting Hill · Chelsea · Wandsworth · Richmond · Wimbledon · Chiswick · Islington · Hampstead · Highgate · Dulwich · Greenwich · Clapham · Battersea · Peckham · Hackney · Guildford · Cobham · Weybridge · Sevenoaks · Tunbridge Wells · Beaconsfield · Marlow · Henley · Oxford · Woodstock · Windsor · Ascot · St Albans"}
-            </p>
-          </div>
-
           <FooterCol
             title="Company"
             links={[
@@ -104,6 +99,19 @@ export function SiteFooter() {
             ]}
           />
 
+        </div>
+
+        <div className="mt-12">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ivory">
+            Where we work
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-ivory/70">
+            Notting Hill · Chelsea · Wandsworth · Richmond · Wimbledon ·
+            Chiswick · Islington · Hampstead · Highgate · Dulwich · Greenwich ·
+            Clapham · Battersea · Peckham · Hackney · Guildford · Cobham ·
+            Weybridge · Sevenoaks · Tunbridge Wells · Beaconsfield · Marlow ·
+            Henley · Oxford · Woodstock · Windsor · Ascot · St Albans
+          </p>
         </div>
 
         <div className="mt-16 border-t border-ivory/15 pt-8">
