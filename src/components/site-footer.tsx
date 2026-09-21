@@ -101,6 +101,19 @@ export function SiteFooter() {
 
         </div>
 
+        <div className="mt-12">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ivory">
+            Where we work
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-ivory/70">
+            Notting Hill · Chelsea · Wandsworth · Richmond · Wimbledon ·
+            Chiswick · Islington · Hampstead · Highgate · Dulwich · Greenwich ·
+            Clapham · Battersea · Peckham · Hackney · Guildford · Cobham ·
+            Weybridge · Sevenoaks · Tunbridge Wells · Beaconsfield · Marlow ·
+            Henley · Oxford · Woodstock · Windsor · Ascot · St Albans
+          </p>
+        </div>
+
         <div className="mt-16 border-t border-ivory/15 pt-8">
           <p className="text-[13px] font-medium uppercase tracking-[0.1em] text-ivory/60">
             Our standards
