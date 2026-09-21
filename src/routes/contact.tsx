@@ -145,9 +145,13 @@ function ContactPage() {
                 <>
                   Climateway Ltd
                   <br />
-                  1 Example Street
+                  382 Dns House Kenton Road
                   <br />
-                  London EC1A 1AA
+                  Harrow, Greater London
+                  <br />
+                  HA3 8DP
+                  <br />
+                  United Kingdom
                 </>
               }
             />
