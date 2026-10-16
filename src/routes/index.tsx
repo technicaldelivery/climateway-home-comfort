@@ -456,14 +456,12 @@ function Pricing() {
   const entries = [
     {
       name: "Cooling",
-      price: "From £2,950",
-      description: "A single room made liveable in summer. Air-to-air, quiet, efficient, grant-eligible.",
+      description: "A single room made liveable in summer. Air-to-air, quiet, efficient, grant-eligible where applicable.",
       to: "/pricing/cooling" as const,
       icon: Snowflake,
     },
     {
       name: "Heating",
-      price: "From £6,500 after £7,500 BUS grant",
       description: "Replace an old boiler with a heat pump. Warm, efficient, cheaper to run.",
       to: "/pricing/heating" as const,
       icon: Flame,
@@ -471,7 +469,6 @@ function Pricing() {
     },
     {
       name: "Whole home",
-      price: "From £14,500 after grants",
       description: "Heat, cool, ventilation and controls designed as one system. The full Climateway.",
       to: "/pricing/whole-home" as const,
       icon: Home,
@@ -479,12 +476,12 @@ function Pricing() {
   ];
   return (
     <Section tone="sky" id="pricing">
-      <Eyebrow>Where to start</Eyebrow>
+      <Eyebrow>Choose your starting point</Eyebrow>
       <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight md:text-5xl">
-        Start with what your home needs today. Grow from there.
+        Three ways in. One Comfort Promise.
       </h2>
       <p className="mt-6 max-w-[60ch] text-[17px] text-foreground/75">
-        We design projects that make sense right now, with the option to build out as your home and life change.
+        Every home is different. We design each project around your home, your budget and the comfort you want to feel. Tell us where you'd like to start and we'll come back with a fixed-price proposal within 48 hours.
       </p>
       <div className="mt-14 grid items-stretch gap-6 md:grid-cols-3">
         {entries.map((entry) => {
@@ -496,20 +493,19 @@ function Pricing() {
           >
             <Icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
             <h3 className="mt-6 font-display text-2xl font-medium">{entry.name}</h3>
-            <p className="mt-4 font-display text-3xl font-bold leading-tight text-primary">{entry.price}</p>
             <p className="mt-2 text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground">
               Comfort Promise included
             </p>
             <p className="mt-6 text-base leading-relaxed text-foreground/75">{entry.description}</p>
-            <Link to={entry.to} className="mt-auto pt-8 text-sm font-medium text-primary underline-offset-4 hover:underline">
-              See what's included →
+            <Link to="/score" className="mt-auto pt-8 text-sm font-medium text-primary underline-offset-4 hover:underline">
+              Get my quote →
             </Link>
           </article>
           );
         })}
       </div>
       <p className="mt-10 max-w-4xl text-base text-foreground/80">
-        Every project qualifies for at least £2,500 in government grants. Most qualify for £7,500-£10,000. Finance is available through independent commercial finance partners from £75/month.
+        Every project is designed around your specific home and sequenced to capture the maximum government grant support available — typically £7,500 to £10,000 in combined grants. Independent finance also available to spread the cost.
       </p>
       <Link
         to="/grants"
