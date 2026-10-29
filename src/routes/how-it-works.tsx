@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import heatPumpExterior from "@/assets/heat-pump-exterior.jpg";
 import { ArrowRight } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
 const homeVictorian =
@@ -6,7 +7,7 @@ const homeVictorian =
 const homeKitchen =
   "https://images.unsplash.com/photo-1633505765486-e404bbbec654?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 const homeBedroom =
-  "https://images.unsplash.com/photo-1776860150305-108ed577d7d4?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+  heatPumpExterior;
 const heroHome =
   "https://images.unsplash.com/photo-1758915753332-cab59126742c?fm=jpg&q=85&w=1600&auto=format&fit=crop";
 const imgThermostat =

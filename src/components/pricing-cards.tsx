@@ -1,5 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Flame, Home, Snowflake } from "lucide-react";
+import cardCooling from "@/assets/card-cooling.jpg";
+import cardHeating from "@/assets/card-heating.jpg";
+import cardWholeHome from "@/assets/card-whole-home.jpg";
 
 export const pricingEntries = [
   {
@@ -9,6 +12,8 @@ export const pricingEntries = [
     qualifier: "Grant-eligible from April 2026 (£2,500 BUS)",
     body: "Beat the next heatwave. A silent Daikin split in the room you can't sleep in — installed in a day, grant-eligible.",
     icon: Snowflake,
+    image: cardCooling,
+    alt: "Bright summer bedroom with a person reading and a discreet wall-mounted cooling unit",
   },
   {
     name: "Heating",
@@ -17,6 +22,8 @@ export const pricingEntries = [
     qualifier: "Net of £7,500 BUS grant",
     body: "Replace a tired gas boiler with a Daikin heat pump. Lower bills, lower carbon, same comfort — grant takes most of the sticker off.",
     icon: Flame,
+    image: cardHeating,
+    alt: "Cosy winter living room, bare feet on warm oak floor and a mug of tea",
     featured: true,
   },
   {
@@ -26,6 +33,8 @@ export const pricingEntries = [
     qualifier: "Net of grants, subject to scope and eligibility",
     body: "Heating, cooling, ventilation and controls designed as one system — not four. Project-managed end-to-end with the Comfort Promise behind it.",
     icon: Home,
+    image: cardWholeHome,
+    alt: "Open-plan family kitchen and living space in a period home extension",
   },
 ];
 
@@ -38,8 +47,10 @@ export function PricingCards() {
           return (
             <article
               key={e.name}
-              className={`flex flex-col border bg-background p-8 text-foreground ${e.featured ? "border-primary shadow-lg" : "border-border"}`}
+              className={`flex flex-col overflow-hidden border bg-background text-foreground ${e.featured ? "border-primary shadow-lg" : "border-border"}`}
             >
+              <img src={e.image} alt={e.alt} loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full object-cover" />
+              <div className="flex flex-1 flex-col p-8">
               <Icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
               <h3 className="mt-6 font-display text-2xl font-medium">{e.name}</h3>
               <p className="mt-4 font-display text-4xl font-bold leading-tight text-primary">{e.price}</p>
@@ -52,6 +63,7 @@ export function PricingCards() {
               >
                 Get my Climate Score <ArrowRight className="h-4 w-4" />
               </Link>
+              </div>
             </article>
           );
         })}
