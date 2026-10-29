@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Apply comprehensive terminology, legal attribution, geography, timelines, grant qualifications, claims, citations and metadata corrections
-- [ ] Verify links, cookie settings, prices, unchanged images and page rendering
+- [x] Apply comprehensive terminology, legal attribution, geography, timelines, grant qualifications, claims, citations and metadata corrections
+- [x] Verify links, cookie settings, prices, unchanged images and page rendering
 - [ ] Redeploy the corrected site and return its preview URL
 
 - [x] Reposition homepage hero, trust, entry points, audiences, comparison, FAQ, and closing call-to-action
