@@ -273,7 +273,7 @@ const audiences = [
   },
   {
     title: "Landlords and portfolios",
-    body: "The government has signalled intent to require EPC C on privately rented properties by 2030. Owner-occupied homes are not currently in scope, but EPC C is widely expected to become the standard for mortgage valuations and resale within the decade.",
+    body: "The government has signalled intent to require EPC C on privately rented properties by 2030. Non-compliant landlords may face fines once legislation is enacted.",
     to: "/who-we-help/landlords" as const,
     icon: Building2,
   },
@@ -492,7 +492,7 @@ const faqs = [
   },
   {
     q: "What grants are available?",
-    a: "The Boiler Upgrade Scheme provides £7,500 toward a heat pump installation (or £2,500 for air-to-air systems, where eligible). " + vatQualification + " " + warmHomesQualification,
+    a: "The Boiler Upgrade Scheme provides £7,500 toward a heat pump installation (or £2,500 for air-to-air systems, where eligible). Zero-rated VAT on qualifying energy-saving measures until 31 March 2027. We confirm VAT treatment for your specific installation in your System Design. " + warmHomesQualification,
   },
   {
     q: "What if I'm planning to sell?",
