@@ -21,15 +21,17 @@ import {
 import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { PricingCards } from "@/components/pricing-cards";
+import heroLivingRoom from "@/assets/hero-living-room.jpg";
+import heatPumpExterior from "@/assets/heat-pump-exterior.jpg";
+import engineerCommissioning from "@/assets/engineer-commissioning.jpg";
 
-const heroHome =
-  "https://images.unsplash.com/photo-1759238136854-a43787126db7?fm=jpg&q=85&w=2400&auto=format&fit=crop";
+const heroHome = heroLivingRoom;
 const heroHomeAlt =
-  "Modern living room with fireplace and contemporary minimalist decor";
+  "Warm, sunlit period living room with a linen sofa, terracotta throw and a cup of tea";
 const imgHeatPump =
-  "https://images.unsplash.com/photo-1776860150305-108ed577d7d4?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+  heatPumpExterior;
 const imgHeatPumpAlt =
-  "Modern heat pump installed against a brick house exterior";
+  "Modern air source heat pump neatly installed beside a London brick townhouse";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -370,6 +372,8 @@ function Process() {
     {
       title: "Performance Year",
       body: "For the first year after installation, we check in on system performance and are on-call if anything isn't delivering the temperatures we designed for. That's the Comfort Promise in practice.",
+      img: engineerCommissioning,
+      alt: "Engineer checking a home's thermostat and system readings during commissioning",
     },
   ];
   return (

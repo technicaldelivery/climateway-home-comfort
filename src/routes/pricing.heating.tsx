@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heatPumpExterior from "@/assets/heat-pump-exterior.jpg";
 import { OfferLandingPage } from "@/components/offer-landing-page";
 
-const image = "https://images.unsplash.com/photo-1776860150305-108ed577d7d4?fm=jpg&q=85&w=1600&auto=format&fit=crop";
+const image = heatPumpExterior;
 export const Route = createFileRoute("/pricing/heating")({
   head: () => ({ meta: [
     { title: "Heat Pumps — Climateway" }, { name: "description", content: "Replace an old boiler with a Daikin heat pump designed for your home, with the £7,500 BUS grant managed for you." },
