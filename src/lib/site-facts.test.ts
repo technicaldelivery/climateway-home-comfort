@@ -1,6 +1,7 @@
 import { describe, test } from "node:test";
 import { deepStrictEqual, strictEqual } from "node:assert";
 import { installationTimelines, startingPrices, surveyFee, designFee, busHeatingGrant, vatZeroRateEnd } from "./site-facts";
+import { serviceAreas } from "./service-areas";
 
 describe("Climateway confirmed figures", () => {
   test("cooling total is 2 to 4 weeks", () => deepStrictEqual(installationTimelines.cooling.totalWeeks, [2, 4]));
@@ -16,4 +17,11 @@ describe("Climateway confirmed figures", () => {
   test("System Design costs £1,250", () => strictEqual(designFee, 1250));
   test("heating grant is £7,500", () => strictEqual(busHeatingGrant, 7500));
   test("VAT zero-rating ends 31 March 2027", () => strictEqual(vatZeroRateEnd, "2027-03-31"));
+});
+describe("service areas", () => {
+  test("lists Henley-on-Thames under Oxfordshire only", () => {
+    const hits = serviceAreas.filter((a) => a.towns.includes("Henley-on-Thames")).map((a) => a.region);
+    deepStrictEqual(hits, ["Oxfordshire"]);
+  });
+  test("has eight regions", () => strictEqual(serviceAreas.length, 8));
 });
