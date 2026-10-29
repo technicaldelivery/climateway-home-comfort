@@ -1,3 +1,4 @@
+import { startingPrices, warmHomesQualification } from "@/lib/site-facts";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
@@ -5,16 +6,21 @@ import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 export const Route = createFileRoute("/score")({
   head: () => ({
     meta: [
-      { title: "Your Climate Score — Climateway" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Score" },
+      { name: "twitter:description", content: "Find out in 60 seconds how your home performs in the new British climate, and what it would cost to make it future-ready." },
+      { property: "og:description", content: "Find out in 60 seconds how your home performs in the new British climate, and what it would cost to make it future-ready." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Climateway — Climate-ready homes for British weather — Score" },
       {
         name: "description",
         content:
           "Find out in 60 seconds how your home performs in the new British climate, and what it would cost to make it future-ready.",
       },
-      { property: "og:title", content: "Your Climate Score — Climateway" },
-      { property: "og:url", content: "/score" },
+      { property: "og:title", content: "Climateway — Climate-ready homes for British weather — Score" },
+      { property: "og:url", content: "https://climateway-home-comfort.lovable.app/score" },
     ],
-    links: [{ rel: "canonical", href: "/score" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/score" }],
   }),
   component: ScorePage,
 });
@@ -438,8 +444,8 @@ function Results({ a }: { a: Answers }) {
                 ["Summer Comfort", "At risk", "Comfortable", "Comfortable"],
                 ["Annual Bill", "£2,400", "£1,400", "£900"],
                 ["CO2 Emissions", "High", "Medium", "Low"],
-                ["Estimated Project Cost", "—", "From £14,000", "From £22,000"],
-                ["Net Cost After Grants", "—", "From £6,500", "From £14,500"],
+                ["Estimated Project Cost", "—", "From £13,000", "From £22,000"],
+                ["Net Cost After Grants", "—", `From £${startingPrices.heating.toLocaleString("en-GB")}`, `From £${startingPrices.wholeHome.toLocaleString("en-GB")}`],
               ].map((row) => (
                 <tr key={row[0]}>
                   <td className="px-5 py-4 font-medium">{row[0]}</td>
@@ -459,6 +465,7 @@ function Results({ a }: { a: Answers }) {
         <p className="mt-4 text-base text-foreground/70">
           Based on your postcode and property profile, you may qualify for up to £12,500 in government and local grants:
         </p>
+        <p className="mt-4 text-base text-foreground/70">{warmHomesQualification}</p>
         <ul className="mt-8 space-y-0">
           {grants.map((g) => (
             <li key={g.name} className="border-t border-hairline py-5 last:border-b">

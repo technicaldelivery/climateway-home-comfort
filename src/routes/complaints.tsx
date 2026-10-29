@@ -4,12 +4,16 @@ import { Section } from "@/components/section";
 export const Route = createFileRoute("/complaints")({
   head: () => ({
     meta: [
-      { title: "Complaints Procedure — Climateway" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Complaints" },
+      { name: "twitter:description", content: "Climateway complaints procedure." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Climateway — Climate-ready homes for British weather — Complaints" },
       { name: "description", content: "Climateway complaints procedure." },
-      { property: "og:title", content: "Complaints Procedure — Climateway" },
+      { property: "og:title", content: "Climateway — Climate-ready homes for British weather — Complaints" },
       { property: "og:description", content: "Climateway complaints procedure." },
     ],
-    links: [{ rel: "canonical", href: "/complaints" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/complaints" }],
   }),
   component: ComplaintsPage,
 });

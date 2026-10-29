@@ -15,16 +15,23 @@ const imgSpacejoy =
 export const Route = createFileRoute("/journal")({
   head: () => ({
     meta: [
-      { title: "Journal — Climateway" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Journal" },
+      { name: "twitter:description", content: "Long-form thinking on climate-ready homes — heating, cooling, bills, grants, and the homes we're working on." },
+      { property: "og:description", content: "Long-form thinking on climate-ready homes — heating, cooling, bills, grants, and the homes we're working on." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1640797878742-dccaa23e7bfc?fm=jpg&q=85&w=1600&auto=format&fit=crop" },
+      { name: "twitter:image", content: "https://images.unsplash.com/photo-1640797878742-dccaa23e7bfc?fm=jpg&q=85&w=1600&auto=format&fit=crop" },
+      { title: "Climateway — Climate-ready homes for British weather — Journal" },
       {
         name: "description",
         content:
           "Long-form thinking on climate-ready homes — heating, cooling, bills, grants, and the homes we're working on.",
       },
-      { property: "og:title", content: "Journal — Climateway" },
-      { property: "og:url", content: "/journal" },
+      { property: "og:title", content: "Climateway — Climate-ready homes for British weather — Journal" },
+      { property: "og:url", content: "https://climateway-home-comfort.lovable.app/journal" },
     ],
-    links: [{ rel: "canonical", href: "/journal" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/journal" }],
   }),
   component: JournalPage,
 });

@@ -4,12 +4,16 @@ import { Section } from "@/components/section";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Climateway" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Privacy" },
+      { name: "twitter:description", content: "Climateway privacy policy." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Climateway — Climate-ready homes for British weather — Privacy" },
       { name: "description", content: "Climateway privacy policy." },
-      { property: "og:title", content: "Privacy Policy — Climateway" },
+      { property: "og:title", content: "Climateway — Climate-ready homes for British weather — Privacy" },
       { property: "og:description", content: "Climateway privacy policy." },
     ],
-    links: [{ rel: "canonical", href: "/privacy" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/privacy" }],
   }),
   component: PrivacyPage,
 });

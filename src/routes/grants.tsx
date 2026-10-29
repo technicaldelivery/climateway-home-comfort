@@ -1,3 +1,4 @@
+import { vatQualification, warmHomesQualification } from "@/lib/site-facts";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
@@ -5,7 +6,11 @@ import { Section, Eyebrow } from "@/components/section";
 export const Route = createFileRoute("/grants")({
   head: () => ({
     meta: [
-      { title: "Climate Grants Explained — What You Actually Qualify For" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Grants" },
+      { name: "twitter:description", content: "Straight answers on UK heat pump and home-energy grants: Boiler Upgrade Scheme, air-to-air grant, Warm Homes Local Grant, 0% VAT and finance." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Climateway — Climate-ready homes for British weather — Grants" },
       {
         name: "description",
         content:
@@ -13,16 +18,16 @@ export const Route = createFileRoute("/grants")({
       },
       {
         property: "og:title",
-        content: "Climate Grants Explained — What You Actually Qualify For",
+        content: "Climateway — Climate-ready homes for British weather — Grants",
       },
       {
         property: "og:description",
         content:
           "What's available, what's realistic, and what Climateway handles for you.",
       },
-      { property: "og:url", content: "/grants" },
+      { property: "og:url", content: "https://climateway-home-comfort.lovable.app/grants" },
     ],
-    links: [{ rel: "canonical", href: "/grants" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/grants" }],
   }),
   component: GrantsPage,
 });
@@ -117,32 +122,21 @@ function GrantsPage() {
         </h2>
         <div className="mt-8 max-w-[65ch] space-y-5 text-base text-foreground/80">
           <p>
-            The Warm Homes: Local Grant provides substantial support for
-            households on lower incomes — typically those receiving
-            qualifying benefits or with household income under £36,000. Where
-            you qualify, we coordinate the application with your local
-            council on your behalf.
+            {warmHomesQualification}
           </p>
           <p>
-            Honest note: this scheme is heavily oversubscribed and not
-            available in every council area. Timelines from application to
-            installation are typically 12–20 weeks. We will tell you straight
-            away whether you qualify and whether the timeline works for your
-            project.
+            Availability and application times depend on your local authority. We signpost you to the relevant council for current details.
           </p>
         </div>
       </Section>
 
       <Section>
         <h2 className="max-w-3xl font-display text-4xl">
-          0% VAT on every Climateway installation
+          0% VAT on qualifying energy-saving measures
         </h2>
         <div className="mt-8 max-w-[65ch] space-y-5 text-base text-foreground/80">
           <p>
-            Energy-saving home improvements — including heat pumps,
-            insulation, solar panels and battery storage — are zero-rated for
-            VAT until March 2027. This applies automatically. On a £30,000
-            project, that's £6,000 you don't pay, on top of any grants.
+            {vatQualification}
           </p>
         </div>
       </Section>
@@ -180,7 +174,7 @@ function GrantsPage() {
                 <td className="px-5 py-4 text-right">£32,000</td>
               </tr>
               <tr>
-                <td className="px-5 py-4">VAT (zero-rated)</td>
+                <td className="px-5 py-4">VAT (zero-rated where qualifying)</td>
                 <td className="px-5 py-4 text-right">−£0</td>
               </tr>
               <tr>
@@ -205,7 +199,7 @@ function GrantsPage() {
           </table>
         </div>
         <p className="mt-4 max-w-2xl text-sm italic text-foreground/60">
-          Worked example for illustration. Your audit produces precise
+          Worked example for illustration. Your Home Survey produces precise
           figures for your home.
         </p>
       </Section>
