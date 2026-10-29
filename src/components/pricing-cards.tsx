@@ -1,3 +1,4 @@
+import { startingPrices, busHeatingGrant } from "@/lib/site-facts";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Flame, Home, Snowflake } from "lucide-react";
 import cardCooling from "@/assets/card-cooling.jpg";
@@ -7,19 +8,19 @@ import cardWholeHome from "@/assets/card-whole-home.jpg";
 export const pricingEntries = [
   {
     name: "Cooling",
-    price: "From £2,200",
+    price: `From £${startingPrices.cooling.toLocaleString("en-GB")}`,
     sub: "Single-room Daikin air-to-air",
     qualifier: "Grant-eligible from April 2026 (£2,500 BUS)",
-    body: "Beat the next heatwave. A silent Daikin split in the room you can't sleep in — installed in a day, grant-eligible.",
+    body: "Beat the next heatwave. A silent Daikin split in the room you can't sleep in — grant-eligible where applicable.",
     icon: Snowflake,
     image: cardCooling,
     alt: "Victorian terrace living room with a discreet white wall-mounted air conditioner and an open sash window onto a green garden",
   },
   {
     name: "Heating",
-    price: "From £5,500",
+    price: `From £${startingPrices.heating.toLocaleString("en-GB")}`,
     sub: "Daikin heat pump",
-    qualifier: "Net of £7,500 BUS grant",
+    qualifier: `Your price after the £${busHeatingGrant.toLocaleString("en-GB")} BUS grant has been applied`,
     body: "Replace a tired gas boiler with a Daikin heat pump. Lower bills, lower carbon, same comfort — grant takes most of the sticker off.",
     icon: Flame,
     image: cardHeating,
@@ -28,7 +29,7 @@ export const pricingEntries = [
   },
   {
     name: "Whole home",
-    price: "From £14,500",
+    price: `From £${startingPrices.wholeHome.toLocaleString("en-GB")}`,
     sub: "Integrated system",
     qualifier: "Net of grants, subject to scope and eligibility",
     body: "Heating, cooling, ventilation and controls designed as one system — not four. Project-managed end-to-end with the Comfort Promise behind it.",

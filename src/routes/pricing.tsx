@@ -7,14 +7,16 @@ import { PricingCards } from "@/components/pricing-cards";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Honest Climate System Pricing — Climateway" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Pricing" },
+      { name: "twitter:description", content: "Indicative starting prices for Daikin cooling, Daikin heat pumps and whole-home climate systems, with grants and fixed pricing at design stage." },
+      { title: "Climateway — Climate-ready homes for British weather — Pricing" },
       { name: "description", content: "Indicative starting prices for Daikin cooling, Daikin heat pumps and whole-home climate systems, with grants and fixed pricing at design stage." },
-      { property: "og:title", content: "Honest Climate System Pricing — Climateway" },
+      { property: "og:title", content: "Climateway — Climate-ready homes for British weather — Pricing" },
       { property: "og:description", content: "Cooling from £2,200, heating from £5,500 net of grant, whole home from £14,500. No surprises." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/pricing" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/pricing" }],
   }),
   component: PricingPage,
 });

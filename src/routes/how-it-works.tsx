@@ -1,3 +1,4 @@
+import { installationTimelineCopy } from "@/lib/site-facts";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heatPumpExterior from "@/assets/heat-pump-exterior.jpg";
 import { ArrowRight } from "lucide-react";
@@ -16,16 +17,21 @@ const imgThermostat =
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How it works — Climateway" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — How It Works" },
+      { name: "twitter:description", content: "Five steps from \"my home is uncomfortable\" to \"my home is brilliant\". The Climateway process in detail." },
+      { property: "og:description", content: "Five steps from \"my home is uncomfortable\" to \"my home is brilliant\". The Climateway process in detail." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Climateway — Climate-ready homes for British weather — How It Works" },
       {
         name: "description",
         content:
           "Five steps from \"my home is uncomfortable\" to \"my home is brilliant\". The Climateway process in detail.",
       },
-      { property: "og:title", content: "How it works — Climateway" },
-      { property: "og:url", content: "/how-it-works" },
+      { property: "og:title", content: "Climateway — Climate-ready homes for British weather — How It Works" },
+      { property: "og:url", content: "https://climateway-home-comfort.lovable.app/how-it-works" },
     ],
-    links: [{ rel: "canonical", href: "/how-it-works" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/how-it-works" }],
   }),
   component: HowPage,
 });
@@ -42,7 +48,7 @@ const steps = [
     title: "Home Survey",
     img: homeVictorian,
     desc: "A qualified assessor visits your home for a 90-minute physical survey. We measure, photograph, and thermally image — building a complete picture of how your house performs today.",
-    includes: ["On-site survey by a qualified assessor", "Thermal imaging and airtightness check", "Written audit report"],
+    includes: ["On-site survey by a qualified assessor", "Thermal imaging and airtightness check", "Written Home Survey report"],
     timeline: "90 minutes on site. £200, credited in full against your design fee.",
   },
   {
@@ -50,14 +56,14 @@ const steps = [
     img: homeKitchen,
     desc: "We design your full climate system as a single integrated package — heating, cooling, ventilation, controls and fabric. We model the savings, apply for every grant you qualify for, and give you one fixed price.",
     includes: ["Full system design and specification", "Modelled energy savings", "Grant applications managed for you", "Fixed-price installation quote"],
-    timeline: "3–5 weeks. £1,250 fixed design fee.",
+    timeline: "Included in the overall project timeline. £1,250 fixed design fee.",
   },
   {
     title: "Installation",
     img: homeBedroom,
     desc: "One project manager. One vetted team of engineers. One invoice. We sequence the works to keep your home livable throughout, and finish to a standard you can show off.",
     includes: ["Single point of contact", "All trades coordinated by Climateway", "Daily progress updates", "End-of-project commissioning"],
-    timeline: "4–8 weeks on site.",
+    timeline: installationTimelineCopy,
   },
   {
     title: "Performance Year",

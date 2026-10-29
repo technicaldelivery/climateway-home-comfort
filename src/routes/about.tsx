@@ -5,13 +5,15 @@ import { Section, Eyebrow } from "@/components/section";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Climateway" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — About" },
+      { name: "twitter:description", content: "Why Climateway exists, how we work, and the Comfort Promise that underpins every project." },
+      { title: "Climateway — Climate-ready homes for British weather — About" },
       {
         name: "description",
         content:
           "Why Climateway exists, how we work, and the Comfort Promise that underpins every project.",
       },
-      { property: "og:title", content: "About — Climateway" },
+      { property: "og:title", content: "Climateway — Climate-ready homes for British weather — About" },
       {
         property: "og:description",
         content:
@@ -19,9 +21,9 @@ export const Route = createFileRoute("/about")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://climateway-home-comfort.lovable.app/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/about" }],
   }),
   component: AboutPage,
 });

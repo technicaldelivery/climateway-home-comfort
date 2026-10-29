@@ -1,3 +1,4 @@
+import { coverage } from "@/lib/site-facts";
 import { Link } from "@tanstack/react-router";
 import { Instagram, Linkedin, Youtube } from "lucide-react";
 
@@ -10,7 +11,7 @@ export function SiteFooter() {
     name: "Climateway",
     description:
       "Whole-home climate adaptation for British homes — heating, cooling, ventilation and controls designed and installed as one project.",
-    areaServed: ["London", "Home Counties", "Cotswolds", "West Country"],
+    areaServed: ["London", "Surrey", "Berkshire", "Buckinghamshire", "Hertfordshire", "Essex", "Kent", "Oxfordshire"],
     telephone: "+44 20 0000 0000",
     email: "hello@climateway.co.uk",
     address: {
@@ -32,8 +33,7 @@ export function SiteFooter() {
               Climateway
             </Link>
             <p className="mt-6 text-sm leading-relaxed text-ivory/70">
-              Climate-ready homes across London, the Home Counties and
-              Oxfordshire.
+              {coverage}
             </p>
             <div className="mt-6">
               <p className="text-[13px] font-medium text-ivory/60">Follow us</p>
@@ -74,7 +74,7 @@ export function SiteFooter() {
             title="Company"
             links={[
               { to: "/about", label: "About" },
-              { to: "/how-it-works", label: "Process" },
+              { to: "/how-it-works", label: "How it Works" },
               { to: "/pricing", label: "Pricing" },
               { to: "/guarantees", label: "Guarantees" },
               { to: "/contact", label: "Contact" },
@@ -106,11 +106,9 @@ export function SiteFooter() {
             Where we work
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-ivory/70">
-            Notting Hill · Chelsea · Wandsworth · Richmond · Wimbledon ·
-            Chiswick · Islington · Hampstead · Highgate · Dulwich · Greenwich ·
-            Clapham · Battersea · Peckham · Hackney · Guildford · Cobham ·
-            Weybridge · Sevenoaks · Tunbridge Wells · Beaconsfield · Marlow ·
-            Henley · Oxford · Woodstock · Windsor · Ascot · St Albans
+            {coverage}
+            <br />
+            Oxfordshire includes Oxford, Henley-on-Thames and Woodstock.
           </p>
         </div>
 
@@ -129,8 +127,7 @@ export function SiteFooter() {
             on request and detailed in your project documentation.
           </p>
           <p className="mt-8 text-xs text-ivory/60">
-            Bappoo Ltd trading as{" "}
-            <span className="font-bold">Climateway Ltd</span>, England.
+            Operated by Bappoo HoldCo Limited. Climateway Ltd incorporation pending.
           </p>
         </div>
       </div>

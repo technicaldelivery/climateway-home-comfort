@@ -21,6 +21,7 @@ import {
 import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { PricingCards } from "@/components/pricing-cards";
+import { coverage, installationTimelineCopy, vatQualification, warmHomesQualification, surveyFee, designFee } from "@/lib/site-facts";
 import heroLivingRoom from "@/assets/hero-living-room.jpg";
 import heatPumpExterior from "@/assets/heat-pump-exterior.jpg";
 import engineerCommissioning from "@/assets/engineer-commissioning.jpg";
@@ -35,22 +36,24 @@ const imgHeatPumpAlt =
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather" },
+      { name: "twitter:description", content: "Heating, cooling, ventilation and controls — designed and installed as one managed project. Warm in winter. Cool in summer. Lower bills, all year." },
       { title: "Climateway — Climate-ready homes for British weather" },
       {
         name: "description",
         content:
           "Heating, cooling, ventilation and controls — designed and installed as one managed project. Warm in winter. Cool in summer. Lower bills, all year.",
       },
-      { property: "og:title", content: "Climateway — Climate-ready homes" },
+      { property: "og:title", content: "Climateway — Climate-ready homes for British weather" },
       {
         property: "og:description",
         content: "Warm in winter. Cool in summer. Lower bills, all year.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://climateway-home-comfort.lovable.app/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/" }],
   }),
   component: HomePage,
 });
@@ -117,7 +120,7 @@ function Hero() {
               </p>
             </div>
             <a
-              href="#solution"
+              href="#how-it-works-steps"
               className="inline-flex items-center gap-1.5 pt-3 text-base underline-offset-4 hover:underline"
               style={{ color: "#0E4F4A" }}
             >
@@ -144,14 +147,17 @@ function Problem() {
   const stats = [
     {
       n: "40°C",
+      citation: "Met Office, July 2022 (Coningsby, Lincolnshire — 40.3°C)",
       body: "UK summer temperatures are now regularly exceeding levels British homes were never designed for.",
     },
     {
       n: "19 million",
+      citation: "DESNZ English Housing Survey 2023",
       body: "UK homes rated EPC D or worse — leaking heat in winter, overheating in summer.",
     },
     {
       n: "£2,400+",
+      citation: "Ofgem default tariff price cap, 2026",
       body: "Typical annual energy bill for a UK family home rated EPC D or below, based on current Ofgem price-cap data.",
     },
   ];
@@ -164,6 +170,7 @@ function Problem() {
         {stats.map((s) => (
           <div key={s.n}>
             <p className="font-display text-6xl text-ivory md:text-7xl">{s.n}</p>
+            <p className="mt-2 text-xs italic text-ivory/60">{s.citation}</p>
             <p className="mt-6 text-base text-ivory/80">{s.body}</p>
           </div>
         ))}
@@ -196,7 +203,7 @@ function Solution() {
     },
     {
       title: "Comfort, guaranteed",
-      body: "We design every system to deliver agreed comfort temperatures in both seasons. If our installation doesn't hit those temperatures, we come back at our cost until it does. No other UK climate company offers this.",
+      body: "We design every system to deliver agreed comfort temperatures in both seasons. If our installation doesn't hit those temperatures, we come back at our cost until it does. Few UK brands currently combine whole-home design, mid-market pricing, grant orchestration and a cooling-included Comfort Promise in one offer.",
       icon: (
         <ShieldCheck className="h-9 w-9" style={{ color: "#0E4F4A" }} strokeWidth={1.5} />
       ),
@@ -266,7 +273,7 @@ const audiences = [
   },
   {
     title: "Landlords and portfolios",
-    body: "EPC C compliance by 2030 is real. So is the premium tenants pay for a comfortable home.",
+    body: "The government has signalled intent to require EPC C on privately rented properties by 2030. Owner-occupied homes are not currently in scope, but EPC C is widely expected to become the standard for mortgage valuations and resale within the decade.",
     to: "/who-we-help/landlords" as const,
     icon: Building2,
   },
@@ -357,15 +364,15 @@ function Process() {
     },
     {
       title: "Home Survey",
-      body: "Our engineer visits. 90 minutes on site. We measure everything — fabric, heating, ventilation, glazing, overheating risk. £200, credited in full against your design fee.",
+      body: "Our engineer visits. 90 minutes on site. We measure everything — fabric, heating, ventilation, glazing, overheating risk. £" + surveyFee + ", credited in full against your design fee.",
     },
     {
       title: "System Design",
-      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fully fixed, written installation price. Once you accept it, that's what you pay. If anything comes up during installation that's our fault to have missed, we cover it. £1,250 fixed design fee. No obligation to proceed.",
+      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fully fixed, written installation price. Once you accept it, that's what you pay. If anything comes up during installation that's our fault to have missed, we cover it. £" + designFee.toLocaleString("en-GB") + " fixed design fee. No obligation to proceed.",
     },
     {
       title: "Installation",
-      body: "Our approved installation partners — all MCS certified, F-Gas certified and Gas Safe registered — install your system under our direct project management. One team, one invoice, one point of contact. Typical install: 2 to 6 weeks depending on scope.",
+      body: "Our approved installation partners — all MCS certified, F-Gas certified and Gas Safe registered — install your system under our direct project management. One team, one invoice, one point of contact. " + installationTimelineCopy,
       img: imgHeatPump,
       alt: imgHeatPumpAlt,
     },
@@ -377,7 +384,7 @@ function Process() {
     },
   ];
   return (
-    <Section>
+    <Section id="how-it-works-steps">
       <Eyebrow>
         Five steps from "my home is uncomfortable" to "my home is brilliant"
       </Eyebrow>
@@ -477,7 +484,7 @@ function Pricing() {
 const faqs = [
   {
     q: "How long does a project take?",
-    a: "From your audit to a finished installation, a single-room cooling project typically takes 6 to 10 weeks, a heating project 8 to 14 weeks, and a whole-home project 12 to 28 weeks.\n\nMost of that time is design and approvals. The physical installation usually takes 1 to 3 weeks on site. Listed buildings, conservation areas, ground-source projects and complex period properties can take longer — we tell you upfront if your project falls into this category.",
+    a: installationTimelineCopy,
   },
   {
     q: "Do I have to do everything at once?",
@@ -485,11 +492,11 @@ const faqs = [
   },
   {
     q: "What grants are available?",
-    a: "The two main grants are the Boiler Upgrade Scheme, which provides £7,500 toward a heat pump installation (or £2,500 for air-to-air systems), plus zero-rated VAT on all energy-efficient home upgrades. Lower-income households may also qualify for the Warm Homes: Local Grant. Your Climate Score identifies exactly what your home qualifies for. We apply for the grants on your behalf — you don't deal with any paperwork.",
+    a: "The Boiler Upgrade Scheme provides £7,500 toward a heat pump installation (or £2,500 for air-to-air systems, where eligible). " + vatQualification + " " + warmHomesQualification,
   },
   {
     q: "What if I'm planning to sell?",
-    a: "A climate-ready home commands a meaningful premium. Most of our completed projects add more in value than they cost. We'll show you the projected resale uplift in your design.",
+    a: "A climate-ready home commands a meaningful premium. We'll show you the projected resale uplift in your design.",
   },
   {
     q: "Do you work with my architect?",
@@ -509,7 +516,7 @@ const faqs = [
   },
   {
     q: "Where do you work?",
-    a: "We work across all of London, the Home Counties and Oxfordshire.\n\nIn London: Notting Hill, Kensington, Chelsea, Fulham, Hammersmith, Chiswick, Richmond, Wimbledon, Wandsworth, Battersea, Clapham, Balham, Dulwich, Peckham, Brixton, Camberwell, Greenwich, Blackheath, Islington, Hackney, Shoreditch, Camden, Kentish Town, Hampstead, Highgate, Muswell Hill, Crouch End, Stoke Newington, Kilburn, Maida Vale, St John's Wood, Marylebone, Belgravia, Pimlico, Mayfair.\n\nIn the Home Counties: Guildford, Cobham, Weybridge, Esher, Oxshott, Woking, Ripley, Godalming, Farnham, Haslemere, Sevenoaks, Tunbridge Wells, Westerham, Tonbridge, Oxted, Reigate, Redhill, Dorking, Epsom, Leatherhead, Beaconsfield, Gerrards Cross, Amersham, Chorleywood, Chalfont St Giles, Marlow, Henley-on-Thames, Cookham, Sonning, Ascot, Sunningdale, Virginia Water, Windsor, Wentworth, Radlett, Harpenden, St Albans, Berkhamsted, Tring, Chesham.\n\nIn Oxfordshire: Oxford, Henley-on-Thames, Thame, Wallingford, Wantage, Abingdon, Woodstock, Chipping Norton, Burford, Witney.\n\nIf you're not sure whether we cover you, ask — our network is growing, and we're expanding into the Cotswolds and West Country through 2027.",
+    a: coverage + "\n\nIn London: Notting Hill, Kensington, Chelsea, Fulham, Hammersmith, Chiswick, Richmond, Wimbledon, Wandsworth, Battersea, Clapham, Balham, Dulwich, Peckham, Brixton, Camberwell, Greenwich, Blackheath, Islington, Hackney, Shoreditch, Camden, Kentish Town, Hampstead, Highgate, Muswell Hill, Crouch End, Stoke Newington, Kilburn, Maida Vale, St John's Wood, Marylebone, Belgravia, Pimlico, Mayfair.\n\nIn the Home Counties: Guildford, Cobham, Weybridge, Esher, Oxshott, Woking, Ripley, Godalming, Farnham, Haslemere, Sevenoaks, Tunbridge Wells, Westerham, Tonbridge, Oxted, Reigate, Redhill, Dorking, Epsom, Leatherhead, Beaconsfield, Gerrards Cross, Amersham, Chorleywood, Chalfont St Giles, Marlow, Cookham, Sonning, Ascot, Sunningdale, Virginia Water, Windsor, Wentworth, Radlett, Harpenden, St Albans, Berkhamsted, Tring, Chesham.\n\nIn Oxfordshire: Oxford, Henley-on-Thames, Thame, Wallingford, Wantage, Abingdon, Woodstock, Chipping Norton, Burford, Witney.\n\nIf you're not sure whether we cover you, ask — our network is growing, and we're expanding into the Cotswolds and West Country through 2027.",
   },
 ];
 
@@ -620,7 +627,12 @@ function FAQ() {
                     className="max-w-[65ch] whitespace-pre-line pb-6 pr-12 text-[17px] font-normal text-foreground/75"
                     style={{ lineHeight: 1.6 }}
                   >
-                    {f.a}
+                    {f.a.split("/guarantees").map((part, index) => (
+                      <span key={index}>
+                        {index > 0 && <Link to="/guarantees" className="text-primary underline underline-offset-4">/guarantees</Link>}
+                        {part}
+                      </span>
+                    ))}
                   </p>
                 </div>
               </div>
@@ -662,10 +674,10 @@ function GrantsUpdate() {
           </p>
           <p>
             Climateway projects qualify for up to £7,500 on traditional heat
-            pumps and £2,500 on air-to-air systems, alongside Warm Homes Plan
-            grants and other support. Most projects capture £7,500 to £10,000 in
+            pumps and £2,500 on air-to-air systems, where eligible. Most projects capture £7,500 to £10,000 in
             combined grants.
           </p>
+          <p>{warmHomesQualification}</p>
         </div>
         <Link
           to="/score"

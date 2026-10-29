@@ -5,7 +5,11 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/guarantees")({
   head: () => ({
     meta: [
-      { title: "Climateway Cover — Three layers of protection" },
+      { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Guarantees" },
+      { name: "twitter:description", content: "Honest cover, not marketing cover. Manufacturer warranty, 6-year workmanship guarantee, and an insurance-backed guarantee on every Climateway installation." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Climateway — Climate-ready homes for British weather — Guarantees" },
       {
         name: "description",
         content:
@@ -13,7 +17,7 @@ export const Route = createFileRoute("/guarantees")({
       },
       {
         property: "og:title",
-        content: "Climateway Cover — Three layers of protection",
+        content: "Climateway — Climate-ready homes for British weather — Guarantees",
       },
       {
         property: "og:description",
@@ -21,7 +25,7 @@ export const Route = createFileRoute("/guarantees")({
           "Manufacturer warranty, 6-year workmanship guarantee, and an insurance-backed guarantee on every Climateway installation.",
       },
     ],
-    links: [{ rel: "canonical", href: "/guarantees" }],
+    links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/guarantees" }],
   }),
   component: GuaranteesPage,
 });
