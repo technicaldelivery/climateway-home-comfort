@@ -44,6 +44,7 @@ export function writeConsent(status: ConsentStatus) {
 
 export function openPrivacyConsent() {
   if (typeof window === "undefined") return;
+  localStorage.removeItem(STORAGE_KEY);
   syncConsentDataset(null);
   window.dispatchEvent(new Event(OPEN_CONSENT_EVENT));
 }

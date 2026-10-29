@@ -11,7 +11,7 @@ export const pricingEntries = [
     price: `From £${startingPrices.cooling.toLocaleString("en-GB")}`,
     sub: "Single-room Daikin air-to-air",
     qualifier: "Grant-eligible from April 2026 (£2,500 BUS)",
-    body: "Beat the next heatwave. A silent Daikin split in the room you can't sleep in — grant-eligible where applicable.",
+    body: "Beat the next heatwave. A silent Daikin split in the room you can't sleep in — installed in a day on site, grant-eligible where applicable.",
     icon: Snowflake,
     image: cardCooling,
     alt: "Victorian terrace living room with a discreet white wall-mounted air conditioner and an open sash window onto a green garden",

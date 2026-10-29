@@ -23,7 +23,7 @@ export const Route = createFileRoute("/pricing/")({
 });
 
 const steps = [
-  ["1", "Climate Score", "Free", "Online tool. Two minutes. Returns your home's performance score, projected bill savings, grants you qualify for, and the recommended intervention."],
+  ["1", "Climate Score", "Free", "Online tool. Under two minutes. Returns your home's performance score, projected bill savings, grants you qualify for, and the recommended intervention."],
   ["2", "Home Survey", `£${surveyFee}`, "Our engineer visits your home. Measures, surveys, checks constraints — gas run, flue, condensate, loading, insulation state."],
   ["3", "System Design", `£${designFee.toLocaleString("en-GB")}`, "Full technical design pack: equipment schedule, loading calcs, installation drawings, grant application pack, fixed installation quote. Home Survey fee credits in full against this stage."],
   ["4", "Installation", "", "Fixed price from the Design. Delivered by our accredited partner network — MCS, F-Gas, Gas Safe. Backed by the Comfort Promise."],
