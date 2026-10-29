@@ -3,8 +3,10 @@ import { deepStrictEqual, strictEqual } from "node:assert";
 import { installationTimelines, startingPrices, surveyFee, designFee, busHeatingGrant, vatZeroRateEnd } from "./site-facts";
 
 describe("Climateway confirmed figures", () => {
-  test("standalone total is 2 to 6 weeks", () => deepStrictEqual(installationTimelines.standalone.totalWeeks, [2, 6]));
-  test("standalone on-site is 1 to 2 weeks", () => deepStrictEqual(installationTimelines.standalone.onSiteWeeks, [1, 2]));
+  test("cooling total is 2 to 4 weeks", () => deepStrictEqual(installationTimelines.cooling.totalWeeks, [2, 4]));
+  test("cooling on-site is 1 day", () => strictEqual(installationTimelines.cooling.onSiteDays, 1));
+  test("heat pump total is 6 to 10 weeks", () => deepStrictEqual(installationTimelines.heatPump.totalWeeks, [6, 10]));
+  test("heat pump on-site is 2 to 5 days", () => deepStrictEqual(installationTimelines.heatPump.onSiteDays, [2, 5]));
   test("whole home total is 12 to 20 weeks", () => deepStrictEqual(installationTimelines.wholeHome.totalWeeks, [12, 20]));
   test("whole home on-site is 2 to 3 weeks", () => deepStrictEqual(installationTimelines.wholeHome.onSiteWeeks, [2, 3]));
   test("cooling starts at £2,200", () => strictEqual(startingPrices.cooling, 2200));

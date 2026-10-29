@@ -1,9 +1,10 @@
 export const installationTimelines = {
-  standalone: { totalWeeks: [2, 6], onSiteWeeks: [1, 2] },
+  cooling: { totalWeeks: [2, 4], onSiteDays: 1 },
+  heatPump: { totalWeeks: [6, 10], onSiteDays: [2, 5] },
   wholeHome: { totalWeeks: [12, 20], onSiteWeeks: [2, 3] },
 } as const;
 
-export const installationTimelineCopy = `Single-room cooling or standalone heat pump install: ${installationTimelines.standalone.totalWeeks.join(" to ")} weeks total (survey to commissioning), of which ${installationTimelines.standalone.onSiteWeeks.join(" to ")} weeks on-site. Whole-home integrated systems: ${installationTimelines.wholeHome.totalWeeks.join(" to ")} weeks total (survey to commissioning), of which ${installationTimelines.wholeHome.onSiteWeeks.join(" to ")} weeks on-site.`;
+export const installationTimelineCopy = `Single-room cooling installation: ${installationTimelines.cooling.totalWeeks.join(" to ")} weeks total from Climate Score to install day. On-site install: ${installationTimelines.cooling.onSiteDays} day. Standalone heat pump installation: ${installationTimelines.heatPump.totalWeeks.join(" to ")} weeks total. On-site install: ${installationTimelines.heatPump.onSiteDays.join(" to ")} days. Whole-home integrated systems: ${installationTimelines.wholeHome.totalWeeks.join(" to ")} weeks total. On-site install: ${installationTimelines.wholeHome.onSiteWeeks.join(" to ")} weeks.`;
 
 export const coverage = "All of London, plus the Home Counties (Surrey, Berkshire, Buckinghamshire, Hertfordshire, Essex, Kent) and Oxfordshire.";
 export const vatQualification = "Zero-rated VAT on qualifying energy-saving measures (heat pumps, insulation, controls and specified associated works) until 31 March 2027. We confirm VAT treatment for your specific installation in your System Design.";
