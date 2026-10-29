@@ -103,12 +103,16 @@ export function SiteFooter() {
 
         <div className="mt-12">
           <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ivory">
-            Where we work
+            Areas we cover
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-ivory/70">
-            {coverage}
-            <br />
-            Oxfordshire includes Oxford, Henley-on-Thames and Woodstock.
+            London (all boroughs) · Surrey · Berkshire · Buckinghamshire ·
+            Hertfordshire · Essex · Kent · Oxfordshire — covering 140+ towns
+            across the South East.{" "}
+            <a href="/#where-we-work" className="underline underline-offset-4 hover:text-ivory">
+              Full list on the homepage
+            </a>
+            .
           </p>
         </div>
 

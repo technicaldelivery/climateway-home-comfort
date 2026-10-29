@@ -19,6 +19,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
+import { serviceAreas, coverageShort } from "@/lib/service-areas";
 import { Button } from "@/components/ui/button";
 import { PricingCards } from "@/components/pricing-cards";
 import { coverage, installationTimelineCopy, warmHomesQualification, surveyFee, designFee } from "@/lib/site-facts";
@@ -54,6 +55,22 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://climateway-home-comfort.lovable.app/" },
     ],
     links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Climateway",
+          description:
+            "Whole-home climate adaptation — heating, cooling, ventilation and controls — designed and installed as integrated systems.",
+          areaServed: serviceAreas.flatMap((a) => [a.region, ...a.towns]),
+          serviceType: "Home climate system design and installation",
+          priceRange: "££",
+          url: "https://climateway-home-comfort.lovable.app/",
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });
@@ -67,6 +84,7 @@ function HomePage() {
       <Problem />
       <Solution />
       <WhoWeHelp />
+      <WhereWeWork />
       <ScoreTeaser />
       <GrantsUpdate />
       <Process />
@@ -102,6 +120,7 @@ function Hero() {
             ventilation, controls. From a single AC unit to a whole-home
             installation. One team. One promise.
           </p>
+          <p className="mt-4 text-sm text-foreground/60">{coverageShort}</p>
           <div className="mt-12 flex flex-wrap items-start gap-x-8 gap-y-6">
             <div className="flex flex-col items-start">
               <Link
@@ -314,6 +333,42 @@ function WhoWeHelp() {
   );
 }
 
+function WhereWeWork() {
+  return (
+    <section
+      id="where-we-work"
+      className="scroll-mt-24 border-b px-6 py-20 md:py-[120px]"
+      style={{ backgroundColor: "#F6F1E8", borderColor: "rgb(31 41 55 / 0.15)" }}
+    >
+      <div className="mx-auto max-w-7xl">
+        <Eyebrow>Where we work</Eyebrow>
+        <h2 className="max-w-3xl font-display text-4xl font-medium leading-tight md:text-5xl">
+          Across London, the Home Counties and Oxfordshire.
+        </h2>
+        <p className="mt-6 max-w-[60ch] text-lg text-foreground/75">
+          Local installer teams covering 140+ towns and postcodes. Full list below.
+        </p>
+        <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4 xl:grid-cols-8">
+          {serviceAreas.map((a) => (
+            <div key={a.region}>
+              <h3 className="text-sm font-bold uppercase tracking-wider" style={{ color: "#0E4F4A" }}>
+                {a.region}
+              </h3>
+              <p className="mt-3 text-[13px] leading-[1.1rem]" style={{ color: "#1F2937" }}>
+                {a.towns.join(", ")}
+                {a.suffix ?? "."}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-12 text-center text-sm" style={{ color: "#6B7280" }}>
+          Can't see your town? Submit a Climate Score — we'll confirm coverage within 24 hours.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function ScoreTeaser() {
   return (
     <Section tone="teal">
@@ -516,7 +571,7 @@ const faqs = [
   },
   {
     q: "Where do you work?",
-    a: coverage + "\n\nIn London: Notting Hill, Kensington, Chelsea, Fulham, Hammersmith, Chiswick, Richmond, Wimbledon, Wandsworth, Battersea, Clapham, Balham, Dulwich, Peckham, Brixton, Camberwell, Greenwich, Blackheath, Islington, Hackney, Shoreditch, Camden, Kentish Town, Hampstead, Highgate, Muswell Hill, Crouch End, Stoke Newington, Kilburn, Maida Vale, St John's Wood, Marylebone, Belgravia, Pimlico, Mayfair.\n\nIn the Home Counties: Guildford, Cobham, Weybridge, Esher, Oxshott, Woking, Ripley, Godalming, Farnham, Haslemere, Sevenoaks, Tunbridge Wells, Westerham, Tonbridge, Oxted, Reigate, Redhill, Dorking, Epsom, Leatherhead, Beaconsfield, Gerrards Cross, Amersham, Chorleywood, Chalfont St Giles, Marlow, Cookham, Sonning, Ascot, Sunningdale, Virginia Water, Windsor, Wentworth, Radlett, Harpenden, St Albans, Berkhamsted, Tring, Chesham.\n\nIn Oxfordshire: Oxford, Henley-on-Thames, Thame, Wallingford, Wantage, Abingdon, Woodstock, Chipping Norton, Burford, Witney.\n\nIf you're not sure whether we cover you, ask — our network is growing, and we're expanding into the Cotswolds and West Country through 2027.",
+    a: coverageShort + " See the Where we work section on the homepage for the full list.",
   },
 ];
 
