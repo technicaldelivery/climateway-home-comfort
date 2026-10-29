@@ -131,7 +131,7 @@ export function SiteFooter() {
             on request and detailed in your project documentation.
           </p>
           <p className="mt-8 text-xs text-ivory/60">
-            Operated by Bappoo HoldCo Limited. Climateway Ltd incorporation pending.
+            © 2026 Climateway. Climateway Ltd incorporation pending.
           </p>
         </div>
       </div>
