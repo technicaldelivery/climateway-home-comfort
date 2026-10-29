@@ -65,8 +65,8 @@ function HomePage() {
       <ScoreTeaser />
       <GrantsUpdate />
       <Process />
-      <WhyClimateway />
       <FAQ />
+      <WhyClimateway />
       <FinalCTA />
     </>
   );
