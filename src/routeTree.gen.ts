@@ -23,6 +23,7 @@ import { Route as ScoreRouteImport } from './routes/score'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ApiLeadsRouteImport } from './routes/api/leads'
+import { Route as PricingIndexRouteImport } from './routes/pricing.index'
 import { Route as PricingCoolingRouteImport } from './routes/pricing.cooling'
 import { Route as PricingHeatingRouteImport } from './routes/pricing.heating'
 import { Route as PricingWholeHomeRouteImport } from './routes/pricing.whole-home'
@@ -103,6 +104,11 @@ const ApiLeadsRoute = ApiLeadsRouteImport.update({
   path: '/api/leads',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingIndexRoute = PricingIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PricingRoute,
+} as any)
 const PricingCoolingRoute = PricingCoolingRouteImport.update({
   id: '/cooling',
   path: '/cooling',
@@ -173,6 +179,7 @@ export interface FileRoutesByFullPath {
   '/who-we-help/landlords': typeof WhoWeHelpLandlordsRoute
   '/who-we-help/period-homes': typeof WhoWeHelpPeriodHomesRoute
   '/who-we-help/renovations': typeof WhoWeHelpRenovationsRoute
+  '/pricing/': typeof PricingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -183,7 +190,6 @@ export interface FileRoutesByTo {
   '/guarantees': typeof GuaranteesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/journal': typeof JournalRoute
-  '/pricing': typeof PricingRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/score': typeof ScoreRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -198,6 +204,7 @@ export interface FileRoutesByTo {
   '/who-we-help/landlords': typeof WhoWeHelpLandlordsRoute
   '/who-we-help/period-homes': typeof WhoWeHelpPeriodHomesRoute
   '/who-we-help/renovations': typeof WhoWeHelpRenovationsRoute
+  '/pricing': typeof PricingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -224,6 +231,7 @@ export interface FileRoutesById {
   '/who-we-help/landlords': typeof WhoWeHelpLandlordsRoute
   '/who-we-help/period-homes': typeof WhoWeHelpPeriodHomesRoute
   '/who-we-help/renovations': typeof WhoWeHelpRenovationsRoute
+  '/pricing/': typeof PricingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -251,6 +259,7 @@ export interface FileRouteTypes {
     | '/who-we-help/landlords'
     | '/who-we-help/period-homes'
     | '/who-we-help/renovations'
+    | '/pricing/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -261,7 +270,6 @@ export interface FileRouteTypes {
     | '/guarantees'
     | '/how-it-works'
     | '/journal'
-    | '/pricing'
     | '/privacy'
     | '/score'
     | '/sitemap.xml'
@@ -276,6 +284,7 @@ export interface FileRouteTypes {
     | '/who-we-help/landlords'
     | '/who-we-help/period-homes'
     | '/who-we-help/renovations'
+    | '/pricing'
   id:
     | '__root__'
     | '/'
@@ -301,6 +310,7 @@ export interface FileRouteTypes {
     | '/who-we-help/landlords'
     | '/who-we-help/period-homes'
     | '/who-we-help/renovations'
+    | '/pricing/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -426,6 +436,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiLeadsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing/': {
+      id: '/pricing/'
+      path: '/'
+      fullPath: '/pricing/'
+      preLoaderRoute: typeof PricingIndexRouteImport
+      parentRoute: typeof PricingRoute
+    }
     '/pricing/cooling': {
       id: '/pricing/cooling'
       path: '/cooling'
@@ -496,12 +513,14 @@ interface PricingRouteChildren {
   PricingCoolingRoute: typeof PricingCoolingRoute
   PricingHeatingRoute: typeof PricingHeatingRoute
   PricingWholeHomeRoute: typeof PricingWholeHomeRoute
+  PricingIndexRoute: typeof PricingIndexRoute
 }
 
 const PricingRouteChildren: PricingRouteChildren = {
   PricingCoolingRoute: PricingCoolingRoute,
   PricingHeatingRoute: PricingHeatingRoute,
   PricingWholeHomeRoute: PricingWholeHomeRoute,
+  PricingIndexRoute: PricingIndexRoute,
 }
 
 const PricingRouteWithChildren =
