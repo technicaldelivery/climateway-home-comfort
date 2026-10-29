@@ -38,18 +38,18 @@ const steps = [
     timeline: "60 seconds, online.",
   },
   {
-    title: "Home Audit",
+    title: "Home Survey",
     img: homeVictorian,
     desc: "A qualified assessor visits your home for a 90-minute physical survey. We measure, photograph, and thermally image — building a complete picture of how your house performs today.",
     includes: ["On-site survey by a qualified assessor", "Thermal imaging and airtightness check", "Written audit report"],
-    timeline: "90 minutes on site. £250, credited against your design fee.",
+    timeline: "90 minutes on site. £200, credited in full against your design fee.",
   },
   {
     title: "System Design",
     img: homeKitchen,
     desc: "We design your full climate system as a single integrated package — heating, cooling, ventilation, controls and fabric. We model the savings, apply for every grant you qualify for, and give you one fixed price.",
     includes: ["Full system design and specification", "Modelled energy savings", "Grant applications managed for you", "Fixed-price installation quote"],
-    timeline: "3–5 weeks. £1,500 fixed design fee.",
+    timeline: "3–5 weeks. £1,250 fixed design fee.",
   },
   {
     title: "Installation",

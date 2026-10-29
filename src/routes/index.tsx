@@ -354,12 +354,12 @@ function Process() {
       body: "Free online assessment. 60 seconds. Tells you exactly where your home stands today.",
     },
     {
-      title: "Home Audit",
-      body: "A qualified assessor visits. 90 minutes on site. We measure everything — fabric, heating, ventilation, glazing, overheating risk. £250, credited against your design fee.",
+      title: "Home Survey",
+      body: "Our engineer visits. 90 minutes on site. We measure everything — fabric, heating, ventilation, glazing, overheating risk. £200, credited in full against your design fee.",
     },
     {
       title: "System Design",
-      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fully fixed, written installation price. Once you accept it, that's what you pay. If anything comes up during installation that's our fault to have missed, we cover it. £1,500 fixed design fee. No obligation to proceed.",
+      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fully fixed, written installation price. Once you accept it, that's what you pay. If anything comes up during installation that's our fault to have missed, we cover it. £1,250 fixed design fee. No obligation to proceed.",
     },
     {
       title: "Installation",

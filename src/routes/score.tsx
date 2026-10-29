@@ -472,13 +472,13 @@ function Results({ a }: { a: Answers }) {
             Ready for the next step?
           </h3>
           <p className="mt-3 max-w-xl text-ivory/85">
-            Book your Home Audit — £250, fully credited against your design fee.
+            Book your Home Survey — £200, fully credited against your design fee.
           </p>
           <Link
             to="/contact"
             className="mt-6 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3.5 text-base font-medium text-accent-foreground transition-opacity hover:opacity-90"
           >
-            Book your Home Audit
+            Book your Home Survey
             <ArrowRight className="h-4 w-4" />
           </Link>
           <div className="mt-4">
