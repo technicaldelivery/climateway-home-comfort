@@ -13,7 +13,7 @@ export const pricingEntries = [
     body: "Beat the next heatwave. A silent Daikin split in the room you can't sleep in — installed in a day, grant-eligible.",
     icon: Snowflake,
     image: cardCooling,
-    alt: "Bright summer bedroom with a person reading and a discreet wall-mounted cooling unit",
+    alt: "Crisp white linen bedding and sheer curtains in a calm bedroom lit by soft morning light",
   },
   {
     name: "Heating",
