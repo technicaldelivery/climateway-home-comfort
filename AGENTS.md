@@ -1,4 +1,5 @@
 ## Learned User Preferences
+- Keep confirmed prices, installation durations and shared coverage/grant qualifications in the browser-safe site-facts module so pages cannot contradict one another; verify numeric rules with its adjacent tests.
 - Clickable controls (buttons, accordion triggers, menu toggles) should show a pointer cursor on hover.
 - Implement production features that touch shared layout, forms, or analytics in this repo rather than Lovable.
 - On compact viewports, switch to the hamburger before nav labels wrap; keep “Get your Climate Score” beside it until small screens, then move the CTA into the menu.
