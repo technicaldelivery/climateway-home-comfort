@@ -17,3 +17,11 @@ describe("Climateway confirmed figures", () => {
   test("heating grant is £7,500", () => strictEqual(busHeatingGrant, 7500));
   test("VAT zero-rating ends 31 March 2027", () => strictEqual(vatZeroRateEnd, "2027-03-31"));
 });
+import { serviceAreas } from "./service-areas";
+describe("service areas", () => {
+  it("lists Henley-on-Thames under Oxfordshire only", () => {
+    const hits = serviceAreas.filter((a) => a.towns.includes("Henley-on-Thames")).map((a) => a.region);
+    expect(hits).toEqual(["Oxfordshire"]);
+  });
+  it("has eight regions", () => expect(serviceAreas).toHaveLength(8));
+});
