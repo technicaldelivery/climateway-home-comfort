@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
+import { PricingCards } from "@/components/pricing-cards";
 
 const heroHome =
   "https://images.unsplash.com/photo-1759238136854-a43787126db7?fm=jpg&q=85&w=2400&auto=format&fit=crop";
@@ -57,15 +58,15 @@ function HomePage() {
     <>
       <Hero />
       <TrustStrip />
+      <Pricing />
       <Problem />
       <Solution />
       <WhoWeHelp />
       <ScoreTeaser />
       <GrantsUpdate />
       <Process />
-      <Pricing />
-      <WhyClimateway />
       <FAQ />
+      <WhyClimateway />
       <FinalCTA />
     </>
   );
@@ -353,12 +354,12 @@ function Process() {
       body: "Free online assessment. 60 seconds. Tells you exactly where your home stands today.",
     },
     {
-      title: "Home Audit",
-      body: "A qualified assessor visits. 90 minutes on site. We measure everything — fabric, heating, ventilation, glazing, overheating risk. £250, credited against your design fee.",
+      title: "Home Survey",
+      body: "Our engineer visits. 90 minutes on site. We measure everything — fabric, heating, ventilation, glazing, overheating risk. £200, credited in full against your design fee.",
     },
     {
       title: "System Design",
-      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fully fixed, written installation price. Once you accept it, that's what you pay. If anything comes up during installation that's our fault to have missed, we cover it. £1,500 fixed design fee. No obligation to proceed.",
+      body: "We design your complete climate system, model your savings, identify every grant you qualify for, and give you a fully fixed, written installation price. Once you accept it, that's what you pay. If anything comes up during installation that's our fault to have missed, we cover it. £1,250 fixed design fee. No obligation to proceed.",
     },
     {
       title: "Installation",
@@ -453,60 +454,12 @@ function TrustStrip() {
 }
 
 function Pricing() {
-  const entries = [
-    {
-      name: "Cooling",
-      description: "A single room made liveable in summer. Air-to-air, quiet, efficient, grant-eligible where applicable.",
-      to: "/pricing/cooling" as const,
-      icon: Snowflake,
-    },
-    {
-      name: "Heating",
-      description: "Replace an old boiler with a heat pump. Warm, efficient, cheaper to run.",
-      to: "/pricing/heating" as const,
-      icon: Flame,
-      featured: true,
-    },
-    {
-      name: "Whole home",
-      description: "Heat, cool, ventilation and controls designed as one system. The full Climateway.",
-      to: "/pricing/whole-home" as const,
-      icon: Home,
-    },
-  ];
   return (
     <Section tone="sky" id="pricing">
-      <Eyebrow>Choose your starting point</Eyebrow>
-      <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight md:text-5xl">
-        Three ways in. One Comfort Promise.
+      <h2 className="mb-14 max-w-4xl font-display text-4xl font-medium leading-tight md:text-5xl">
+        Where to start — and what it costs
       </h2>
-      <p className="mt-6 max-w-[60ch] text-[17px] text-foreground/75">
-        Every home is different. We design each project around your home, your budget and the comfort you want to feel. Tell us where you'd like to start and we'll come back with a fixed-price proposal within 48 hours.
-      </p>
-      <div className="mt-14 grid items-stretch gap-6 md:grid-cols-3">
-        {entries.map((entry) => {
-          const Icon = entry.icon;
-          return (
-          <article
-            key={entry.name}
-            className={`flex flex-col border bg-background p-8 text-foreground ${entry.featured ? "border-primary shadow-lg" : "border-border"}`}
-          >
-            <Icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
-            <h3 className="mt-6 font-display text-2xl font-medium">{entry.name}</h3>
-            <p className="mt-2 text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground">
-              Comfort Promise included
-            </p>
-            <p className="mt-6 text-base leading-relaxed text-foreground/75">{entry.description}</p>
-            <Link to="/score" className="mt-auto pt-8 text-sm font-medium text-primary underline-offset-4 hover:underline">
-              Get my quote →
-            </Link>
-          </article>
-          );
-        })}
-      </div>
-      <p className="mt-10 max-w-4xl text-base text-foreground/80">
-        Every project is designed around your specific home and sequenced to capture the maximum government grant support available — typically £7,500 to £10,000 in combined grants. Independent finance also available to spread the cost.
-      </p>
+      <PricingCards />
       <Link
         to="/grants"
         className="mt-4 inline-flex items-center gap-1 text-sm text-primary underline underline-offset-4"
