@@ -24,7 +24,7 @@ export function OfferLandingPage({
             <h1 className="mt-5 max-w-xl font-display text-5xl font-medium leading-tight md:text-6xl">{title}</h1>
             <div className="mt-7 max-w-[60ch] space-y-4 text-lg leading-relaxed text-foreground/75">
               {intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              <p>Quotes are tailored to your home. Request yours in 60 seconds through our Climate Score.</p>
+              <p>Quotes are tailored to your home. Request yours in under two minutes through our Climate Score.</p>
             </div>
             <Button asChild size="lg" className="mt-10 h-14 bg-accent px-7 text-base text-accent-foreground hover:bg-accent/90">
               <Link to="/score">

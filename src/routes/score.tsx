@@ -7,15 +7,15 @@ export const Route = createFileRoute("/score")({
   head: () => ({
     meta: [
       { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Score" },
-      { name: "twitter:description", content: "Find out in 60 seconds how your home performs in the new British climate, and what it would cost to make it future-ready." },
-      { property: "og:description", content: "Find out in 60 seconds how your home performs in the new British climate, and what it would cost to make it future-ready." },
+      { name: "twitter:description", content: "Find out in under two minutes how your home performs in the new British climate, and what it would cost to make it future-ready." },
+      { property: "og:description", content: "Find out in under two minutes how your home performs in the new British climate, and what it would cost to make it future-ready." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { title: "Climateway — Climate-ready homes for British weather — Score" },
       {
         name: "description",
         content:
-          "Find out in 60 seconds how your home performs in the new British climate, and what it would cost to make it future-ready.",
+          "Find out in under two minutes how your home performs in the new British climate, and what it would cost to make it future-ready.",
       },
       { property: "og:title", content: "Climateway — Climate-ready homes for British weather — Score" },
       { property: "og:url", content: "https://climateway-home-comfort.lovable.app/score" },

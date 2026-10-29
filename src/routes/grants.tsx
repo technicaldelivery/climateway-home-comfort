@@ -211,7 +211,7 @@ function GrantsPage() {
             Find out exactly which grants apply to your home.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-ivory/80">
-            Your free Climate Score takes 60 seconds and identifies the
+            Your free Climate Score takes under two minutes and identifies the
             grants you qualify for, based on your postcode, property type and
             circumstances.
           </p>

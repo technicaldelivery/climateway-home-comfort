@@ -21,7 +21,7 @@ import {
 import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { PricingCards } from "@/components/pricing-cards";
-import { coverage, installationTimelineCopy, vatQualification, warmHomesQualification, surveyFee, designFee } from "@/lib/site-facts";
+import { coverage, installationTimelineCopy, warmHomesQualification, surveyFee, designFee } from "@/lib/site-facts";
 import heroLivingRoom from "@/assets/hero-living-room.jpg";
 import heatPumpExterior from "@/assets/heat-pump-exterior.jpg";
 import engineerCommissioning from "@/assets/engineer-commissioning.jpg";
@@ -116,7 +116,7 @@ function Hero() {
                 className="mt-3 text-sm font-normal"
                 style={{ color: "#6B7280" }}
               >
-                60 seconds. No commitment.
+                Under two minutes. No commitment.
               </p>
             </div>
             <a
@@ -323,7 +323,7 @@ function ScoreTeaser() {
             Start with your free Climate Score.
           </h2>
           <p className="mt-6 max-w-xl text-lg text-ivory/80">
-            In 60 seconds, see how your home performs in the new British
+            In under two minutes, see how your home performs in the new British
             climate — and exactly what it would cost to make it future-ready.
           </p>
         </div>
@@ -360,7 +360,7 @@ function Process() {
   const steps: Array<{ title: string; body: string; img?: string; alt?: string }> = [
     {
       title: "Climate Score",
-      body: "Free online assessment. 60 seconds. Tells you exactly where your home stands today.",
+      body: "Free online assessment. Under two minutes. Tells you exactly where your home stands today.",
     },
     {
       title: "Home Survey",
@@ -504,7 +504,7 @@ const faqs = [
   },
   {
     q: "What if it goes wrong?",
-    a: "Every installation carries a 6-year workmanship guarantee, underwritten by an independent insurer, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You only ever deal with Climateway, not the installers. We manage every contractor on your behalf. Full details on our /guarantees page.",
+    a: "Every installation carries a 6-year workmanship guarantee, underwritten by an independent insurer, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You only ever deal with Climateway, not the installers. We manage every contractor on your behalf. Full details on our /guarantees.",
   },
   {
     q: "Do you guarantee my energy bills will be lower?",
@@ -629,7 +629,7 @@ function FAQ() {
                   >
                     {f.a.split("/guarantees").map((part, index) => (
                       <span key={index}>
-                        {index > 0 && <Link to="/guarantees" className="text-primary underline underline-offset-4">/guarantees</Link>}
+                        {index > 0 && <Link to="/guarantees" className="text-primary underline underline-offset-4">Guarantees page</Link>}
                         {part}
                       </span>
                     ))}
@@ -668,7 +668,7 @@ function GrantsUpdate() {
         <div className="mt-10 max-w-[65ch] space-y-5 text-[17px] leading-relaxed text-foreground/80">
           <p>
             Until this year, government grants only supported heating upgrades.
-            From 2026, the Boiler Upgrade Scheme extends to air-to-air heat
+            From April 2026, the Boiler Upgrade Scheme extends to air-to-air heat
             pumps — the same units that warm your home in winter and cool it in
             summer.
           </p>
@@ -703,7 +703,7 @@ function FinalCTA() {
           The best time to design your home for the climate ahead is before the next heatwave.
         </h2>
         <p className="mx-auto mt-6 max-w-[60ch] text-lg leading-relaxed text-ivory/80 md:text-[20px]">
-          The Climate Score takes 60 seconds. It's free. It tells you where your home stands and what's worth doing about it.
+          The Climate Score takes under two minutes. It's free. It tells you where your home stands and what's worth doing about it.
         </p>
         <Button asChild size="lg" className="mt-10 h-16 bg-accent px-8 text-base text-accent-foreground hover:bg-accent/90">
           <Link to="/score">

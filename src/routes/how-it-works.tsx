@@ -40,9 +40,9 @@ const steps = [
   {
     title: "Climate Score",
     img: heroHome,
-    desc: "A free, sixty-second online assessment that benchmarks your home against the new British climate. Personalised to your postcode and property type, with an instant view of every grant you qualify for.",
+    desc: "A free online assessment, completed in under two minutes, that benchmarks your home against the new British climate. Personalised to your postcode and property type, with an instant view of every grant you qualify for.",
     includes: ["Personalised score across four metrics", "Estimated grant eligibility", "No technical knowledge required"],
-    timeline: "60 seconds, online.",
+    timeline: "under two minutes, online.",
   },
   {
     title: "Home Survey",

@@ -104,7 +104,7 @@ function AboutPage() {
             Ready to see how your home performs?
           </h2>
           <p className="mx-auto mt-6 max-w-[60ch] text-lg leading-relaxed text-ivory/80 md:text-[20px]">
-            Your free Climate Score takes 60 seconds.
+            Your free Climate Score takes under two minutes.
           </p>
           <Link
             to="/score"
