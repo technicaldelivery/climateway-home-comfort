@@ -2,7 +2,6 @@ import { coverage } from "@/lib/site-facts";
 import { Link } from "@tanstack/react-router";
 import { Instagram, Linkedin, Youtube } from "lucide-react";
 
-import { openPrivacyConsent } from "@/lib/privacy-consent";
 
 export function SiteFooter() {
   const localBusiness = {
@@ -93,7 +92,8 @@ export function SiteFooter() {
             title="Legal"
             links={[
               { to: "/privacy", label: "Privacy" },
-              { label: "Cookie settings", onClick: openPrivacyConsent },
+              { to: "/privacy", hash: "cookies", label: "Cookie settings" },
+
               { to: "/terms", label: "Terms" },
               { to: "/complaints", label: "Complaints" },
             ]}
@@ -151,10 +151,11 @@ function FooterCol({
 }: {
   title: string;
   links: (
-    | { label: string; to: string }
+    | { label: string; to: string; hash?: string }
     | { label: string; onClick: () => void }
   )[];
 }) {
+
   return (
     <div>
       <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ivory">
@@ -164,7 +165,8 @@ function FooterCol({
         {links.map((l) => (
           <li key={l.label}>
             {"to" in l ? (
-              <Link to={l.to} className="text-ivory/70 hover:text-ivory">
+              <Link to={l.to} hash={l.hash} className="text-ivory/70 hover:text-ivory">
+
                 {l.label}
               </Link>
             ) : (
