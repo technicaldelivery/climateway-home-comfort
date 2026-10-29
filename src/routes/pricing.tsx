@@ -1,3 +1,4 @@
+import { coverage, surveyFee, designFee } from "@/lib/site-facts";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Section, Eyebrow } from "@/components/section";
@@ -23,8 +24,8 @@ export const Route = createFileRoute("/pricing")({
 
 const steps = [
   ["1", "Climate Score", "Free", "Online tool. Two minutes. Returns your home's performance score, projected bill savings, grants you qualify for, and the recommended intervention."],
-  ["2", "Home Survey", "£200", "Our engineer visits your home. Measures, surveys, checks constraints — gas run, flue, condensate, loading, insulation state."],
-  ["3", "System Design", "£1,250", "Full technical design pack: equipment schedule, loading calcs, installation drawings, grant application pack, fixed installation quote. Home Survey fee credits in full against this stage."],
+  ["2", "Home Survey", `£${surveyFee}`, "Our engineer visits your home. Measures, surveys, checks constraints — gas run, flue, condensate, loading, insulation state."],
+  ["3", "System Design", `£${designFee.toLocaleString("en-GB")}`, "Full technical design pack: equipment schedule, loading calcs, installation drawings, grant application pack, fixed installation quote. Home Survey fee credits in full against this stage."],
   ["4", "Installation", "", "Fixed price from the Design. Delivered by our accredited partner network — MCS, F-Gas, Gas Safe. Backed by the Comfort Promise."],
 ];
 
@@ -81,7 +82,7 @@ function PricingPage() {
       <section className="bg-background px-6 py-12">
         <div className="mx-auto max-w-4xl space-y-4 text-xs leading-relaxed text-muted-foreground">
           <p><strong>Kit specification:</strong> We default to Daikin equipment. Where site requirements, scope or supply availability dictate, we may substitute equivalent premium Japanese brand (Mitsubishi, Panasonic). The specified make and model is always confirmed in your System Design before any order is placed.</p>
-          <p><strong>Pricing accuracy:</strong> Prices shown are indicative starting points for typical UK homes in our Phase 1 geography (London, Home Counties, Oxfordshire). Your final price depends on site survey findings, scope, kit specification and grant eligibility — all confirmed in your fixed-price System Design before installation.</p>
+          <p><strong>Pricing accuracy:</strong> Prices shown are indicative starting points for typical UK homes in our Phase 1 geography. {coverage} Your final price depends on site survey findings, scope, kit specification and grant eligibility — all confirmed in your fixed-price System Design before installation.</p>
           <p><strong>Grants:</strong> BUS grant amounts are set by DESNZ and subject to eligibility (homeowner, EPC criteria, planning constraints). We handle the full application on your behalf.</p>
         </div>
       </section>
