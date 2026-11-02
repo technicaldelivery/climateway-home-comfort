@@ -141,7 +141,7 @@ export function SiteFooter() {
           <p className="mt-3 max-w-3xl text-[14px] font-normal leading-relaxed text-ivory/85">
             Climateway installations are delivered through our network of MCS
             certified, F-Gas certified, Gas Safe registered installation
-            partners. We are a member of the Renewable Energy Consumer
+            partners. We are applying for membership of the Renewable Energy Consumer
             Code (RECC).
           </p>
           <p className="mt-3 max-w-3xl text-[13px] italic leading-relaxed text-ivory/60">
