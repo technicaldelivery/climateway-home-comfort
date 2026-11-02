@@ -1,7 +1,7 @@
 import { describe, test } from "node:test";
 import { deepStrictEqual, strictEqual } from "node:assert";
 import { installationTimelines, startingPrices, surveyFee, designFee, busHeatingGrant, vatZeroRateEnd } from "./site-facts";
-import { serviceAreas } from "./service-areas";
+import { serviceAreas, footerCoverage } from "./service-areas";
 
 describe("Climateway confirmed figures", () => {
   test("cooling total is 2 to 4 weeks", () => deepStrictEqual(installationTimelines.cooling.totalWeeks, [2, 4]));

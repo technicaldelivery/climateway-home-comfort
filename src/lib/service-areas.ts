@@ -15,3 +15,20 @@ export const serviceAreas: { region: string; towns: string[]; suffix?: string }[
   { region: "Kent", towns: ["Sevenoaks", "Tunbridge Wells", "Tonbridge", "Westerham", "Cranbrook", "Edenbridge", "Maidstone", "Canterbury", "Rochester", "Dartford", "Tenterden", "Whitstable", "Faversham", "Ashford"] },
   { region: "Oxfordshire", towns: ["Oxford", "Henley-on-Thames", "Woodstock", "Burford", "Chipping Norton", "Witney", "Bicester", "Thame", "Wallingford", "Didcot", "Faringdon", "Charlbury", "Banbury", "Abingdon"] },
 ];
+
+// Curated subset shown in the footer's three-column grid. Every town here
+// must also appear in serviceAreas above — checked in site-facts.test.ts.
+export const footerCoverage: { header: string; towns: string[] }[] = [
+  {
+    header: "London",
+    towns: ["Notting Hill", "Chelsea", "Wandsworth", "Richmond", "Wimbledon", "Chiswick", "Islington", "Hampstead", "Highgate", "Dulwich", "Greenwich", "Clapham"],
+  },
+  {
+    header: "Home Counties",
+    towns: ["Guildford", "Esher", "Weybridge", "Cobham", "Virginia Water", "Oxted", "Beaconsfield", "Gerrards Cross", "Marlow", "St Albans", "Harpenden", "Berkhamsted", "Chelmsford", "Brentwood", "Sevenoaks", "Tunbridge Wells", "Tonbridge", "Windsor", "Ascot", "Reading"],
+  },
+  {
+    header: "Oxfordshire",
+    towns: ["Oxford", "Henley-on-Thames", "Woodstock", "Burford", "Chipping Norton", "Witney", "Bicester", "Thame", "Wallingford", "Didcot", "Abingdon"],
+  },
+];
