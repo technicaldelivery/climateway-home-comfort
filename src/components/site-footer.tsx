@@ -1,4 +1,5 @@
 import { coverage } from "@/lib/site-facts";
+import { footerCoverage } from "@/lib/service-areas";
 import { Link } from "@tanstack/react-router";
 import { Instagram, Linkedin, Youtube } from "lucide-react";
 
@@ -102,17 +103,34 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12">
-          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ivory">
-            Areas we cover
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-ivory/70">
-            London (all boroughs) · Surrey · Berkshire · Buckinghamshire ·
-            Hertfordshire · Essex · Kent · Oxfordshire — covering 140+ towns
-            across the South East.{" "}
-            <a href="/#where-we-work" className="underline underline-offset-4 hover:text-ivory">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ivory">
+              Areas we cover
+            </h2>
+            <a
+              href="/#where-we-work"
+              className="text-sm text-ivory/70 underline underline-offset-4 hover:text-ivory"
+            >
               Full list on the homepage
             </a>
-            .
+          </div>
+          <div className="mt-6 grid gap-8 sm:grid-cols-3">
+            {footerCoverage.map((col) => (
+              <div key={col.header}>
+                <h3 className="text-[13px] font-medium uppercase tracking-[0.1em] text-ivory/60">
+                  {col.header}
+                </h3>
+                <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ivory/70">
+                  {col.towns.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-sm text-ivory/60">
+            Not listed? Submit a Climate Score — we'll confirm coverage within
+            24 hours.
           </p>
         </div>
 

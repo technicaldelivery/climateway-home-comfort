@@ -10,7 +10,7 @@ export const pricingEntries = [
     name: "Cooling",
     price: `From £${startingPrices.cooling.toLocaleString("en-GB")}`,
     sub: "Single-room Daikin air-to-air",
-    qualifier: "Grant-eligible from April 2026 (£2,500 BUS)",
+    qualifier: "Grant-eligible from April 2026 — £2,500 BUS (Boiler Upgrade Scheme)",
     body: "Beat the next heatwave. A silent Daikin split in the room you can't sleep in — installed in a day on site, grant-eligible where applicable.",
     icon: Snowflake,
     image: cardCooling,
