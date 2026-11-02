@@ -584,7 +584,7 @@ function WhyClimateway() {
   ];
   const right = [
     "One integrated approach across heat, cool, fabric, controls",
-    "Independent — no supplier or manufacturer ties",
+    "Independent — no exclusive supplier tie-ins. We specify Daikin as our default kit; where site requirements dictate we may substitute an equivalent premium Japanese brand, always confirmed in your System Design.",
     "One project, one team, one invoice",
     "Every grant identified and applied for you",
   ];

@@ -1,7 +1,7 @@
 import { describe, test } from "node:test";
 import { deepStrictEqual, strictEqual } from "node:assert";
 import { installationTimelines, startingPrices, surveyFee, designFee, busHeatingGrant, vatZeroRateEnd } from "./site-facts";
-import { serviceAreas } from "./service-areas";
+import { serviceAreas, footerCoverage } from "./service-areas";
 
 describe("Climateway confirmed figures", () => {
   test("cooling total is 2 to 4 weeks", () => deepStrictEqual(installationTimelines.cooling.totalWeeks, [2, 4]));
@@ -24,4 +24,26 @@ describe("service areas", () => {
     deepStrictEqual(hits, ["Oxfordshire"]);
   });
   test("has eight regions", () => strictEqual(serviceAreas.length, 8));
+});
+
+describe("footer coverage grid", () => {
+  test("has three columns headed London, Home Counties, Oxfordshire", () =>
+    deepStrictEqual(footerCoverage.map((c) => c.header), [
+      "London",
+      "Home Counties",
+      "Oxfordshire",
+    ]));
+  test("lists only towns that appear in the full service areas", () => {
+    const known = new Set(serviceAreas.flatMap((a) => a.towns));
+    const unknown = footerCoverage
+      .flatMap((c) => c.towns)
+      .filter((t) => !known.has(t));
+    deepStrictEqual(unknown, []);
+  });
+  test("keeps Henley-on-Thames in the Oxfordshire column only", () => {
+    const hits = footerCoverage
+      .filter((c) => c.towns.includes("Henley-on-Thames"))
+      .map((c) => c.header);
+    deepStrictEqual(hits, ["Oxfordshire"]);
+  });
 });
