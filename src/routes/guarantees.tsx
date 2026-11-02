@@ -6,14 +6,14 @@ export const Route = createFileRoute("/guarantees")({
   head: () => ({
     meta: [
       { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Guarantees" },
-      { name: "twitter:description", content: "Manufacturer warranty and a 6-year workmanship guarantee on every Climateway installation." },
+      { name: "twitter:description", content: "Honest cover, not marketing cover. Manufacturer warranty and a 6-year workmanship guarantee on every Climateway installation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { title: "Climateway — Climate-ready homes for British weather — Guarantees" },
       {
         name: "description",
         content:
-          "Manufacturer warranty and a 6-year workmanship guarantee on every Climateway installation.",
+          "Honest cover, not marketing cover. Manufacturer warranty and a 6-year workmanship guarantee on every Climateway installation.",
       },
       {
         property: "og:title",
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/guarantees")({
       {
         property: "og:description",
         content:
-          "Manufacturer warranty and a 6-year workmanship guarantee on every Climateway installation.",
+          "Honest cover, not marketing cover. Manufacturer warranty and a 6-year workmanship guarantee on every Climateway installation.",
       },
     ],
     links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/guarantees" }],
