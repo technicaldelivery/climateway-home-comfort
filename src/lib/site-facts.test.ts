@@ -25,3 +25,25 @@ describe("service areas", () => {
   });
   test("has eight regions", () => strictEqual(serviceAreas.length, 8));
 });
+
+describe("footer coverage grid", () => {
+  test("has three columns headed London, Home Counties, Oxfordshire", () =>
+    deepStrictEqual(footerCoverage.map((c) => c.header), [
+      "London",
+      "Home Counties",
+      "Oxfordshire",
+    ]));
+  test("lists only towns that appear in the full service areas", () => {
+    const known = new Set(serviceAreas.flatMap((a) => a.towns));
+    const unknown = footerCoverage
+      .flatMap((c) => c.towns)
+      .filter((t) => !known.has(t));
+    deepStrictEqual(unknown, []);
+  });
+  test("keeps Henley-on-Thames in the Oxfordshire column only", () => {
+    const hits = footerCoverage
+      .filter((c) => c.towns.includes("Henley-on-Thames"))
+      .map((c) => c.header);
+    deepStrictEqual(hits, ["Oxfordshire"]);
+  });
+});
