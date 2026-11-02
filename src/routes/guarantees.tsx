@@ -75,8 +75,9 @@ function GuaranteesPage() {
             The installation itself, covered for 6 years.
           </h2>
           <p className="mt-6 max-w-[65ch] text-lg leading-relaxed text-foreground/80">
-            Every Climateway installation carries a 6-year workmanship
-            guarantee, exceeding the MCS minimum. This covers anything that
+            Your installation partner provides a 6-year workmanship guarantee,
+            exceeding the MCS minimum. Climateway manages any claim on your
+            behalf. This covers anything that
             fails because of how it was fitted — pipework, electrical work,
             commissioning, system integration. If anything goes wrong
             because of our installation, we come back and fix it at no cost
@@ -93,8 +94,10 @@ function GuaranteesPage() {
         <p className="mt-6 max-w-[65ch] text-lg leading-relaxed text-ivory/85">
           For every project we deliver, we agree the comfort temperatures
           your home will reach in winter and summer. We design the system to
-          meet those temperatures. If it doesn't, we come back at our cost
-          until it does. This is in addition to the two-layer Climateway
+          meet those temperatures. If your system doesn't deliver the
+          temperatures agreed in your System Design, we bring your installer
+          back, at no cost to you, until it does. This is in addition to the
+          two-layer Climateway
           Cover.
         </p>
       </Section>

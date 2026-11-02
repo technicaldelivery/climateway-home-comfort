@@ -63,9 +63,9 @@ function AboutPage() {
         </h2>
         <div className="mt-10 max-w-[65ch] space-y-5 text-lg leading-relaxed text-foreground/80">
           <p>
-            Climateway designs your climate system. Our approved installation
-            partners — MCS certified, F-Gas certified, Gas Safe registered —
-            build it under our direct project management. Our installation
+            Climateway designs your climate system. Installation by our vetted
+            partner engineers — MCS certified, F-Gas certified, Gas Safe
+            registered — coordinated by Climateway. Our installation
             partners are established UK mechanical and electrical businesses
             with proven track records across residential and commercial
             projects, all bound by Climateway's quality standards.
@@ -84,11 +84,11 @@ function AboutPage() {
         </h2>
         <div className="mt-10 max-w-[65ch] space-y-5 text-lg leading-relaxed text-foreground/80">
           <p>
-            Every Climateway installation carries a 6-year workmanship
-            guarantee, plus manufacturer product warranties of 5 to 10 years.
-            On top of that, our Comfort
-            Promise: if your designed system doesn't deliver the temperatures we
-            agreed, we come back at our cost until it does.
+            Every installation carries a 6-year workmanship guarantee from your
+            installation partner, plus manufacturer product warranties of 5 to
+            10 years. On top of that, our Comfort Promise: if your system
+            doesn't deliver the temperatures agreed in your System Design, we
+            bring your installer back, at no cost to you, until it does.
           </p>
           <p>
             That's it. No fine print, no offset schemes, no carbon-credit

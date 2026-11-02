@@ -222,7 +222,7 @@ function Solution() {
     },
     {
       title: "Comfort, guaranteed",
-      body: "We design every system to deliver agreed comfort temperatures in both seasons. If our installation doesn't hit those temperatures, we come back at our cost until it does. Few UK brands currently combine whole-home design, mid-market pricing, grant orchestration and a cooling-included Comfort Promise in one offer.",
+      body: "We design every system to deliver agreed comfort temperatures in both seasons. If your system doesn't deliver the temperatures agreed in your System Design, we bring your installer back, at no cost to you, until it does. Few UK brands currently combine whole-home design, mid-market pricing, grant orchestration and a cooling-included Comfort Promise in one offer.",
       icon: (
         <ShieldCheck className="h-9 w-9" style={{ color: "#0E4F4A" }} strokeWidth={1.5} />
       ),
@@ -427,7 +427,7 @@ function Process() {
     },
     {
       title: "Installation",
-      body: "Our approved installation partners — all MCS certified, F-Gas certified and Gas Safe registered — install your system under our direct project management. One team, one invoice, one point of contact. " + installationTimelineCopy,
+      body: "Installation by our vetted partner engineers, coordinated by Climateway — all MCS certified, F-Gas certified and Gas Safe registered. One team, one invoice, one point of contact. " + installationTimelineCopy,
       img: imgHeatPump,
       alt: imgHeatPumpAlt,
     },
@@ -492,7 +492,7 @@ function TrustStrip() {
     },
     {
       title: "The Comfort Promise",
-      body: "If your system doesn't deliver the temperatures we agreed, we come back at our cost until it does.",
+      body: "If your system doesn't deliver the temperatures agreed in your System Design, we bring your installer back, at no cost to you, until it does.",
       icon: Leaf,
     },
   ];
@@ -559,7 +559,7 @@ const faqs = [
   },
   {
     q: "What if it goes wrong?",
-    a: "Every installation carries a 6-year workmanship guarantee, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your designed system doesn't deliver the agreed indoor temperatures in winter or summer, we come back and fix it at our cost. You only ever deal with Climateway, not the installers. We manage every contractor on your behalf. Full details on our /guarantees.",
+    a: "Every installation carries a 6-year workmanship guarantee from your installation partner, plus manufacturer product warranties of 5 to 10 years. On top of that, our Comfort Promise: if your system doesn't deliver the temperatures agreed in your System Design, we bring your installer back, at no cost to you, until it does. You only ever deal with Climateway, not the installers. We manage every contractor on your behalf. Full details on our /guarantees.",
   },
   {
     q: "Do you guarantee my energy bills will be lower?",
