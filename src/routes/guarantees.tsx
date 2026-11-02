@@ -6,14 +6,14 @@ export const Route = createFileRoute("/guarantees")({
   head: () => ({
     meta: [
       { name: "twitter:title", content: "Climateway — Climate-ready homes for British weather — Guarantees" },
-      { name: "twitter:description", content: "Honest cover, not marketing cover. Manufacturer warranty, 6-year workmanship guarantee, and an insurance-backed guarantee on every Climateway installation." },
+      { name: "twitter:description", content: "Manufacturer warranty and a 6-year workmanship guarantee on every Climateway installation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { title: "Climateway — Climate-ready homes for British weather — Guarantees" },
       {
         name: "description",
         content:
-          "Honest cover, not marketing cover. Manufacturer warranty, 6-year workmanship guarantee, and an insurance-backed guarantee on every Climateway installation.",
+          "Manufacturer warranty and a 6-year workmanship guarantee on every Climateway installation.",
       },
       {
         property: "og:title",
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/guarantees")({
       {
         property: "og:description",
         content:
-          "Manufacturer warranty, 6-year workmanship guarantee, and an insurance-backed guarantee on every Climateway installation.",
+          "Manufacturer warranty and a 6-year workmanship guarantee on every Climateway installation.",
       },
     ],
     links: [{ rel: "canonical", href: "https://climateway-home-comfort.lovable.app/guarantees" }],
@@ -84,22 +84,6 @@ function GuaranteesPage() {
           </p>
         </div>
       </section>
-
-      <Section>
-        <Eyebrow>
-          <span style={{ color: "#0E4F4A" }}>Layer 3 — Insurance-backed</span>
-        </Eyebrow>
-        <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
-          Protection even if we're no longer here.
-        </h2>
-        <p className="mt-6 max-w-[65ch] text-lg leading-relaxed text-foreground/80">
-          Our 6-year workmanship guarantee is underwritten by an independent
-          insurer through an independent IBG provider. If Climateway
-          ceases trading during the guarantee period, the insurer steps in
-          to cover any workmanship issues. Your installation is protected
-          even in the unlikely event we are not.
-        </p>
-      </Section>
 
       <Section tone="teal">
         <Eyebrow>Comfort Promise</Eyebrow>
