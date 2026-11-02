@@ -85,8 +85,8 @@ function AboutPage() {
         <div className="mt-10 max-w-[65ch] space-y-5 text-lg leading-relaxed text-foreground/80">
           <p>
             Every Climateway installation carries a 6-year workmanship
-            guarantee, underwritten by an independent insurer, plus manufacturer
-            product warranties of 5 to 10 years. On top of that, our Comfort
+            guarantee, plus manufacturer product warranties of 5 to 10 years.
+            On top of that, our Comfort
             Promise: if your designed system doesn't deliver the temperatures we
             agreed, we come back at our cost until it does.
           </p>
