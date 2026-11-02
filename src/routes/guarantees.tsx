@@ -38,7 +38,7 @@ function GuaranteesPage() {
           <span style={{ color: "#0E4F4A" }}>Climateway Cover</span>
         </Eyebrow>
         <h1 className="max-w-3xl font-display text-5xl leading-tight md:text-6xl">
-          Three layers of protection on every installation.
+          Two layers of protection on every installation.
         </h1>
         <p className="mt-8 max-w-2xl text-lg text-foreground/75">
           Honest cover, not marketing cover. Here's exactly what's
@@ -94,7 +94,7 @@ function GuaranteesPage() {
           For every project we deliver, we agree the comfort temperatures
           your home will reach in winter and summer. We design the system to
           meet those temperatures. If it doesn't, we come back at our cost
-          until it does. This is in addition to the three-layer Climateway
+          until it does. This is in addition to the two-layer Climateway
           Cover.
         </p>
       </Section>
